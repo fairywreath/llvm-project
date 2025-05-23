@@ -418,8 +418,9 @@ def SPV_NV_stereo_view_rendering         : I32EnumAttrCase<"SPV_NV_stereo_view_r
 def SPV_NV_viewport_array2               : I32EnumAttrCase<"SPV_NV_viewport_array2", 5012>;
 def SPV_NV_bindless_texture              : I32EnumAttrCase<"SPV_NV_bindless_texture", 5013>;
 def SPV_NV_ray_tracing_motion_blur       : I32EnumAttrCase<"SPV_NV_ray_tracing_motion_blur", 5014>;
+def SPV_NV_tensor_addressing             : I32EnumAttrCase<"SPV_NV_tensor_addressing", 5015>;
 
-def SPV_NVX_multiview_per_view_attributes : I32EnumAttrCase<"SPV_NVX_multiview_per_view_attributes", 5015>;
+def SPV_NVX_multiview_per_view_attributes : I32EnumAttrCase<"SPV_NVX_multiview_per_view_attributes", 6000>;
 
 def SPIRV_ExtensionAttr :
     SPIRV_I32EnumAttr<"Extension", "supported SPIR-V extensions", "ext", [
@@ -469,7 +470,8 @@ def SPIRV_ExtensionAttr :
       SPV_NV_shader_image_footprint, SPV_NV_shader_sm_builtins,
       SPV_NV_shader_subgroup_partitioned, SPV_NV_shading_rate,
       SPV_NV_stereo_view_rendering, SPV_NV_viewport_array2, SPV_NV_bindless_texture,
-      SPV_NV_ray_tracing_motion_blur, SPV_NVX_multiview_per_view_attributes
+      SPV_NV_ray_tracing_motion_blur, SPV_NV_tensor_addressing,
+      SPV_NVX_multiview_per_view_attributes
     ]>;
 
 //===----------------------------------------------------------------------===//
@@ -4110,6 +4112,23 @@ def SPIRV_INTEL_StoreCacheControlAttr :
                       "store_cache_control", [
       SPIRV_INTEL_SCC_Uncached, SPIRV_INTEL_SCC_WriteThrough,
       SPIRV_INTEL_SCC_WriteBack, SPIRV_INTEL_SCC_Streaming
+    ]>;
+
+def SPIRV_NV_TACM_Undefined      : I32EnumAttrCase<"Undefined", 0>;
+def SPIRV_NV_TACM_Constant       : I32EnumAttrCase<"Constant", 1>;
+def SPIRV_NV_TACM_ClampToEdge    : I32EnumAttrCase<"ClampToEdge", 2>;
+def SPIRV_NV_TACM_Repeat         : I32EnumAttrCase<"Repeat", 3>;
+def SPIRV_NV_TACM_RepeatMirrored : I32EnumAttrCase<"RepeatMirrored", 4>;
+
+// NOTE: This is an attribute in the SPIR-V *dialect* but a constant (<id>) in
+// SPIR-V proper.
+def SPIRV_NV_TensorClampModeAttr :
+    SPIRV_I32EnumAttr<"TensorClampModeNV",
+                      "valid SPIR-V Tensor Clamp Mode (NV)",
+                      "tensor_clamp_mode_nv", [
+      SPIRV_NV_TACM_Undefined, SPIRV_NV_TACM_Constant,
+      SPIRV_NV_TACM_ClampToEdge, SPIRV_NV_TACM_Repeat,
+      SPIRV_NV_TACM_RepeatMirrored
     ]>;
 
 //===----------------------------------------------------------------------===//
