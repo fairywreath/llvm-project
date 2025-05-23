@@ -480,22 +480,66 @@ def SPIRV_ExtensionAttr :
 
 // Begin enum section. Generated from SPIR-V spec; DO NOT MODIFY!
 
-def SPIRV_C_Matrix                                      : I32EnumAttrCase<"Matrix", 0>;
-def SPIRV_C_Addresses                                   : I32EnumAttrCase<"Addresses", 4>;
-def SPIRV_C_Linkage                                     : I32EnumAttrCase<"Linkage", 5>;
-def SPIRV_C_Kernel                                      : I32EnumAttrCase<"Kernel", 6>;
-def SPIRV_C_Float16                                     : I32EnumAttrCase<"Float16", 9>;
-def SPIRV_C_Float64                                     : I32EnumAttrCase<"Float64", 10>;
-def SPIRV_C_Int64                                       : I32EnumAttrCase<"Int64", 11>;
+def SPIRV_C_Matrix                                      : I32EnumAttrCase<"Matrix", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_Addresses                                   : I32EnumAttrCase<"Addresses", 4> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_Linkage                                     : I32EnumAttrCase<"Linkage", 5> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_Kernel                                      : I32EnumAttrCase<"Kernel", 6> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_Float16                                     : I32EnumAttrCase<"Float16", 9> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_Float64                                     : I32EnumAttrCase<"Float64", 10> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_Int64                                       : I32EnumAttrCase<"Int64", 11> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_C_Groups                                      : I32EnumAttrCase<"Groups", 18> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_ballot]>
   ];
 }
-def SPIRV_C_Int16                                       : I32EnumAttrCase<"Int16", 22>;
-def SPIRV_C_Int8                                        : I32EnumAttrCase<"Int8", 39>;
-def SPIRV_C_Sampled1D                                   : I32EnumAttrCase<"Sampled1D", 43>;
-def SPIRV_C_SampledBuffer                               : I32EnumAttrCase<"SampledBuffer", 46>;
+def SPIRV_C_Int16                                       : I32EnumAttrCase<"Int16", 22> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_Int8                                        : I32EnumAttrCase<"Int8", 39> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_Sampled1D                                   : I32EnumAttrCase<"Sampled1D", 43> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_C_SampledBuffer                               : I32EnumAttrCase<"SampledBuffer", 46> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_C_GroupNonUniform                             : I32EnumAttrCase<"GroupNonUniform", 61> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_3>
@@ -514,6 +558,46 @@ def SPIRV_C_ShaderViewportIndex                         : I32EnumAttrCase<"Shade
 def SPIRV_C_UniformDecoration                           : I32EnumAttrCase<"UniformDecoration", 71> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_6>
+  ];
+}
+def SPIRV_C_CoreBuiltinsARM                             : I32EnumAttrCase<"CoreBuiltinsARM", 4165> {
+  list<Availability> availability = [
+    Extension<[SPV_ARM_core_builtins]>
+  ];
+}
+def SPIRV_C_TileImageColorReadAccessEXT                 : I32EnumAttrCase<"TileImageColorReadAccessEXT", 4166> {
+  list<Availability> availability = [
+    Extension<[SPV_EXT_shader_tile_image]>
+  ];
+}
+def SPIRV_C_TileImageDepthReadAccessEXT                 : I32EnumAttrCase<"TileImageDepthReadAccessEXT", 4167> {
+  list<Availability> availability = [
+    Extension<[SPV_EXT_shader_tile_image]>
+  ];
+}
+def SPIRV_C_TileImageStencilReadAccessEXT               : I32EnumAttrCase<"TileImageStencilReadAccessEXT", 4168> {
+  list<Availability> availability = [
+    Extension<[SPV_EXT_shader_tile_image]>
+  ];
+}
+def SPIRV_C_TensorsARM                                  : I32EnumAttrCase<"TensorsARM", 4174> {
+  list<Availability> availability = [
+    Extension<[SPV_ARM_tensors]>
+  ];
+}
+def SPIRV_C_StorageTensorArrayDynamicIndexingARM        : I32EnumAttrCase<"StorageTensorArrayDynamicIndexingARM", 4175> {
+  list<Availability> availability = [
+    Extension<[SPV_ARM_tensors]>
+  ];
+}
+def SPIRV_C_StorageTensorArrayNonUniformIndexingARM     : I32EnumAttrCase<"StorageTensorArrayNonUniformIndexingARM", 4176> {
+  list<Availability> availability = [
+    Extension<[SPV_ARM_tensors]>
+  ];
+}
+def SPIRV_C_CooperativeMatrixLayoutsARM                 : I32EnumAttrCase<"CooperativeMatrixLayoutsARM", 4201> {
+  list<Availability> availability = [
+    Extension<[SPV_ARM_cooperative_matrix_layouts]>
   ];
 }
 def SPIRV_C_SubgroupBallotKHR                           : I32EnumAttrCase<"SubgroupBallotKHR", 4423> {
@@ -544,11 +628,6 @@ def SPIRV_C_StorageInputOutput16                        : I32EnumAttrCase<"Stora
 def SPIRV_C_DeviceGroup                                 : I32EnumAttrCase<"DeviceGroup", 4437> {
   list<Availability> availability = [
     Extension<[SPV_KHR_device_group]>
-  ];
-}
-def SPIRV_C_AtomicStorageOps                            : I32EnumAttrCase<"AtomicStorageOps", 4445> {
-  list<Availability> availability = [
-    Extension<[SPV_KHR_shader_atomic_counter_ops]>
   ];
 }
 def SPIRV_C_SampleMaskPostDepthCoverage                 : I32EnumAttrCase<"SampleMaskPostDepthCoverage", 4447> {
@@ -591,6 +670,51 @@ def SPIRV_C_RoundingModeRTZ                             : I32EnumAttrCase<"Round
     Extension<[SPV_KHR_float_controls]>
   ];
 }
+def SPIRV_C_UntypedPointersKHR                          : I32EnumAttrCase<"UntypedPointersKHR", 4473> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_untyped_pointers]>
+  ];
+}
+def SPIRV_C_TextureSampleWeightedQCOM                   : I32EnumAttrCase<"TextureSampleWeightedQCOM", 4484> {
+  list<Availability> availability = [
+    Extension<[SPV_QCOM_image_processing]>
+  ];
+}
+def SPIRV_C_TextureBoxFilterQCOM                        : I32EnumAttrCase<"TextureBoxFilterQCOM", 4485> {
+  list<Availability> availability = [
+    Extension<[SPV_QCOM_image_processing]>
+  ];
+}
+def SPIRV_C_TextureBlockMatchQCOM                       : I32EnumAttrCase<"TextureBlockMatchQCOM", 4486> {
+  list<Availability> availability = [
+    Extension<[SPV_QCOM_image_processing]>
+  ];
+}
+def SPIRV_C_TextureBlockMatch2QCOM                      : I32EnumAttrCase<"TextureBlockMatch2QCOM", 4498> {
+  list<Availability> availability = [
+    Extension<[SPV_QCOM_image_processing2]>
+  ];
+}
+def SPIRV_C_ShaderClockKHR                              : I32EnumAttrCase<"ShaderClockKHR", 5055> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_shader_clock]>
+  ];
+}
+def SPIRV_C_QuadControlKHR                              : I32EnumAttrCase<"QuadControlKHR", 5087> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_quad_control]>
+  ];
+}
+def SPIRV_C_Int4TypeINTEL                               : I32EnumAttrCase<"Int4TypeINTEL", 5112> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_int4]>
+  ];
+}
+def SPIRV_C_BFloat16TypeKHR                             : I32EnumAttrCase<"BFloat16TypeKHR", 5116> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_bfloat16]>
+  ];
+}
 def SPIRV_C_ImageFootprintNV                            : I32EnumAttrCase<"ImageFootprintNV", 5282> {
   list<Availability> availability = [
     Extension<[SPV_NV_shader_image_footprint]>
@@ -601,11 +725,6 @@ def SPIRV_C_FragmentBarycentricKHR                      : I32EnumAttrCase<"Fragm
     Extension<[SPV_KHR_fragment_shader_barycentric, SPV_NV_fragment_shader_barycentric]>
   ];
 }
-def SPIRV_C_ComputeDerivativeGroupQuadsNV               : I32EnumAttrCase<"ComputeDerivativeGroupQuadsNV", 5288> {
-  list<Availability> availability = [
-    Extension<[SPV_NV_compute_shader_derivatives]>
-  ];
-}
 def SPIRV_C_GroupNonUniformPartitionedNV                : I32EnumAttrCase<"GroupNonUniformPartitionedNV", 5297> {
   list<Availability> availability = [
     Extension<[SPV_NV_shader_subgroup_partitioned]>
@@ -613,22 +732,77 @@ def SPIRV_C_GroupNonUniformPartitionedNV                : I32EnumAttrCase<"Group
 }
 def SPIRV_C_VulkanMemoryModel                           : I32EnumAttrCase<"VulkanMemoryModel", 5345> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_KHR_vulkan_memory_model]>
   ];
 }
 def SPIRV_C_VulkanMemoryModelDeviceScope                : I32EnumAttrCase<"VulkanMemoryModelDeviceScope", 5346> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
-  ];
-}
-def SPIRV_C_ComputeDerivativeGroupLinearNV              : I32EnumAttrCase<"ComputeDerivativeGroupLinearNV", 5350> {
-  list<Availability> availability = [
-    Extension<[SPV_NV_compute_shader_derivatives]>
+    Extension<[SPV_KHR_vulkan_memory_model]>
   ];
 }
 def SPIRV_C_BindlessTextureNV                           : I32EnumAttrCase<"BindlessTextureNV", 5390> {
   list<Availability> availability = [
     Extension<[SPV_NV_bindless_texture]>
+  ];
+}
+def SPIRV_C_CooperativeVectorNV                         : I32EnumAttrCase<"CooperativeVectorNV", 5394> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_cooperative_vector]>
+  ];
+}
+def SPIRV_C_AtomicFloat16VectorNV                       : I32EnumAttrCase<"AtomicFloat16VectorNV", 5404> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_shader_atomic_fp16_vector]>
+  ];
+}
+def SPIRV_C_RawAccessChainsNV                           : I32EnumAttrCase<"RawAccessChainsNV", 5414> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_raw_access_chains]>
+  ];
+}
+def SPIRV_C_RayTracingSpheresGeometryNV                 : I32EnumAttrCase<"RayTracingSpheresGeometryNV", 5418> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_linear_swept_spheres]>
+  ];
+}
+def SPIRV_C_RayTracingLinearSweptSpheresGeometryNV      : I32EnumAttrCase<"RayTracingLinearSweptSpheresGeometryNV", 5419> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_linear_swept_spheres]>
+  ];
+}
+def SPIRV_C_CooperativeMatrixReductionsNV               : I32EnumAttrCase<"CooperativeMatrixReductionsNV", 5430> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_cooperative_matrix2]>
+  ];
+}
+def SPIRV_C_CooperativeMatrixConversionsNV              : I32EnumAttrCase<"CooperativeMatrixConversionsNV", 5431> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_cooperative_matrix2]>
+  ];
+}
+def SPIRV_C_CooperativeMatrixPerElementOperationsNV     : I32EnumAttrCase<"CooperativeMatrixPerElementOperationsNV", 5432> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_cooperative_matrix2]>
+  ];
+}
+def SPIRV_C_CooperativeMatrixTensorAddressingNV         : I32EnumAttrCase<"CooperativeMatrixTensorAddressingNV", 5433> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_cooperative_matrix2]>
+  ];
+}
+def SPIRV_C_CooperativeMatrixBlockLoadsNV               : I32EnumAttrCase<"CooperativeMatrixBlockLoadsNV", 5434> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_cooperative_matrix2]>
+  ];
+}
+def SPIRV_C_CooperativeVectorTrainingNV                 : I32EnumAttrCase<"CooperativeVectorTrainingNV", 5435> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_cooperative_vector]>
+  ];
+}
+def SPIRV_C_TensorAddressingNV                          : I32EnumAttrCase<"TensorAddressingNV", 5439> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_tensor_addressing]>
   ];
 }
 def SPIRV_C_SubgroupShuffleINTEL                        : I32EnumAttrCase<"SubgroupShuffleINTEL", 5568> {
@@ -659,6 +833,11 @@ def SPIRV_C_RoundToInfinityINTEL                        : I32EnumAttrCase<"Round
 def SPIRV_C_FloatingPointModeINTEL                      : I32EnumAttrCase<"FloatingPointModeINTEL", 5583> {
   list<Availability> availability = [
     Extension<[SPV_INTEL_float_controls2]>
+  ];
+}
+def SPIRV_C_IntegerFunctions2INTEL                      : I32EnumAttrCase<"IntegerFunctions2INTEL", 5584> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_shader_integer_functions2]>
   ];
 }
 def SPIRV_C_FunctionPointersINTEL                       : I32EnumAttrCase<"FunctionPointersINTEL", 5603> {
@@ -776,9 +955,19 @@ def SPIRV_C_LoopFuseINTEL                               : I32EnumAttrCase<"LoopF
     Extension<[SPV_INTEL_loop_fuse]>
   ];
 }
+def SPIRV_C_FPGADSPControlINTEL                         : I32EnumAttrCase<"FPGADSPControlINTEL", 5908> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_fpga_dsp_control]>
+  ];
+}
 def SPIRV_C_MemoryAccessAliasingINTEL                   : I32EnumAttrCase<"MemoryAccessAliasingINTEL", 5910> {
   list<Availability> availability = [
     Extension<[SPV_INTEL_memory_access_aliasing]>
+  ];
+}
+def SPIRV_C_FPGAInvocationPipeliningAttributesINTEL     : I32EnumAttrCase<"FPGAInvocationPipeliningAttributesINTEL", 5916> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_fpga_invocation_pipelining_attributes]>
   ];
 }
 def SPIRV_C_FPGABufferLocationINTEL                     : I32EnumAttrCase<"FPGABufferLocationINTEL", 5920> {
@@ -794,6 +983,11 @@ def SPIRV_C_ArbitraryPrecisionFixedPointINTEL           : I32EnumAttrCase<"Arbit
 def SPIRV_C_USMStorageClassesINTEL                      : I32EnumAttrCase<"USMStorageClassesINTEL", 5935> {
   list<Availability> availability = [
     Extension<[SPV_INTEL_usm_storage_classes]>
+  ];
+}
+def SPIRV_C_RuntimeAlignedAttributeINTEL                : I32EnumAttrCase<"RuntimeAlignedAttributeINTEL", 5939> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_runtime_aligned]>
   ];
 }
 def SPIRV_C_IOPipesINTEL                                : I32EnumAttrCase<"IOPipesINTEL", 5943> {
@@ -813,27 +1007,17 @@ def SPIRV_C_FPGARegINTEL                                : I32EnumAttrCase<"FPGAR
 }
 def SPIRV_C_DotProductInputAll                          : I32EnumAttrCase<"DotProductInputAll", 6016> {
   list<Availability> availability = [
-    Extension<[SPV_KHR_integer_dot_product]>,
-    MinVersion<SPIRV_V_1_6>
-  ];
-}
-def SPIRV_C_DotProductInput4x8Bit                       : I32EnumAttrCase<"DotProductInput4x8Bit", 6017> {
-  list<I32EnumAttrCase> implies = [SPIRV_C_Int8];
-  list<Availability> availability = [
-    Extension<[SPV_KHR_integer_dot_product]>,
-    MinVersion<SPIRV_V_1_6>
+    Extension<[SPV_KHR_integer_dot_product]>
   ];
 }
 def SPIRV_C_DotProductInput4x8BitPacked                 : I32EnumAttrCase<"DotProductInput4x8BitPacked", 6018> {
   list<Availability> availability = [
-    Extension<[SPV_KHR_integer_dot_product]>,
-    MinVersion<SPIRV_V_1_6>
+    Extension<[SPV_KHR_integer_dot_product]>
   ];
 }
 def SPIRV_C_DotProduct                                  : I32EnumAttrCase<"DotProduct", 6019> {
   list<Availability> availability = [
-    Extension<[SPV_KHR_integer_dot_product]>,
-    MinVersion<SPIRV_V_1_6>
+    Extension<[SPV_KHR_integer_dot_product]>
   ];
 }
 def SPIRV_C_RayCullMaskKHR                              : I32EnumAttrCase<"RayCullMaskKHR", 6020> {
@@ -843,13 +1027,22 @@ def SPIRV_C_RayCullMaskKHR                              : I32EnumAttrCase<"RayCu
 }
 def SPIRV_C_CooperativeMatrixKHR                        : I32EnumAttrCase<"CooperativeMatrixKHR", 6022> {
   list<Availability> availability = [
-    Extension<[SPV_KHR_cooperative_matrix]>,
-    MinVersion<SPIRV_V_1_6>
+    Extension<[SPV_KHR_cooperative_matrix]>
+  ];
+}
+def SPIRV_C_ReplicatedCompositesEXT                     : I32EnumAttrCase<"ReplicatedCompositesEXT", 6024> {
+  list<Availability> availability = [
+    Extension<[SPV_EXT_replicated_composites]>
   ];
 }
 def SPIRV_C_BitInstructions                             : I32EnumAttrCase<"BitInstructions", 6025> {
   list<Availability> availability = [
     Extension<[SPV_KHR_bit_instructions]>
+  ];
+}
+def SPIRV_C_FloatControls2                              : I32EnumAttrCase<"FloatControls2", 6029> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_float_controls2]>
   ];
 }
 def SPIRV_C_AtomicFloat32AddEXT                         : I32EnumAttrCase<"AtomicFloat32AddEXT", 6033> {
@@ -862,14 +1055,14 @@ def SPIRV_C_AtomicFloat64AddEXT                         : I32EnumAttrCase<"Atomi
     Extension<[SPV_EXT_shader_atomic_float_add]>
   ];
 }
-def SPIRV_C_LongConstantCompositeINTEL                  : I32EnumAttrCase<"LongConstantCompositeINTEL", 6089> {
+def SPIRV_C_LongCompositesINTEL                         : I32EnumAttrCase<"LongCompositesINTEL", 6089> {
   list<Availability> availability = [
-    Extension<[SPV_INTEL_long_constant_composite]>
+    Extension<[SPV_INTEL_long_composites]>
   ];
 }
-def SPIRV_C_OptNoneINTEL                                : I32EnumAttrCase<"OptNoneINTEL", 6094> {
+def SPIRV_C_OptNoneEXT                                  : I32EnumAttrCase<"OptNoneEXT", 6094> {
   list<Availability> availability = [
-    Extension<[SPV_INTEL_optnone]>
+    Extension<[SPV_EXT_optnone, SPV_INTEL_optnone]>
   ];
 }
 def SPIRV_C_AtomicFloat16AddEXT                         : I32EnumAttrCase<"AtomicFloat16AddEXT", 6095> {
@@ -882,9 +1075,69 @@ def SPIRV_C_DebugInfoModuleINTEL                        : I32EnumAttrCase<"Debug
     Extension<[SPV_INTEL_debug_module]>
   ];
 }
+def SPIRV_C_BFloat16ConversionINTEL                     : I32EnumAttrCase<"BFloat16ConversionINTEL", 6115> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_bfloat16_conversion]>
+  ];
+}
 def SPIRV_C_SplitBarrierINTEL                           : I32EnumAttrCase<"SplitBarrierINTEL", 6141> {
   list<Availability> availability = [
     Extension<[SPV_INTEL_split_barrier]>
+  ];
+}
+def SPIRV_C_ArithmeticFenceEXT                          : I32EnumAttrCase<"ArithmeticFenceEXT", 6144> {
+  list<Availability> availability = [
+    Extension<[SPV_EXT_arithmetic_fence]>
+  ];
+}
+def SPIRV_C_TaskSequenceINTEL                           : I32EnumAttrCase<"TaskSequenceINTEL", 6162> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_task_sequence]>
+  ];
+}
+def SPIRV_C_FPMaxErrorINTEL                             : I32EnumAttrCase<"FPMaxErrorINTEL", 6169> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_fp_max_error]>
+  ];
+}
+def SPIRV_C_FPGALatencyControlINTEL                     : I32EnumAttrCase<"FPGALatencyControlINTEL", 6171> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_fpga_latency_control]>
+  ];
+}
+def SPIRV_C_FPGAArgumentInterfacesINTEL                 : I32EnumAttrCase<"FPGAArgumentInterfacesINTEL", 6174> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_fpga_argument_interfaces]>
+  ];
+}
+def SPIRV_C_GlobalVariableHostAccessINTEL               : I32EnumAttrCase<"GlobalVariableHostAccessINTEL", 6187> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_global_variable_host_access]>
+  ];
+}
+def SPIRV_C_GlobalVariableFPGADecorationsINTEL          : I32EnumAttrCase<"GlobalVariableFPGADecorationsINTEL", 6189> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_global_variable_fpga_decorations]>
+  ];
+}
+def SPIRV_C_SubgroupBufferPrefetchINTEL                 : I32EnumAttrCase<"SubgroupBufferPrefetchINTEL", 6220> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_subgroup_buffer_prefetch]>
+  ];
+}
+def SPIRV_C_Subgroup2DBlockIOINTEL                      : I32EnumAttrCase<"Subgroup2DBlockIOINTEL", 6228> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_2d_block_io]>
+  ];
+}
+def SPIRV_C_SubgroupMatrixMultiplyAccumulateINTEL       : I32EnumAttrCase<"SubgroupMatrixMultiplyAccumulateINTEL", 6236> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_subgroup_matrix_multiply_accumulate]>
+  ];
+}
+def SPIRV_C_TernaryBitwiseFunctionINTEL                 : I32EnumAttrCase<"TernaryBitwiseFunctionINTEL", 6241> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_ternary_bitwise_function]>
   ];
 }
 def SPIRV_C_GroupUniformArithmeticKHR                   : I32EnumAttrCase<"GroupUniformArithmeticKHR", 6400> {
@@ -892,38 +1145,91 @@ def SPIRV_C_GroupUniformArithmeticKHR                   : I32EnumAttrCase<"Group
     Extension<[SPV_KHR_uniform_group_instructions]>
   ];
 }
+def SPIRV_C_TensorFloat32RoundingINTEL                  : I32EnumAttrCase<"TensorFloat32RoundingINTEL", 6425> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_tensor_float32_conversion]>
+  ];
+}
+def SPIRV_C_MaskedGatherScatterINTEL                    : I32EnumAttrCase<"MaskedGatherScatterINTEL", 6427> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_masked_gather_scatter]>
+  ];
+}
+def SPIRV_C_CacheControlsINTEL                          : I32EnumAttrCase<"CacheControlsINTEL", 6441> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_cache_controls]>
+  ];
+}
+def SPIRV_C_RegisterLimitsINTEL                         : I32EnumAttrCase<"RegisterLimitsINTEL", 6460> {
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_maximum_registers]>
+  ];
+}
 def SPIRV_C_Shader                                      : I32EnumAttrCase<"Shader", 1> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Matrix];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_Vector16                                    : I32EnumAttrCase<"Vector16", 7> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Kernel];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_Float16Buffer                               : I32EnumAttrCase<"Float16Buffer", 8> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Kernel];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_Int64Atomics                                : I32EnumAttrCase<"Int64Atomics", 12> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Int64];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageBasic                                  : I32EnumAttrCase<"ImageBasic", 13> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Kernel];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_Pipes                                       : I32EnumAttrCase<"Pipes", 17> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Kernel];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_DeviceEnqueue                               : I32EnumAttrCase<"DeviceEnqueue", 19> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Kernel];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_LiteralSampler                              : I32EnumAttrCase<"LiteralSampler", 20> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Kernel];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_GenericPointer                              : I32EnumAttrCase<"GenericPointer", 38> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Addresses];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_Image1D                                     : I32EnumAttrCase<"Image1D", 44> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Sampled1D];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageBuffer                                 : I32EnumAttrCase<"ImageBuffer", 47> {
   list<I32EnumAttrCase> implies = [SPIRV_C_SampledBuffer];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_NamedBarrier                                : I32EnumAttrCase<"NamedBarrier", 59> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Kernel];
@@ -973,7 +1279,7 @@ def SPIRV_C_GroupNonUniformQuad                         : I32EnumAttrCase<"Group
     MinVersion<SPIRV_V_1_3>
   ];
 }
-def SPIRV_C_StorageUniform16                            : I32EnumAttrCase<"StorageUniform16", 4434> {
+def SPIRV_C_UniformAndStorageBuffer16BitAccess          : I32EnumAttrCase<"UniformAndStorageBuffer16BitAccess", 4434> {
   list<I32EnumAttrCase> implies = [SPIRV_C_StorageBuffer16BitAccess];
   list<Availability> availability = [
     Extension<[SPV_KHR_16bit_storage]>
@@ -985,10 +1291,28 @@ def SPIRV_C_UniformAndStorageBuffer8BitAccess           : I32EnumAttrCase<"Unifo
     Extension<[SPV_KHR_8bit_storage]>
   ];
 }
+def SPIRV_C_Int4CooperativeMatrixINTEL                  : I32EnumAttrCase<"Int4CooperativeMatrixINTEL", 5114> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_CooperativeMatrixKHR, SPIRV_C_Int4TypeINTEL];
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_int4]>
+  ];
+}
+def SPIRV_C_BFloat16DotProductKHR                       : I32EnumAttrCase<"BFloat16DotProductKHR", 5117> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_BFloat16TypeKHR];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_bfloat16]>
+  ];
+}
+def SPIRV_C_BFloat16CooperativeMatrixKHR                : I32EnumAttrCase<"BFloat16CooperativeMatrixKHR", 5118> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_BFloat16TypeKHR, SPIRV_C_CooperativeMatrixKHR];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_bfloat16]>
+  ];
+}
 def SPIRV_C_UniformTexelBufferArrayDynamicIndexing      : I32EnumAttrCase<"UniformTexelBufferArrayDynamicIndexing", 5304> {
   list<I32EnumAttrCase> implies = [SPIRV_C_SampledBuffer];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_VectorComputeINTEL                          : I32EnumAttrCase<"VectorComputeINTEL", 5617> {
@@ -1003,92 +1327,203 @@ def SPIRV_C_FPFastMathModeINTEL                         : I32EnumAttrCase<"FPFas
     Extension<[SPV_INTEL_fp_fast_math_mode]>
   ];
 }
+def SPIRV_C_DotProductInput4x8Bit                       : I32EnumAttrCase<"DotProductInput4x8Bit", 6017> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Int8];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_integer_dot_product]>
+  ];
+}
 def SPIRV_C_GroupNonUniformRotateKHR                    : I32EnumAttrCase<"GroupNonUniformRotateKHR", 6026> {
   list<I32EnumAttrCase> implies = [SPIRV_C_GroupNonUniform];
   list<Availability> availability = [
     Extension<[SPV_KHR_subgroup_rotate]>
   ];
 }
+def SPIRV_C_FPGAClusterAttributesV2INTEL                : I32EnumAttrCase<"FPGAClusterAttributesV2INTEL", 6150> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_FPGAClusterAttributesINTEL];
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_fpga_cluster_attributes]>
+  ];
+}
+def SPIRV_C_FPGAKernelAttributesv2INTEL                 : I32EnumAttrCase<"FPGAKernelAttributesv2INTEL", 6161> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_FPGAKernelAttributesINTEL];
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_kernel_attributes]>
+  ];
+}
+def SPIRV_C_Subgroup2DBlockTransformINTEL               : I32EnumAttrCase<"Subgroup2DBlockTransformINTEL", 6229> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Subgroup2DBlockIOINTEL];
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_2d_block_io]>
+  ];
+}
+def SPIRV_C_Subgroup2DBlockTransposeINTEL               : I32EnumAttrCase<"Subgroup2DBlockTransposeINTEL", 6230> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Subgroup2DBlockIOINTEL];
+  list<Availability> availability = [
+    Extension<[SPV_INTEL_2d_block_io]>
+  ];
+}
 def SPIRV_C_Geometry                                    : I32EnumAttrCase<"Geometry", 2> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_Tessellation                                : I32EnumAttrCase<"Tessellation", 3> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageReadWrite                              : I32EnumAttrCase<"ImageReadWrite", 14> {
   list<I32EnumAttrCase> implies = [SPIRV_C_ImageBasic];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageMipmap                                 : I32EnumAttrCase<"ImageMipmap", 15> {
   list<I32EnumAttrCase> implies = [SPIRV_C_ImageBasic];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_AtomicStorage                               : I32EnumAttrCase<"AtomicStorage", 21> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageGatherExtended                         : I32EnumAttrCase<"ImageGatherExtended", 25> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_StorageImageMultisample                     : I32EnumAttrCase<"StorageImageMultisample", 27> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_UniformBufferArrayDynamicIndexing           : I32EnumAttrCase<"UniformBufferArrayDynamicIndexing", 28> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_SampledImageArrayDynamicIndexing            : I32EnumAttrCase<"SampledImageArrayDynamicIndexing", 29> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_StorageBufferArrayDynamicIndexing           : I32EnumAttrCase<"StorageBufferArrayDynamicIndexing", 30> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_StorageImageArrayDynamicIndexing            : I32EnumAttrCase<"StorageImageArrayDynamicIndexing", 31> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ClipDistance                                : I32EnumAttrCase<"ClipDistance", 32> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_CullDistance                                : I32EnumAttrCase<"CullDistance", 33> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_SampleRateShading                           : I32EnumAttrCase<"SampleRateShading", 35> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_SampledRect                                 : I32EnumAttrCase<"SampledRect", 37> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_InputAttachment                             : I32EnumAttrCase<"InputAttachment", 40> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_SparseResidency                             : I32EnumAttrCase<"SparseResidency", 41> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_MinLod                                      : I32EnumAttrCase<"MinLod", 42> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_SampledCubeArray                            : I32EnumAttrCase<"SampledCubeArray", 45> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageMSArray                                : I32EnumAttrCase<"ImageMSArray", 48> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_StorageImageExtendedFormats                 : I32EnumAttrCase<"StorageImageExtendedFormats", 49> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageQuery                                  : I32EnumAttrCase<"ImageQuery", 50> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_DerivativeControl                           : I32EnumAttrCase<"DerivativeControl", 51> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_InterpolationFunction                       : I32EnumAttrCase<"InterpolationFunction", 52> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_TransformFeedback                           : I32EnumAttrCase<"TransformFeedback", 53> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_StorageImageReadWithoutFormat               : I32EnumAttrCase<"StorageImageReadWithoutFormat", 55> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_StorageImageWriteWithoutFormat              : I32EnumAttrCase<"StorageImageWriteWithoutFormat", 56> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_SubgroupDispatch                            : I32EnumAttrCase<"SubgroupDispatch", 58> {
   list<I32EnumAttrCase> implies = [SPIRV_C_DeviceEnqueue];
@@ -1115,12 +1550,6 @@ def SPIRV_C_DrawParameters                              : I32EnumAttrCase<"DrawP
   ];
 }
 def SPIRV_C_WorkgroupMemoryExplicitLayoutKHR            : I32EnumAttrCase<"WorkgroupMemoryExplicitLayoutKHR", 4428> {
-  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
-  list<Availability> availability = [
-    Extension<[SPV_KHR_workgroup_memory_explicit_layout]>
-  ];
-}
-def SPIRV_C_WorkgroupMemoryExplicitLayout16BitAccessKHR : I32EnumAttrCase<"WorkgroupMemoryExplicitLayout16BitAccessKHR", 4430> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
     Extension<[SPV_KHR_workgroup_memory_explicit_layout]>
@@ -1154,6 +1583,12 @@ def SPIRV_C_RayTracingKHR                               : I32EnumAttrCase<"RayTr
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing]>
+  ];
+}
+def SPIRV_C_TileShadingQCOM                             : I32EnumAttrCase<"TileShadingQCOM", 4495> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    Extension<[SPV_QCOM_tile_shading]>
   ];
 }
 def SPIRV_C_Float16ImageAMD                             : I32EnumAttrCase<"Float16ImageAMD", 5008> {
@@ -1192,10 +1627,10 @@ def SPIRV_C_Int64ImageEXT                               : I32EnumAttrCase<"Int64
     Extension<[SPV_EXT_shader_image_int64]>
   ];
 }
-def SPIRV_C_ShaderClockKHR                              : I32EnumAttrCase<"ShaderClockKHR", 5055> {
+def SPIRV_C_ShaderEnqueueAMDX                           : I32EnumAttrCase<"ShaderEnqueueAMDX", 5067> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
-    Extension<[SPV_KHR_shader_clock]>
+    Extension<[SPV_AMDX_shader_enqueue]>
   ];
 }
 def SPIRV_C_FragmentFullyCoveredEXT                     : I32EnumAttrCase<"FragmentFullyCoveredEXT", 5265> {
@@ -1204,10 +1639,22 @@ def SPIRV_C_FragmentFullyCoveredEXT                     : I32EnumAttrCase<"Fragm
     Extension<[SPV_EXT_fragment_fully_covered]>
   ];
 }
+def SPIRV_C_MeshShadingNV                               : I32EnumAttrCase<"MeshShadingNV", 5266> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>
+  ];
+}
 def SPIRV_C_MeshShadingEXT                              : I32EnumAttrCase<"MeshShadingEXT", 5283> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
     Extension<[SPV_EXT_mesh_shader]>
+  ];
+}
+def SPIRV_C_ComputeDerivativeGroupQuadsKHR              : I32EnumAttrCase<"ComputeDerivativeGroupQuadsKHR", 5288> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_compute_shader_derivatives, SPV_NV_compute_shader_derivatives]>
   ];
 }
 def SPIRV_C_FragmentDensityEXT                          : I32EnumAttrCase<"FragmentDensityEXT", 5291> {
@@ -1219,19 +1666,25 @@ def SPIRV_C_FragmentDensityEXT                          : I32EnumAttrCase<"Fragm
 def SPIRV_C_ShaderNonUniform                            : I32EnumAttrCase<"ShaderNonUniform", 5301> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_RuntimeDescriptorArray                      : I32EnumAttrCase<"RuntimeDescriptorArray", 5302> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_StorageTexelBufferArrayDynamicIndexing      : I32EnumAttrCase<"StorageTexelBufferArrayDynamicIndexing", 5305> {
   list<I32EnumAttrCase> implies = [SPIRV_C_ImageBuffer];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
+  ];
+}
+def SPIRV_C_RayTracingPositionFetchKHR                  : I32EnumAttrCase<"RayTracingPositionFetchKHR", 5336> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_ray_tracing_position_fetch]>
   ];
 }
 def SPIRV_C_RayTracingNV                                : I32EnumAttrCase<"RayTracingNV", 5340> {
@@ -1252,10 +1705,22 @@ def SPIRV_C_PhysicalStorageBufferAddresses              : I32EnumAttrCase<"Physi
     Extension<[SPV_EXT_physical_storage_buffer, SPV_KHR_physical_storage_buffer]>
   ];
 }
+def SPIRV_C_ComputeDerivativeGroupLinearKHR             : I32EnumAttrCase<"ComputeDerivativeGroupLinearKHR", 5350> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_compute_shader_derivatives, SPV_NV_compute_shader_derivatives]>
+  ];
+}
 def SPIRV_C_RayTracingProvisionalKHR                    : I32EnumAttrCase<"RayTracingProvisionalKHR", 5353> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing]>
+  ];
+}
+def SPIRV_C_CooperativeMatrixNV                         : I32EnumAttrCase<"CooperativeMatrixNV", 5357> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    Extension<[SPV_NV_cooperative_matrix]>
   ];
 }
 def SPIRV_C_FragmentShaderSampleInterlockEXT            : I32EnumAttrCase<"FragmentShaderSampleInterlockEXT", 5363> {
@@ -1285,34 +1750,70 @@ def SPIRV_C_FragmentShaderPixelInterlockEXT             : I32EnumAttrCase<"Fragm
 def SPIRV_C_DemoteToHelperInvocation                    : I32EnumAttrCase<"DemoteToHelperInvocation", 5379> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_6>
+    Extension<[SPV_EXT_demote_to_helper_invocation]>
   ];
 }
-def SPIRV_C_IntegerFunctions2INTEL                      : I32EnumAttrCase<"IntegerFunctions2INTEL", 5584> {
+def SPIRV_C_DisplacementMicromapNV                      : I32EnumAttrCase<"DisplacementMicromapNV", 5380> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
   list<Availability> availability = [
-    Extension<[SPV_INTEL_shader_integer_functions2]>
+    Extension<[SPV_NV_displacement_micromap]>
+  ];
+}
+def SPIRV_C_RayTracingOpacityMicromapEXT                : I32EnumAttrCase<"RayTracingOpacityMicromapEXT", 5381> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    Extension<[SPV_EXT_opacity_micromap]>
+  ];
+}
+def SPIRV_C_RayQueryPositionFetchKHR                    : I32EnumAttrCase<"RayQueryPositionFetchKHR", 5391> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_Shader];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_ray_tracing_position_fetch]>
   ];
 }
 def SPIRV_C_TessellationPointSize                       : I32EnumAttrCase<"TessellationPointSize", 23> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Tessellation];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_GeometryPointSize                           : I32EnumAttrCase<"GeometryPointSize", 24> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Geometry];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageCubeArray                              : I32EnumAttrCase<"ImageCubeArray", 34> {
   list<I32EnumAttrCase> implies = [SPIRV_C_SampledCubeArray];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_ImageRect                                   : I32EnumAttrCase<"ImageRect", 36> {
   list<I32EnumAttrCase> implies = [SPIRV_C_SampledRect];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_GeometryStreams                             : I32EnumAttrCase<"GeometryStreams", 54> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Geometry];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_MultiViewport                               : I32EnumAttrCase<"MultiViewport", 57> {
   list<I32EnumAttrCase> implies = [SPIRV_C_Geometry];
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
 }
 def SPIRV_C_WorkgroupMemoryExplicitLayout8BitAccessKHR  : I32EnumAttrCase<"WorkgroupMemoryExplicitLayout8BitAccessKHR", 4429> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_WorkgroupMemoryExplicitLayoutKHR];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_workgroup_memory_explicit_layout]>
+  ];
+}
+def SPIRV_C_WorkgroupMemoryExplicitLayout16BitAccessKHR : I32EnumAttrCase<"WorkgroupMemoryExplicitLayout16BitAccessKHR", 4430> {
   list<I32EnumAttrCase> implies = [SPIRV_C_WorkgroupMemoryExplicitLayoutKHR];
   list<Availability> availability = [
     Extension<[SPV_KHR_workgroup_memory_explicit_layout]>
@@ -1322,6 +1823,12 @@ def SPIRV_C_VariablePointers                            : I32EnumAttrCase<"Varia
   list<I32EnumAttrCase> implies = [SPIRV_C_VariablePointersStorageBuffer];
   list<Availability> availability = [
     Extension<[SPV_KHR_variable_pointers]>
+  ];
+}
+def SPIRV_C_AtomicStorageOps                            : I32EnumAttrCase<"AtomicStorageOps", 4445> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_AtomicStorage];
+  list<Availability> availability = [
+    Extension<[SPV_KHR_shader_atomic_counter_ops]>
   ];
 }
 def SPIRV_C_RayTraversalPrimitiveCullingKHR             : I32EnumAttrCase<"RayTraversalPrimitiveCullingKHR", 4478> {
@@ -1351,55 +1858,73 @@ def SPIRV_C_PerViewAttributesNV                         : I32EnumAttrCase<"PerVi
 def SPIRV_C_InputAttachmentArrayDynamicIndexing         : I32EnumAttrCase<"InputAttachmentArrayDynamicIndexing", 5303> {
   list<I32EnumAttrCase> implies = [SPIRV_C_InputAttachment];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_UniformBufferArrayNonUniformIndexing        : I32EnumAttrCase<"UniformBufferArrayNonUniformIndexing", 5306> {
   list<I32EnumAttrCase> implies = [SPIRV_C_ShaderNonUniform];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_SampledImageArrayNonUniformIndexing         : I32EnumAttrCase<"SampledImageArrayNonUniformIndexing", 5307> {
   list<I32EnumAttrCase> implies = [SPIRV_C_ShaderNonUniform];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_StorageBufferArrayNonUniformIndexing        : I32EnumAttrCase<"StorageBufferArrayNonUniformIndexing", 5308> {
   list<I32EnumAttrCase> implies = [SPIRV_C_ShaderNonUniform];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_StorageImageArrayNonUniformIndexing         : I32EnumAttrCase<"StorageImageArrayNonUniformIndexing", 5309> {
   list<I32EnumAttrCase> implies = [SPIRV_C_ShaderNonUniform];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_InputAttachmentArrayNonUniformIndexing      : I32EnumAttrCase<"InputAttachmentArrayNonUniformIndexing", 5310> {
   list<I32EnumAttrCase> implies = [SPIRV_C_InputAttachment, SPIRV_C_ShaderNonUniform];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_UniformTexelBufferArrayNonUniformIndexing   : I32EnumAttrCase<"UniformTexelBufferArrayNonUniformIndexing", 5311> {
   list<I32EnumAttrCase> implies = [SPIRV_C_SampledBuffer, SPIRV_C_ShaderNonUniform];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
   ];
 }
 def SPIRV_C_StorageTexelBufferArrayNonUniformIndexing   : I32EnumAttrCase<"StorageTexelBufferArrayNonUniformIndexing", 5312> {
   list<I32EnumAttrCase> implies = [SPIRV_C_ImageBuffer, SPIRV_C_ShaderNonUniform];
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>
+    Extension<[SPV_EXT_descriptor_indexing]>
+  ];
+}
+def SPIRV_C_ShaderInvocationReorderNV                   : I32EnumAttrCase<"ShaderInvocationReorderNV", 5383> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_RayTracingKHR];
+  list<Availability> availability = [
+    Extension<[SPV_NV_shader_invocation_reorder]>
+  ];
+}
+def SPIRV_C_RayTracingDisplacementMicromapNV            : I32EnumAttrCase<"RayTracingDisplacementMicromapNV", 5409> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_RayTracingKHR];
+  list<Availability> availability = [
+    Extension<[SPV_NV_displacement_micromap]>
+  ];
+}
+def SPIRV_C_RayTracingClusterAccelerationStructureNV    : I32EnumAttrCase<"RayTracingClusterAccelerationStructureNV", 5437> {
+  list<I32EnumAttrCase> implies = [SPIRV_C_RayTracingKHR];
+  list<Availability> availability = [
+    Extension<[SPV_NV_cluster_acceleration_structure]>
   ];
 }
 def SPIRV_C_ShaderViewportIndexLayerEXT                 : I32EnumAttrCase<"ShaderViewportIndexLayerEXT", 5254> {
   list<I32EnumAttrCase> implies = [SPIRV_C_MultiViewport];
   list<Availability> availability = [
-    Extension<[SPV_EXT_shader_viewport_index_layer]>
+    Extension<[SPV_EXT_shader_viewport_index_layer, SPV_NV_viewport_array2]>
   ];
 }
 def SPIRV_C_ShaderViewportMaskNV                        : I32EnumAttrCase<"ShaderViewportMaskNV", 5255> {
@@ -1415,102 +1940,132 @@ def SPIRV_C_ShaderStereoViewNV                          : I32EnumAttrCase<"Shade
   ];
 }
 
-def SPIRV_C_Bfloat16ConversionINTEL                         : I32EnumAttrCase<"Bfloat16ConversionINTEL", 6115> {
-  list<Availability> availability = [
-    Extension<[SPV_INTEL_bfloat16_conversion]>
-  ];
-}
-
-def SPIRV_C_CacheControlsINTEL : I32EnumAttrCase<"CacheControlsINTEL", 6441> {
-  list<Availability> availability = [
-    Extension<[SPV_INTEL_cache_controls]>
-  ];
-}
-
 def SPIRV_CapabilityAttr :
     SPIRV_I32EnumAttr<"Capability", "valid SPIR-V Capability", "capability", [
-      SPIRV_C_Matrix, SPIRV_C_Addresses, SPIRV_C_Linkage, SPIRV_C_Kernel, SPIRV_C_Float16,
-      SPIRV_C_Float64, SPIRV_C_Int64, SPIRV_C_Groups, SPIRV_C_Int16, SPIRV_C_Int8,
-      SPIRV_C_Sampled1D, SPIRV_C_SampledBuffer, SPIRV_C_GroupNonUniform, SPIRV_C_ShaderLayer,
-      SPIRV_C_ShaderViewportIndex, SPIRV_C_UniformDecoration, SPIRV_C_SubgroupBallotKHR,
+      SPIRV_C_Matrix, SPIRV_C_Addresses, SPIRV_C_Linkage, SPIRV_C_Kernel,
+      SPIRV_C_Float16, SPIRV_C_Float64, SPIRV_C_Int64, SPIRV_C_Groups, SPIRV_C_Int16,
+      SPIRV_C_Int8, SPIRV_C_Sampled1D, SPIRV_C_SampledBuffer,
+      SPIRV_C_GroupNonUniform, SPIRV_C_ShaderLayer, SPIRV_C_ShaderViewportIndex,
+      SPIRV_C_UniformDecoration, SPIRV_C_CoreBuiltinsARM,
+      SPIRV_C_TileImageColorReadAccessEXT, SPIRV_C_TileImageDepthReadAccessEXT,
+      SPIRV_C_TileImageStencilReadAccessEXT, SPIRV_C_TensorsARM,
+      SPIRV_C_StorageTensorArrayDynamicIndexingARM,
+      SPIRV_C_StorageTensorArrayNonUniformIndexingARM,
+      SPIRV_C_CooperativeMatrixLayoutsARM, SPIRV_C_SubgroupBallotKHR,
       SPIRV_C_SubgroupVoteKHR, SPIRV_C_StorageBuffer16BitAccess,
-      SPIRV_C_StoragePushConstant16, SPIRV_C_StorageInputOutput16, SPIRV_C_DeviceGroup,
-      SPIRV_C_AtomicStorageOps, SPIRV_C_SampleMaskPostDepthCoverage,
+      SPIRV_C_StoragePushConstant16, SPIRV_C_StorageInputOutput16,
+      SPIRV_C_DeviceGroup, SPIRV_C_SampleMaskPostDepthCoverage,
       SPIRV_C_StorageBuffer8BitAccess, SPIRV_C_StoragePushConstant8,
-      SPIRV_C_DenormPreserve, SPIRV_C_DenormFlushToZero, SPIRV_C_SignedZeroInfNanPreserve,
-      SPIRV_C_RoundingModeRTE, SPIRV_C_RoundingModeRTZ, SPIRV_C_ImageFootprintNV,
-      SPIRV_C_FragmentBarycentricKHR, SPIRV_C_MeshShadingEXT, SPIRV_C_ComputeDerivativeGroupQuadsNV,
-      SPIRV_C_GroupNonUniformPartitionedNV, SPIRV_C_VulkanMemoryModel,
-      SPIRV_C_VulkanMemoryModelDeviceScope, SPIRV_C_ComputeDerivativeGroupLinearNV,
-      SPIRV_C_BindlessTextureNV, SPIRV_C_SubgroupShuffleINTEL,
+      SPIRV_C_DenormPreserve, SPIRV_C_DenormFlushToZero,
+      SPIRV_C_SignedZeroInfNanPreserve, SPIRV_C_RoundingModeRTE,
+      SPIRV_C_RoundingModeRTZ, SPIRV_C_UntypedPointersKHR,
+      SPIRV_C_TextureSampleWeightedQCOM, SPIRV_C_TextureBoxFilterQCOM,
+      SPIRV_C_TextureBlockMatchQCOM, SPIRV_C_TextureBlockMatch2QCOM,
+      SPIRV_C_ShaderClockKHR, SPIRV_C_QuadControlKHR, SPIRV_C_Int4TypeINTEL,
+      SPIRV_C_BFloat16TypeKHR, SPIRV_C_ImageFootprintNV,
+      SPIRV_C_FragmentBarycentricKHR, SPIRV_C_GroupNonUniformPartitionedNV,
+      SPIRV_C_VulkanMemoryModel, SPIRV_C_VulkanMemoryModelDeviceScope,
+      SPIRV_C_BindlessTextureNV, SPIRV_C_CooperativeVectorNV,
+      SPIRV_C_AtomicFloat16VectorNV, SPIRV_C_RawAccessChainsNV,
+      SPIRV_C_RayTracingSpheresGeometryNV,
+      SPIRV_C_RayTracingLinearSweptSpheresGeometryNV,
+      SPIRV_C_CooperativeMatrixReductionsNV, SPIRV_C_CooperativeMatrixConversionsNV,
+      SPIRV_C_CooperativeMatrixPerElementOperationsNV,
+      SPIRV_C_CooperativeMatrixTensorAddressingNV,
+      SPIRV_C_CooperativeMatrixBlockLoadsNV, SPIRV_C_CooperativeVectorTrainingNV,
+      SPIRV_C_TensorAddressingNV, SPIRV_C_SubgroupShuffleINTEL,
       SPIRV_C_SubgroupBufferBlockIOINTEL, SPIRV_C_SubgroupImageBlockIOINTEL,
       SPIRV_C_SubgroupImageMediaBlockIOINTEL, SPIRV_C_RoundToInfinityINTEL,
-      SPIRV_C_FloatingPointModeINTEL, SPIRV_C_FunctionPointersINTEL,
-      SPIRV_C_IndirectReferencesINTEL, SPIRV_C_AsmINTEL, SPIRV_C_AtomicFloat32MinMaxEXT,
+      SPIRV_C_FloatingPointModeINTEL, SPIRV_C_IntegerFunctions2INTEL,
+      SPIRV_C_FunctionPointersINTEL, SPIRV_C_IndirectReferencesINTEL,
+      SPIRV_C_AsmINTEL, SPIRV_C_AtomicFloat32MinMaxEXT,
       SPIRV_C_AtomicFloat64MinMaxEXT, SPIRV_C_AtomicFloat16MinMaxEXT,
       SPIRV_C_VectorAnyINTEL, SPIRV_C_ExpectAssumeKHR,
       SPIRV_C_SubgroupAvcMotionEstimationINTEL,
       SPIRV_C_SubgroupAvcMotionEstimationIntraINTEL,
-      SPIRV_C_SubgroupAvcMotionEstimationChromaINTEL, SPIRV_C_VariableLengthArrayINTEL,
-      SPIRV_C_FunctionFloatControlINTEL, SPIRV_C_FPGAMemoryAttributesINTEL,
-      SPIRV_C_ArbitraryPrecisionIntegersINTEL,
+      SPIRV_C_SubgroupAvcMotionEstimationChromaINTEL,
+      SPIRV_C_VariableLengthArrayINTEL, SPIRV_C_FunctionFloatControlINTEL,
+      SPIRV_C_FPGAMemoryAttributesINTEL, SPIRV_C_ArbitraryPrecisionIntegersINTEL,
       SPIRV_C_ArbitraryPrecisionFloatingPointINTEL,
       SPIRV_C_UnstructuredLoopControlsINTEL, SPIRV_C_FPGALoopControlsINTEL,
       SPIRV_C_KernelAttributesINTEL, SPIRV_C_FPGAKernelAttributesINTEL,
       SPIRV_C_FPGAMemoryAccessesINTEL, SPIRV_C_FPGAClusterAttributesINTEL,
-      SPIRV_C_LoopFuseINTEL, SPIRV_C_MemoryAccessAliasingINTEL,
+      SPIRV_C_LoopFuseINTEL, SPIRV_C_FPGADSPControlINTEL,
+      SPIRV_C_MemoryAccessAliasingINTEL,
+      SPIRV_C_FPGAInvocationPipeliningAttributesINTEL,
       SPIRV_C_FPGABufferLocationINTEL, SPIRV_C_ArbitraryPrecisionFixedPointINTEL,
-      SPIRV_C_USMStorageClassesINTEL, SPIRV_C_IOPipesINTEL, SPIRV_C_BlockingPipesINTEL,
-      SPIRV_C_FPGARegINTEL, SPIRV_C_DotProductInputAll,
-      SPIRV_C_DotProductInput4x8BitPacked, SPIRV_C_DotProduct, SPIRV_C_RayCullMaskKHR,
-      SPIRV_C_CooperativeMatrixKHR,
-      SPIRV_C_BitInstructions, SPIRV_C_AtomicFloat32AddEXT, SPIRV_C_AtomicFloat64AddEXT,
-      SPIRV_C_LongConstantCompositeINTEL, SPIRV_C_OptNoneINTEL,
-      SPIRV_C_AtomicFloat16AddEXT, SPIRV_C_DebugInfoModuleINTEL, SPIRV_C_SplitBarrierINTEL,
-      SPIRV_C_GroupUniformArithmeticKHR, SPIRV_C_Shader, SPIRV_C_Vector16,
-      SPIRV_C_Float16Buffer, SPIRV_C_Int64Atomics, SPIRV_C_ImageBasic, SPIRV_C_Pipes,
-      SPIRV_C_DeviceEnqueue, SPIRV_C_LiteralSampler, SPIRV_C_GenericPointer, SPIRV_C_Image1D,
+      SPIRV_C_USMStorageClassesINTEL, SPIRV_C_RuntimeAlignedAttributeINTEL,
+      SPIRV_C_IOPipesINTEL, SPIRV_C_BlockingPipesINTEL, SPIRV_C_FPGARegINTEL,
+      SPIRV_C_DotProductInputAll, SPIRV_C_DotProductInput4x8BitPacked,
+      SPIRV_C_DotProduct, SPIRV_C_RayCullMaskKHR, SPIRV_C_CooperativeMatrixKHR,
+      SPIRV_C_ReplicatedCompositesEXT, SPIRV_C_BitInstructions,
+      SPIRV_C_FloatControls2, SPIRV_C_AtomicFloat32AddEXT,
+      SPIRV_C_AtomicFloat64AddEXT, SPIRV_C_LongCompositesINTEL, SPIRV_C_OptNoneEXT,
+      SPIRV_C_AtomicFloat16AddEXT, SPIRV_C_DebugInfoModuleINTEL,
+      SPIRV_C_BFloat16ConversionINTEL, SPIRV_C_SplitBarrierINTEL,
+      SPIRV_C_ArithmeticFenceEXT, SPIRV_C_TaskSequenceINTEL, SPIRV_C_FPMaxErrorINTEL,
+      SPIRV_C_FPGALatencyControlINTEL, SPIRV_C_FPGAArgumentInterfacesINTEL,
+      SPIRV_C_GlobalVariableHostAccessINTEL,
+      SPIRV_C_GlobalVariableFPGADecorationsINTEL,
+      SPIRV_C_SubgroupBufferPrefetchINTEL, SPIRV_C_Subgroup2DBlockIOINTEL,
+      SPIRV_C_SubgroupMatrixMultiplyAccumulateINTEL,
+      SPIRV_C_TernaryBitwiseFunctionINTEL, SPIRV_C_GroupUniformArithmeticKHR,
+      SPIRV_C_TensorFloat32RoundingINTEL, SPIRV_C_MaskedGatherScatterINTEL,
+      SPIRV_C_CacheControlsINTEL, SPIRV_C_RegisterLimitsINTEL, SPIRV_C_Shader,
+      SPIRV_C_Vector16, SPIRV_C_Float16Buffer, SPIRV_C_Int64Atomics,
+      SPIRV_C_ImageBasic, SPIRV_C_Pipes, SPIRV_C_DeviceEnqueue,
+      SPIRV_C_LiteralSampler, SPIRV_C_GenericPointer, SPIRV_C_Image1D,
       SPIRV_C_ImageBuffer, SPIRV_C_NamedBarrier, SPIRV_C_GroupNonUniformVote,
       SPIRV_C_GroupNonUniformArithmetic, SPIRV_C_GroupNonUniformBallot,
       SPIRV_C_GroupNonUniformShuffle, SPIRV_C_GroupNonUniformShuffleRelative,
       SPIRV_C_GroupNonUniformClustered, SPIRV_C_GroupNonUniformQuad,
-      SPIRV_C_StorageUniform16, SPIRV_C_UniformAndStorageBuffer8BitAccess,
+      SPIRV_C_UniformAndStorageBuffer16BitAccess,
+      SPIRV_C_UniformAndStorageBuffer8BitAccess, SPIRV_C_Int4CooperativeMatrixINTEL,
+      SPIRV_C_BFloat16DotProductKHR, SPIRV_C_BFloat16CooperativeMatrixKHR,
       SPIRV_C_UniformTexelBufferArrayDynamicIndexing, SPIRV_C_VectorComputeINTEL,
       SPIRV_C_FPFastMathModeINTEL, SPIRV_C_DotProductInput4x8Bit,
-      SPIRV_C_GroupNonUniformRotateKHR, SPIRV_C_Geometry, SPIRV_C_Tessellation,
+      SPIRV_C_GroupNonUniformRotateKHR, SPIRV_C_FPGAClusterAttributesV2INTEL,
+      SPIRV_C_FPGAKernelAttributesv2INTEL, SPIRV_C_Subgroup2DBlockTransformINTEL,
+      SPIRV_C_Subgroup2DBlockTransposeINTEL, SPIRV_C_Geometry, SPIRV_C_Tessellation,
       SPIRV_C_ImageReadWrite, SPIRV_C_ImageMipmap, SPIRV_C_AtomicStorage,
       SPIRV_C_ImageGatherExtended, SPIRV_C_StorageImageMultisample,
       SPIRV_C_UniformBufferArrayDynamicIndexing,
       SPIRV_C_SampledImageArrayDynamicIndexing,
       SPIRV_C_StorageBufferArrayDynamicIndexing,
-      SPIRV_C_StorageImageArrayDynamicIndexing, SPIRV_C_ClipDistance, SPIRV_C_CullDistance,
-      SPIRV_C_SampleRateShading, SPIRV_C_SampledRect, SPIRV_C_InputAttachment,
-      SPIRV_C_SparseResidency, SPIRV_C_MinLod, SPIRV_C_SampledCubeArray,
-      SPIRV_C_ImageMSArray, SPIRV_C_StorageImageExtendedFormats, SPIRV_C_ImageQuery,
-      SPIRV_C_DerivativeControl, SPIRV_C_InterpolationFunction, SPIRV_C_TransformFeedback,
-      SPIRV_C_StorageImageReadWithoutFormat, SPIRV_C_StorageImageWriteWithoutFormat,
-      SPIRV_C_SubgroupDispatch, SPIRV_C_PipeStorage, SPIRV_C_FragmentShadingRateKHR,
-      SPIRV_C_DrawParameters, SPIRV_C_WorkgroupMemoryExplicitLayoutKHR,
-      SPIRV_C_WorkgroupMemoryExplicitLayout16BitAccessKHR, SPIRV_C_MultiView,
+      SPIRV_C_StorageImageArrayDynamicIndexing, SPIRV_C_ClipDistance,
+      SPIRV_C_CullDistance, SPIRV_C_SampleRateShading, SPIRV_C_SampledRect,
+      SPIRV_C_InputAttachment, SPIRV_C_SparseResidency, SPIRV_C_MinLod,
+      SPIRV_C_SampledCubeArray, SPIRV_C_ImageMSArray,
+      SPIRV_C_StorageImageExtendedFormats, SPIRV_C_ImageQuery,
+      SPIRV_C_DerivativeControl, SPIRV_C_InterpolationFunction,
+      SPIRV_C_TransformFeedback, SPIRV_C_StorageImageReadWithoutFormat,
+      SPIRV_C_StorageImageWriteWithoutFormat, SPIRV_C_SubgroupDispatch,
+      SPIRV_C_PipeStorage, SPIRV_C_FragmentShadingRateKHR, SPIRV_C_DrawParameters,
+      SPIRV_C_WorkgroupMemoryExplicitLayoutKHR, SPIRV_C_MultiView,
       SPIRV_C_VariablePointersStorageBuffer, SPIRV_C_RayQueryProvisionalKHR,
-      SPIRV_C_RayQueryKHR, SPIRV_C_RayTracingKHR, SPIRV_C_Float16ImageAMD,
-      SPIRV_C_ImageGatherBiasLodAMD, SPIRV_C_FragmentMaskAMD, SPIRV_C_StencilExportEXT,
-      SPIRV_C_ImageReadWriteLodAMD, SPIRV_C_Int64ImageEXT, SPIRV_C_ShaderClockKHR,
-      SPIRV_C_FragmentFullyCoveredEXT, SPIRV_C_FragmentDensityEXT,
+      SPIRV_C_RayQueryKHR, SPIRV_C_RayTracingKHR, SPIRV_C_TileShadingQCOM,
+      SPIRV_C_Float16ImageAMD, SPIRV_C_ImageGatherBiasLodAMD,
+      SPIRV_C_FragmentMaskAMD, SPIRV_C_StencilExportEXT,
+      SPIRV_C_ImageReadWriteLodAMD, SPIRV_C_Int64ImageEXT, SPIRV_C_ShaderEnqueueAMDX,
+      SPIRV_C_FragmentFullyCoveredEXT, SPIRV_C_MeshShadingNV, SPIRV_C_MeshShadingEXT,
+      SPIRV_C_ComputeDerivativeGroupQuadsKHR, SPIRV_C_FragmentDensityEXT,
       SPIRV_C_ShaderNonUniform, SPIRV_C_RuntimeDescriptorArray,
-      SPIRV_C_StorageTexelBufferArrayDynamicIndexing, SPIRV_C_RayTracingNV,
+      SPIRV_C_StorageTexelBufferArrayDynamicIndexing,
+      SPIRV_C_RayTracingPositionFetchKHR, SPIRV_C_RayTracingNV,
       SPIRV_C_RayTracingMotionBlurNV, SPIRV_C_PhysicalStorageBufferAddresses,
-      SPIRV_C_RayTracingProvisionalKHR,
-      SPIRV_C_FragmentShaderSampleInterlockEXT,
+      SPIRV_C_ComputeDerivativeGroupLinearKHR, SPIRV_C_RayTracingProvisionalKHR,
+      SPIRV_C_CooperativeMatrixNV, SPIRV_C_FragmentShaderSampleInterlockEXT,
       SPIRV_C_FragmentShaderShadingRateInterlockEXT, SPIRV_C_ShaderSMBuiltinsNV,
       SPIRV_C_FragmentShaderPixelInterlockEXT, SPIRV_C_DemoteToHelperInvocation,
-      SPIRV_C_IntegerFunctions2INTEL, SPIRV_C_TessellationPointSize,
+      SPIRV_C_DisplacementMicromapNV, SPIRV_C_RayTracingOpacityMicromapEXT,
+      SPIRV_C_RayQueryPositionFetchKHR, SPIRV_C_TessellationPointSize,
       SPIRV_C_GeometryPointSize, SPIRV_C_ImageCubeArray, SPIRV_C_ImageRect,
       SPIRV_C_GeometryStreams, SPIRV_C_MultiViewport,
-      SPIRV_C_WorkgroupMemoryExplicitLayout8BitAccessKHR, SPIRV_C_VariablePointers,
-      SPIRV_C_RayTraversalPrimitiveCullingKHR, SPIRV_C_SampleMaskOverrideCoverageNV,
-      SPIRV_C_GeometryShaderPassthroughNV, SPIRV_C_PerViewAttributesNV,
-      SPIRV_C_InputAttachmentArrayDynamicIndexing,
+      SPIRV_C_WorkgroupMemoryExplicitLayout8BitAccessKHR,
+      SPIRV_C_WorkgroupMemoryExplicitLayout16BitAccessKHR, SPIRV_C_VariablePointers,
+      SPIRV_C_AtomicStorageOps, SPIRV_C_RayTraversalPrimitiveCullingKHR,
+      SPIRV_C_SampleMaskOverrideCoverageNV, SPIRV_C_GeometryShaderPassthroughNV,
+      SPIRV_C_PerViewAttributesNV, SPIRV_C_InputAttachmentArrayDynamicIndexing,
       SPIRV_C_UniformBufferArrayNonUniformIndexing,
       SPIRV_C_SampledImageArrayNonUniformIndexing,
       SPIRV_C_StorageBufferArrayNonUniformIndexing,
@@ -1518,19 +2073,26 @@ def SPIRV_CapabilityAttr :
       SPIRV_C_InputAttachmentArrayNonUniformIndexing,
       SPIRV_C_UniformTexelBufferArrayNonUniformIndexing,
       SPIRV_C_StorageTexelBufferArrayNonUniformIndexing,
+      SPIRV_C_ShaderInvocationReorderNV, SPIRV_C_RayTracingDisplacementMicromapNV,
+      SPIRV_C_RayTracingClusterAccelerationStructureNV,
       SPIRV_C_ShaderViewportIndexLayerEXT, SPIRV_C_ShaderViewportMaskNV,
-      SPIRV_C_ShaderStereoViewNV, SPIRV_C_Bfloat16ConversionINTEL,
-      SPIRV_C_CacheControlsINTEL
+      SPIRV_C_ShaderStereoViewNV
     ]>;
 
-def SPIRV_AM_Logical                 : I32EnumAttrCase<"Logical", 0>;
+def SPIRV_AM_Logical                 : I32EnumAttrCase<"Logical", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_AM_Physical32              : I32EnumAttrCase<"Physical32", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Addresses]>
   ];
 }
 def SPIRV_AM_Physical64              : I32EnumAttrCase<"Physical64", 2> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Addresses]>
   ];
 }
@@ -1547,505 +2109,734 @@ def SPIRV_AddressingModelAttr :
       SPIRV_AM_PhysicalStorageBuffer64
     ]>;
 
-def SPIRV_BI_Position                    : I32EnumAttrCase<"Position", 0> {
+def SPIRV_BI_Position                             : I32EnumAttrCase<"Position", 0> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_PointSize                   : I32EnumAttrCase<"PointSize", 1> {
+def SPIRV_BI_PointSize                            : I32EnumAttrCase<"PointSize", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_ClipDistance                : I32EnumAttrCase<"ClipDistance", 3> {
+def SPIRV_BI_ClipDistance                         : I32EnumAttrCase<"ClipDistance", 3> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_ClipDistance]>
   ];
 }
-def SPIRV_BI_CullDistance                : I32EnumAttrCase<"CullDistance", 4> {
+def SPIRV_BI_CullDistance                         : I32EnumAttrCase<"CullDistance", 4> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_CullDistance]>
   ];
 }
-def SPIRV_BI_VertexId                    : I32EnumAttrCase<"VertexId", 5> {
+def SPIRV_BI_VertexId                             : I32EnumAttrCase<"VertexId", 5> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_InstanceId                  : I32EnumAttrCase<"InstanceId", 6> {
+def SPIRV_BI_InstanceId                           : I32EnumAttrCase<"InstanceId", 6> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_PrimitiveId                 : I32EnumAttrCase<"PrimitiveId", 7> {
+def SPIRV_BI_PrimitiveId                          : I32EnumAttrCase<"PrimitiveId", 7> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_Geometry, SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV, SPIRV_C_MeshShadingEXT, SPIRV_C_Tessellation]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_Geometry, SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV, SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV, SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_BI_InvocationId                : I32EnumAttrCase<"InvocationId", 8> {
+def SPIRV_BI_InvocationId                         : I32EnumAttrCase<"InvocationId", 8> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry, SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_BI_Layer                       : I32EnumAttrCase<"Layer", 9> {
+def SPIRV_BI_Layer                                : I32EnumAttrCase<"Layer", 9> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_Geometry, SPIRV_C_MeshShadingEXT, SPIRV_C_ShaderLayer, SPIRV_C_ShaderViewportIndexLayerEXT]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_Geometry, SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV, SPIRV_C_ShaderLayer, SPIRV_C_ShaderViewportIndexLayerEXT]>
   ];
 }
-def SPIRV_BI_ViewportIndex               : I32EnumAttrCase<"ViewportIndex", 10> {
+def SPIRV_BI_ViewportIndex                        : I32EnumAttrCase<"ViewportIndex", 10> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_MeshShadingEXT, SPIRV_C_MultiViewport, SPIRV_C_ShaderViewportIndex, SPIRV_C_ShaderViewportIndexLayerEXT]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV, SPIRV_C_MultiViewport, SPIRV_C_ShaderViewportIndex, SPIRV_C_ShaderViewportIndexLayerEXT]>
   ];
 }
-def SPIRV_BI_TessLevelOuter              : I32EnumAttrCase<"TessLevelOuter", 11> {
+def SPIRV_BI_TessLevelOuter                       : I32EnumAttrCase<"TessLevelOuter", 11> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_BI_TessLevelInner              : I32EnumAttrCase<"TessLevelInner", 12> {
+def SPIRV_BI_TessLevelInner                       : I32EnumAttrCase<"TessLevelInner", 12> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_BI_TessCoord                   : I32EnumAttrCase<"TessCoord", 13> {
+def SPIRV_BI_TessCoord                            : I32EnumAttrCase<"TessCoord", 13> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_BI_PatchVertices               : I32EnumAttrCase<"PatchVertices", 14> {
+def SPIRV_BI_PatchVertices                        : I32EnumAttrCase<"PatchVertices", 14> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_BI_FragCoord                   : I32EnumAttrCase<"FragCoord", 15> {
+def SPIRV_BI_FragCoord                            : I32EnumAttrCase<"FragCoord", 15> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_PointCoord                  : I32EnumAttrCase<"PointCoord", 16> {
+def SPIRV_BI_PointCoord                           : I32EnumAttrCase<"PointCoord", 16> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_FrontFacing                 : I32EnumAttrCase<"FrontFacing", 17> {
+def SPIRV_BI_FrontFacing                          : I32EnumAttrCase<"FrontFacing", 17> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_SampleId                    : I32EnumAttrCase<"SampleId", 18> {
+def SPIRV_BI_SampleId                             : I32EnumAttrCase<"SampleId", 18> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_SampleRateShading]>
   ];
 }
-def SPIRV_BI_SamplePosition              : I32EnumAttrCase<"SamplePosition", 19> {
+def SPIRV_BI_SamplePosition                       : I32EnumAttrCase<"SamplePosition", 19> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_SampleRateShading]>
   ];
 }
-def SPIRV_BI_SampleMask                  : I32EnumAttrCase<"SampleMask", 20> {
+def SPIRV_BI_SampleMask                           : I32EnumAttrCase<"SampleMask", 20> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_FragDepth                   : I32EnumAttrCase<"FragDepth", 22> {
+def SPIRV_BI_FragDepth                            : I32EnumAttrCase<"FragDepth", 22> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_HelperInvocation            : I32EnumAttrCase<"HelperInvocation", 23> {
+def SPIRV_BI_HelperInvocation                     : I32EnumAttrCase<"HelperInvocation", 23> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_NumWorkgroups               : I32EnumAttrCase<"NumWorkgroups", 24>;
-def SPIRV_BI_WorkgroupSize               : I32EnumAttrCase<"WorkgroupSize", 25>;
-def SPIRV_BI_WorkgroupId                 : I32EnumAttrCase<"WorkgroupId", 26>;
-def SPIRV_BI_LocalInvocationId           : I32EnumAttrCase<"LocalInvocationId", 27>;
-def SPIRV_BI_GlobalInvocationId          : I32EnumAttrCase<"GlobalInvocationId", 28>;
-def SPIRV_BI_LocalInvocationIndex        : I32EnumAttrCase<"LocalInvocationIndex", 29>;
-def SPIRV_BI_WorkDim                     : I32EnumAttrCase<"WorkDim", 30> {
+def SPIRV_BI_NumWorkgroups                        : I32EnumAttrCase<"NumWorkgroups", 24> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_BI_WorkgroupSize                        : I32EnumAttrCase<"WorkgroupSize", 25> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_BI_WorkgroupId                          : I32EnumAttrCase<"WorkgroupId", 26> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_BI_LocalInvocationId                    : I32EnumAttrCase<"LocalInvocationId", 27> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_BI_GlobalInvocationId                   : I32EnumAttrCase<"GlobalInvocationId", 28> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_BI_LocalInvocationIndex                 : I32EnumAttrCase<"LocalInvocationIndex", 29> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_BI_WorkDim                              : I32EnumAttrCase<"WorkDim", 30> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_GlobalSize                  : I32EnumAttrCase<"GlobalSize", 31> {
+def SPIRV_BI_GlobalSize                           : I32EnumAttrCase<"GlobalSize", 31> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_EnqueuedWorkgroupSize       : I32EnumAttrCase<"EnqueuedWorkgroupSize", 32> {
+def SPIRV_BI_EnqueuedWorkgroupSize                : I32EnumAttrCase<"EnqueuedWorkgroupSize", 32> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_GlobalOffset                : I32EnumAttrCase<"GlobalOffset", 33> {
+def SPIRV_BI_GlobalOffset                         : I32EnumAttrCase<"GlobalOffset", 33> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_GlobalLinearId              : I32EnumAttrCase<"GlobalLinearId", 34> {
+def SPIRV_BI_GlobalLinearId                       : I32EnumAttrCase<"GlobalLinearId", 34> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_SubgroupSize                : I32EnumAttrCase<"SubgroupSize", 36> {
+def SPIRV_BI_SubgroupSize                         : I32EnumAttrCase<"SubgroupSize", 36> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GroupNonUniform, SPIRV_C_Kernel, SPIRV_C_SubgroupBallotKHR]>
   ];
 }
-def SPIRV_BI_SubgroupMaxSize             : I32EnumAttrCase<"SubgroupMaxSize", 37> {
+def SPIRV_BI_SubgroupMaxSize                      : I32EnumAttrCase<"SubgroupMaxSize", 37> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_NumSubgroups                : I32EnumAttrCase<"NumSubgroups", 38> {
+def SPIRV_BI_NumSubgroups                         : I32EnumAttrCase<"NumSubgroups", 38> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GroupNonUniform, SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_NumEnqueuedSubgroups        : I32EnumAttrCase<"NumEnqueuedSubgroups", 39> {
+def SPIRV_BI_NumEnqueuedSubgroups                 : I32EnumAttrCase<"NumEnqueuedSubgroups", 39> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_SubgroupId                  : I32EnumAttrCase<"SubgroupId", 40> {
+def SPIRV_BI_SubgroupId                           : I32EnumAttrCase<"SubgroupId", 40> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GroupNonUniform, SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_BI_SubgroupLocalInvocationId   : I32EnumAttrCase<"SubgroupLocalInvocationId", 41> {
+def SPIRV_BI_SubgroupLocalInvocationId            : I32EnumAttrCase<"SubgroupLocalInvocationId", 41> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GroupNonUniform, SPIRV_C_Kernel, SPIRV_C_SubgroupBallotKHR]>
   ];
 }
-def SPIRV_BI_VertexIndex                 : I32EnumAttrCase<"VertexIndex", 42> {
+def SPIRV_BI_VertexIndex                          : I32EnumAttrCase<"VertexIndex", 42> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_InstanceIndex               : I32EnumAttrCase<"InstanceIndex", 43> {
+def SPIRV_BI_InstanceIndex                        : I32EnumAttrCase<"InstanceIndex", 43> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_BI_SubgroupEqMask              : I32EnumAttrCase<"SubgroupEqMask", 4416> {
+def SPIRV_BI_CoreIDARM                            : I32EnumAttrCase<"CoreIDARM", 4160> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_3>,
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_CoreBuiltinsARM]>
+  ];
+}
+def SPIRV_BI_CoreCountARM                         : I32EnumAttrCase<"CoreCountARM", 4161> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_CoreBuiltinsARM]>
+  ];
+}
+def SPIRV_BI_CoreMaxIDARM                         : I32EnumAttrCase<"CoreMaxIDARM", 4162> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_CoreBuiltinsARM]>
+  ];
+}
+def SPIRV_BI_WarpIDARM                            : I32EnumAttrCase<"WarpIDARM", 4163> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_CoreBuiltinsARM]>
+  ];
+}
+def SPIRV_BI_WarpMaxIDARM                         : I32EnumAttrCase<"WarpMaxIDARM", 4164> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_CoreBuiltinsARM]>
+  ];
+}
+def SPIRV_BI_SubgroupEqMask                       : I32EnumAttrCase<"SubgroupEqMask", 4416> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_shader_ballot]>,
     Capability<[SPIRV_C_GroupNonUniformBallot, SPIRV_C_SubgroupBallotKHR]>
   ];
 }
-def SPIRV_BI_SubgroupGeMask              : I32EnumAttrCase<"SubgroupGeMask", 4417> {
+def SPIRV_BI_SubgroupGeMask                       : I32EnumAttrCase<"SubgroupGeMask", 4417> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_3>,
+    Extension<[SPV_KHR_shader_ballot]>,
     Capability<[SPIRV_C_GroupNonUniformBallot, SPIRV_C_SubgroupBallotKHR]>
   ];
 }
-def SPIRV_BI_SubgroupGtMask              : I32EnumAttrCase<"SubgroupGtMask", 4418> {
+def SPIRV_BI_SubgroupGtMask                       : I32EnumAttrCase<"SubgroupGtMask", 4418> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_3>,
+    Extension<[SPV_KHR_shader_ballot]>,
     Capability<[SPIRV_C_GroupNonUniformBallot, SPIRV_C_SubgroupBallotKHR]>
   ];
 }
-def SPIRV_BI_SubgroupLeMask              : I32EnumAttrCase<"SubgroupLeMask", 4419> {
+def SPIRV_BI_SubgroupLeMask                       : I32EnumAttrCase<"SubgroupLeMask", 4419> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_3>,
+    Extension<[SPV_KHR_shader_ballot]>,
     Capability<[SPIRV_C_GroupNonUniformBallot, SPIRV_C_SubgroupBallotKHR]>
   ];
 }
-def SPIRV_BI_SubgroupLtMask              : I32EnumAttrCase<"SubgroupLtMask", 4420> {
+def SPIRV_BI_SubgroupLtMask                       : I32EnumAttrCase<"SubgroupLtMask", 4420> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_3>,
+    Extension<[SPV_KHR_shader_ballot]>,
     Capability<[SPIRV_C_GroupNonUniformBallot, SPIRV_C_SubgroupBallotKHR]>
   ];
 }
-def SPIRV_BI_BaseVertex                  : I32EnumAttrCase<"BaseVertex", 4424> {
+def SPIRV_BI_BaseVertex                           : I32EnumAttrCase<"BaseVertex", 4424> {
   list<Availability> availability = [
     Extension<[SPV_KHR_shader_draw_parameters]>,
     Capability<[SPIRV_C_DrawParameters]>
   ];
 }
-def SPIRV_BI_BaseInstance                : I32EnumAttrCase<"BaseInstance", 4425> {
+def SPIRV_BI_BaseInstance                         : I32EnumAttrCase<"BaseInstance", 4425> {
   list<Availability> availability = [
     Extension<[SPV_KHR_shader_draw_parameters]>,
     Capability<[SPIRV_C_DrawParameters]>
   ];
 }
-def SPIRV_BI_DrawIndex                   : I32EnumAttrCase<"DrawIndex", 4426> {
+def SPIRV_BI_DrawIndex                            : I32EnumAttrCase<"DrawIndex", 4426> {
   list<Availability> availability = [
-    Extension<[SPV_KHR_shader_draw_parameters, SPV_EXT_mesh_shader]>,
-    Capability<[SPIRV_C_DrawParameters, SPIRV_C_MeshShadingEXT]>
+    Extension<[SPV_EXT_mesh_shader, SPV_KHR_shader_draw_parameters, SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_DrawParameters, SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV]>
   ];
 }
-def SPIRV_BI_PrimitiveShadingRateKHR     : I32EnumAttrCase<"PrimitiveShadingRateKHR", 4432> {
+def SPIRV_BI_PrimitiveShadingRateKHR              : I32EnumAttrCase<"PrimitiveShadingRateKHR", 4432> {
   list<Availability> availability = [
     Extension<[SPV_KHR_fragment_shading_rate]>,
     Capability<[SPIRV_C_FragmentShadingRateKHR]>
   ];
 }
-def SPIRV_BI_DeviceIndex                 : I32EnumAttrCase<"DeviceIndex", 4438> {
+def SPIRV_BI_DeviceIndex                          : I32EnumAttrCase<"DeviceIndex", 4438> {
   list<Availability> availability = [
     Extension<[SPV_KHR_device_group]>,
     Capability<[SPIRV_C_DeviceGroup]>
   ];
 }
-def SPIRV_BI_ViewIndex                   : I32EnumAttrCase<"ViewIndex", 4440> {
+def SPIRV_BI_ViewIndex                            : I32EnumAttrCase<"ViewIndex", 4440> {
   list<Availability> availability = [
     Extension<[SPV_KHR_multiview]>,
     Capability<[SPIRV_C_MultiView]>
   ];
 }
-def SPIRV_BI_ShadingRateKHR              : I32EnumAttrCase<"ShadingRateKHR", 4444> {
+def SPIRV_BI_ShadingRateKHR                       : I32EnumAttrCase<"ShadingRateKHR", 4444> {
   list<Availability> availability = [
     Extension<[SPV_KHR_fragment_shading_rate]>,
     Capability<[SPIRV_C_FragmentShadingRateKHR]>
   ];
 }
-def SPIRV_BI_BaryCoordNoPerspAMD         : I32EnumAttrCase<"BaryCoordNoPerspAMD", 4992> {
+def SPIRV_BI_TileOffsetQCOM                       : I32EnumAttrCase<"TileOffsetQCOM", 4492> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileShadingQCOM]>
+  ];
+}
+def SPIRV_BI_TileDimensionQCOM                    : I32EnumAttrCase<"TileDimensionQCOM", 4493> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileShadingQCOM]>
+  ];
+}
+def SPIRV_BI_TileApronSizeQCOM                    : I32EnumAttrCase<"TileApronSizeQCOM", 4494> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileShadingQCOM]>
+  ];
+}
+def SPIRV_BI_BaryCoordNoPerspAMD                  : I32EnumAttrCase<"BaryCoordNoPerspAMD", 4992> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_explicit_vertex_parameter]>
   ];
 }
-def SPIRV_BI_BaryCoordNoPerspCentroidAMD : I32EnumAttrCase<"BaryCoordNoPerspCentroidAMD", 4993> {
+def SPIRV_BI_BaryCoordNoPerspCentroidAMD          : I32EnumAttrCase<"BaryCoordNoPerspCentroidAMD", 4993> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_explicit_vertex_parameter]>
   ];
 }
-def SPIRV_BI_BaryCoordNoPerspSampleAMD   : I32EnumAttrCase<"BaryCoordNoPerspSampleAMD", 4994> {
+def SPIRV_BI_BaryCoordNoPerspSampleAMD            : I32EnumAttrCase<"BaryCoordNoPerspSampleAMD", 4994> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_explicit_vertex_parameter]>
   ];
 }
-def SPIRV_BI_BaryCoordSmoothAMD          : I32EnumAttrCase<"BaryCoordSmoothAMD", 4995> {
+def SPIRV_BI_BaryCoordSmoothAMD                   : I32EnumAttrCase<"BaryCoordSmoothAMD", 4995> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_explicit_vertex_parameter]>
   ];
 }
-def SPIRV_BI_BaryCoordSmoothCentroidAMD  : I32EnumAttrCase<"BaryCoordSmoothCentroidAMD", 4996> {
+def SPIRV_BI_BaryCoordSmoothCentroidAMD           : I32EnumAttrCase<"BaryCoordSmoothCentroidAMD", 4996> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_explicit_vertex_parameter]>
   ];
 }
-def SPIRV_BI_BaryCoordSmoothSampleAMD    : I32EnumAttrCase<"BaryCoordSmoothSampleAMD", 4997> {
+def SPIRV_BI_BaryCoordSmoothSampleAMD             : I32EnumAttrCase<"BaryCoordSmoothSampleAMD", 4997> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_explicit_vertex_parameter]>
   ];
 }
-def SPIRV_BI_BaryCoordPullModelAMD       : I32EnumAttrCase<"BaryCoordPullModelAMD", 4998> {
+def SPIRV_BI_BaryCoordPullModelAMD                : I32EnumAttrCase<"BaryCoordPullModelAMD", 4998> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_explicit_vertex_parameter]>
   ];
 }
-def SPIRV_BI_FragStencilRefEXT           : I32EnumAttrCase<"FragStencilRefEXT", 5014> {
+def SPIRV_BI_FragStencilRefEXT                    : I32EnumAttrCase<"FragStencilRefEXT", 5014> {
   list<Availability> availability = [
     Extension<[SPV_EXT_shader_stencil_export]>,
     Capability<[SPIRV_C_StencilExportEXT]>
   ];
 }
-def SPIRV_BI_ViewportMaskNV              : I32EnumAttrCase<"ViewportMaskNV", 5253> {
+def SPIRV_BI_RemainingRecursionLevelsAMDX         : I32EnumAttrCase<"RemainingRecursionLevelsAMDX", 5021> {
   list<Availability> availability = [
-    Extension<[SPV_NV_viewport_array2]>,
-    Capability<[SPIRV_C_ShaderViewportMaskNV]>
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
   ];
 }
-def SPIRV_BI_SecondaryPositionNV         : I32EnumAttrCase<"SecondaryPositionNV", 5257> {
+def SPIRV_BI_ShaderIndexAMDX                      : I32EnumAttrCase<"ShaderIndexAMDX", 5073> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_BI_ViewportMaskNV                       : I32EnumAttrCase<"ViewportMaskNV", 5253> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader, SPV_NV_viewport_array2]>,
+    Capability<[SPIRV_C_MeshShadingNV, SPIRV_C_ShaderViewportMaskNV]>
+  ];
+}
+def SPIRV_BI_SecondaryPositionNV                  : I32EnumAttrCase<"SecondaryPositionNV", 5257> {
   list<Availability> availability = [
     Extension<[SPV_NV_stereo_view_rendering]>,
     Capability<[SPIRV_C_ShaderStereoViewNV]>
   ];
 }
-def SPIRV_BI_SecondaryViewportMaskNV     : I32EnumAttrCase<"SecondaryViewportMaskNV", 5258> {
+def SPIRV_BI_SecondaryViewportMaskNV              : I32EnumAttrCase<"SecondaryViewportMaskNV", 5258> {
   list<Availability> availability = [
     Extension<[SPV_NV_stereo_view_rendering]>,
     Capability<[SPIRV_C_ShaderStereoViewNV]>
   ];
 }
-def SPIRV_BI_PositionPerViewNV           : I32EnumAttrCase<"PositionPerViewNV", 5261> {
+def SPIRV_BI_PositionPerViewNV                    : I32EnumAttrCase<"PositionPerViewNV", 5261> {
   list<Availability> availability = [
-    Extension<[SPV_NVX_multiview_per_view_attributes]>,
-    Capability<[SPIRV_C_PerViewAttributesNV]>
+    Extension<[SPV_NVX_multiview_per_view_attributes, SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV, SPIRV_C_PerViewAttributesNV]>
   ];
 }
-def SPIRV_BI_ViewportMaskPerViewNV       : I32EnumAttrCase<"ViewportMaskPerViewNV", 5262> {
+def SPIRV_BI_ViewportMaskPerViewNV                : I32EnumAttrCase<"ViewportMaskPerViewNV", 5262> {
   list<Availability> availability = [
-    Extension<[SPV_NVX_multiview_per_view_attributes]>,
-    Capability<[SPIRV_C_PerViewAttributesNV]>
+    Extension<[SPV_NVX_multiview_per_view_attributes, SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV, SPIRV_C_PerViewAttributesNV]>
   ];
 }
-def SPIRV_BI_FullyCoveredEXT             : I32EnumAttrCase<"FullyCoveredEXT", 5264> {
+def SPIRV_BI_FullyCoveredEXT                      : I32EnumAttrCase<"FullyCoveredEXT", 5264> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_fully_covered]>,
     Capability<[SPIRV_C_FragmentFullyCoveredEXT]>
   ];
 }
-def SPIRV_BI_BaryCoordKHR                : I32EnumAttrCase<"BaryCoordKHR", 5286> {
+def SPIRV_BI_TaskCountNV                          : I32EnumAttrCase<"TaskCountNV", 5274> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_BI_PrimitiveCountNV                     : I32EnumAttrCase<"PrimitiveCountNV", 5275> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_BI_PrimitiveIndicesNV                   : I32EnumAttrCase<"PrimitiveIndicesNV", 5276> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_BI_ClipDistancePerViewNV                : I32EnumAttrCase<"ClipDistancePerViewNV", 5277> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_BI_CullDistancePerViewNV                : I32EnumAttrCase<"CullDistancePerViewNV", 5278> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_BI_LayerPerViewNV                       : I32EnumAttrCase<"LayerPerViewNV", 5279> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_BI_MeshViewCountNV                      : I32EnumAttrCase<"MeshViewCountNV", 5280> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_BI_MeshViewIndicesNV                    : I32EnumAttrCase<"MeshViewIndicesNV", 5281> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_BI_BaryCoordKHR                         : I32EnumAttrCase<"BaryCoordKHR", 5286> {
   list<Availability> availability = [
     Extension<[SPV_KHR_fragment_shader_barycentric, SPV_NV_fragment_shader_barycentric]>,
     Capability<[SPIRV_C_FragmentBarycentricKHR]>
   ];
 }
-def SPIRV_BI_BaryCoordNoPerspKHR         : I32EnumAttrCase<"BaryCoordNoPerspKHR", 5287> {
+def SPIRV_BI_BaryCoordNoPerspKHR                  : I32EnumAttrCase<"BaryCoordNoPerspKHR", 5287> {
   list<Availability> availability = [
     Extension<[SPV_KHR_fragment_shader_barycentric, SPV_NV_fragment_shader_barycentric]>,
     Capability<[SPIRV_C_FragmentBarycentricKHR]>
   ];
 }
-def SPIRV_BI_FragSizeEXT                 : I32EnumAttrCase<"FragSizeEXT", 5292> {
+def SPIRV_BI_FragSizeEXT                          : I32EnumAttrCase<"FragSizeEXT", 5292> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_invocation_density, SPV_NV_shading_rate]>,
     Capability<[SPIRV_C_FragmentDensityEXT]>
   ];
 }
-def SPIRV_BI_FragInvocationCountEXT      : I32EnumAttrCase<"FragInvocationCountEXT", 5293> {
+def SPIRV_BI_FragInvocationCountEXT               : I32EnumAttrCase<"FragInvocationCountEXT", 5293> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_invocation_density, SPV_NV_shading_rate]>,
     Capability<[SPIRV_C_FragmentDensityEXT]>
   ];
 }
-def SPIRV_BI_PrimitivePointIndicesEXT     : I32EnumAttrCase<"PrimitivePointIndicesEXT", 5294> {
+def SPIRV_BI_PrimitivePointIndicesEXT             : I32EnumAttrCase<"PrimitivePointIndicesEXT", 5294> {
   list<Availability> availability = [
     Extension<[SPV_EXT_mesh_shader]>,
     Capability<[SPIRV_C_MeshShadingEXT]>
   ];
 }
-def SPIRV_BI_PrimitiveLineIndicesEXT      : I32EnumAttrCase<"PrimitiveLineIndicesEXT", 5295> {
+def SPIRV_BI_PrimitiveLineIndicesEXT              : I32EnumAttrCase<"PrimitiveLineIndicesEXT", 5295> {
   list<Availability> availability = [
     Extension<[SPV_EXT_mesh_shader]>,
     Capability<[SPIRV_C_MeshShadingEXT]>
   ];
 }
-def SPIRV_BI_PrimitiveTriangleIndicesEXT  : I32EnumAttrCase<"PrimitiveTriangleIndicesEXT", 5296> {
+def SPIRV_BI_PrimitiveTriangleIndicesEXT          : I32EnumAttrCase<"PrimitiveTriangleIndicesEXT", 5296> {
   list<Availability> availability = [
     Extension<[SPV_EXT_mesh_shader]>,
     Capability<[SPIRV_C_MeshShadingEXT]>
   ];
 }
-def SPIRV_BI_CullPrimitiveEXT             : I32EnumAttrCase<"CullPrimitiveEXT", 5299> {
+def SPIRV_BI_CullPrimitiveEXT                     : I32EnumAttrCase<"CullPrimitiveEXT", 5299> {
   list<Availability> availability = [
     Extension<[SPV_EXT_mesh_shader]>,
     Capability<[SPIRV_C_MeshShadingEXT]>
   ];
 }
-def SPIRV_BI_LaunchIdKHR                 : I32EnumAttrCase<"LaunchIdKHR", 5319> {
+def SPIRV_BI_LaunchIdKHR                          : I32EnumAttrCase<"LaunchIdKHR", 5319> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_LaunchSizeKHR               : I32EnumAttrCase<"LaunchSizeKHR", 5320> {
+def SPIRV_BI_LaunchSizeKHR                        : I32EnumAttrCase<"LaunchSizeKHR", 5320> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_WorldRayOriginKHR           : I32EnumAttrCase<"WorldRayOriginKHR", 5321> {
+def SPIRV_BI_WorldRayOriginKHR                    : I32EnumAttrCase<"WorldRayOriginKHR", 5321> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_WorldRayDirectionKHR        : I32EnumAttrCase<"WorldRayDirectionKHR", 5322> {
+def SPIRV_BI_WorldRayDirectionKHR                 : I32EnumAttrCase<"WorldRayDirectionKHR", 5322> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_ObjectRayOriginKHR          : I32EnumAttrCase<"ObjectRayOriginKHR", 5323> {
+def SPIRV_BI_ObjectRayOriginKHR                   : I32EnumAttrCase<"ObjectRayOriginKHR", 5323> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_ObjectRayDirectionKHR       : I32EnumAttrCase<"ObjectRayDirectionKHR", 5324> {
+def SPIRV_BI_ObjectRayDirectionKHR                : I32EnumAttrCase<"ObjectRayDirectionKHR", 5324> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_RayTminKHR                  : I32EnumAttrCase<"RayTminKHR", 5325> {
+def SPIRV_BI_RayTminKHR                           : I32EnumAttrCase<"RayTminKHR", 5325> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_RayTmaxKHR                  : I32EnumAttrCase<"RayTmaxKHR", 5326> {
+def SPIRV_BI_RayTmaxKHR                           : I32EnumAttrCase<"RayTmaxKHR", 5326> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_InstanceCustomIndexKHR      : I32EnumAttrCase<"InstanceCustomIndexKHR", 5327> {
+def SPIRV_BI_InstanceCustomIndexKHR               : I32EnumAttrCase<"InstanceCustomIndexKHR", 5327> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_ObjectToWorldKHR            : I32EnumAttrCase<"ObjectToWorldKHR", 5330> {
+def SPIRV_BI_ObjectToWorldKHR                     : I32EnumAttrCase<"ObjectToWorldKHR", 5330> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_WorldToObjectKHR            : I32EnumAttrCase<"WorldToObjectKHR", 5331> {
+def SPIRV_BI_WorldToObjectKHR                     : I32EnumAttrCase<"WorldToObjectKHR", 5331> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_HitTNV                      : I32EnumAttrCase<"HitTNV", 5332> {
+def SPIRV_BI_HitTNV                               : I32EnumAttrCase<"HitTNV", 5332> {
   list<Availability> availability = [
     Extension<[SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_HitKindKHR                  : I32EnumAttrCase<"HitKindKHR", 5333> {
+def SPIRV_BI_HitKindKHR                           : I32EnumAttrCase<"HitKindKHR", 5333> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_CurrentRayTimeNV            : I32EnumAttrCase<"CurrentRayTimeNV", 5334> {
+def SPIRV_BI_CurrentRayTimeNV                     : I32EnumAttrCase<"CurrentRayTimeNV", 5334> {
   list<Availability> availability = [
     Extension<[SPV_NV_ray_tracing_motion_blur]>,
     Capability<[SPIRV_C_RayTracingMotionBlurNV]>
   ];
 }
-def SPIRV_BI_IncomingRayFlagsKHR         : I32EnumAttrCase<"IncomingRayFlagsKHR", 5351> {
+def SPIRV_BI_HitTriangleVertexPositionsKHR        : I32EnumAttrCase<"HitTriangleVertexPositionsKHR", 5335> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_RayTracingPositionFetchKHR]>
+  ];
+}
+def SPIRV_BI_HitMicroTriangleVertexPositionsNV    : I32EnumAttrCase<"HitMicroTriangleVertexPositionsNV", 5337> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_RayTracingDisplacementMicromapNV]>
+  ];
+}
+def SPIRV_BI_HitMicroTriangleVertexBarycentricsNV : I32EnumAttrCase<"HitMicroTriangleVertexBarycentricsNV", 5344> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_RayTracingDisplacementMicromapNV]>
+  ];
+}
+def SPIRV_BI_IncomingRayFlagsKHR                  : I32EnumAttrCase<"IncomingRayFlagsKHR", 5351> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing, SPV_NV_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR, SPIRV_C_RayTracingNV]>
   ];
 }
-def SPIRV_BI_RayGeometryIndexKHR         : I32EnumAttrCase<"RayGeometryIndexKHR", 5352> {
+def SPIRV_BI_RayGeometryIndexKHR                  : I32EnumAttrCase<"RayGeometryIndexKHR", 5352> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_tracing]>,
     Capability<[SPIRV_C_RayTracingKHR]>
   ];
 }
-def SPIRV_BI_WarpsPerSMNV                : I32EnumAttrCase<"WarpsPerSMNV", 5374> {
+def SPIRV_BI_HitIsSphereNV                        : I32EnumAttrCase<"HitIsSphereNV", 5359> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_linear_swept_spheres]>,
+    Capability<[SPIRV_C_RayTracingSpheresGeometryNV]>
+  ];
+}
+def SPIRV_BI_HitIsLSSNV                           : I32EnumAttrCase<"HitIsLSSNV", 5360> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_linear_swept_spheres]>,
+    Capability<[SPIRV_C_RayTracingLinearSweptSpheresGeometryNV]>
+  ];
+}
+def SPIRV_BI_HitSpherePositionNV                  : I32EnumAttrCase<"HitSpherePositionNV", 5361> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_linear_swept_spheres]>,
+    Capability<[SPIRV_C_RayTracingSpheresGeometryNV]>
+  ];
+}
+def SPIRV_BI_WarpsPerSMNV                         : I32EnumAttrCase<"WarpsPerSMNV", 5374> {
   list<Availability> availability = [
     Extension<[SPV_NV_shader_sm_builtins]>,
     Capability<[SPIRV_C_ShaderSMBuiltinsNV]>
   ];
 }
-def SPIRV_BI_SMCountNV                   : I32EnumAttrCase<"SMCountNV", 5375> {
+def SPIRV_BI_SMCountNV                            : I32EnumAttrCase<"SMCountNV", 5375> {
   list<Availability> availability = [
     Extension<[SPV_NV_shader_sm_builtins]>,
     Capability<[SPIRV_C_ShaderSMBuiltinsNV]>
   ];
 }
-def SPIRV_BI_WarpIDNV                    : I32EnumAttrCase<"WarpIDNV", 5376> {
+def SPIRV_BI_WarpIDNV                             : I32EnumAttrCase<"WarpIDNV", 5376> {
   list<Availability> availability = [
     Extension<[SPV_NV_shader_sm_builtins]>,
     Capability<[SPIRV_C_ShaderSMBuiltinsNV]>
   ];
 }
-def SPIRV_BI_SMIDNV                      : I32EnumAttrCase<"SMIDNV", 5377> {
+def SPIRV_BI_SMIDNV                               : I32EnumAttrCase<"SMIDNV", 5377> {
   list<Availability> availability = [
     Extension<[SPV_NV_shader_sm_builtins]>,
     Capability<[SPIRV_C_ShaderSMBuiltinsNV]>
   ];
 }
-def SPIRV_BI_CullMaskKHR                 : I32EnumAttrCase<"CullMaskKHR", 6021> {
+def SPIRV_BI_HitLSSPositionsNV                    : I32EnumAttrCase<"HitLSSPositionsNV", 5396> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_linear_swept_spheres]>,
+    Capability<[SPIRV_C_RayTracingLinearSweptSpheresGeometryNV]>
+  ];
+}
+def SPIRV_BI_HitKindFrontFacingMicroTriangleNV    : I32EnumAttrCase<"HitKindFrontFacingMicroTriangleNV", 5405> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_RayTracingDisplacementMicromapNV]>
+  ];
+}
+def SPIRV_BI_HitKindBackFacingMicroTriangleNV     : I32EnumAttrCase<"HitKindBackFacingMicroTriangleNV", 5406> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_RayTracingDisplacementMicromapNV]>
+  ];
+}
+def SPIRV_BI_HitSphereRadiusNV                    : I32EnumAttrCase<"HitSphereRadiusNV", 5420> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_linear_swept_spheres]>,
+    Capability<[SPIRV_C_RayTracingSpheresGeometryNV]>
+  ];
+}
+def SPIRV_BI_HitLSSRadiiNV                        : I32EnumAttrCase<"HitLSSRadiiNV", 5421> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_linear_swept_spheres]>,
+    Capability<[SPIRV_C_RayTracingLinearSweptSpheresGeometryNV]>
+  ];
+}
+def SPIRV_BI_ClusterIDNV                          : I32EnumAttrCase<"ClusterIDNV", 5436> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_cluster_acceleration_structure]>,
+    Capability<[SPIRV_C_RayTracingClusterAccelerationStructureNV]>
+  ];
+}
+def SPIRV_BI_CullMaskKHR                          : I32EnumAttrCase<"CullMaskKHR", 6021> {
   list<Availability> availability = [
     Extension<[SPV_KHR_ray_cull_mask]>,
     Capability<[SPIRV_C_RayCullMaskKHR]>
@@ -2054,11 +2845,12 @@ def SPIRV_BI_CullMaskKHR                 : I32EnumAttrCase<"CullMaskKHR", 6021> 
 
 def SPIRV_BuiltInAttr :
     SPIRV_I32EnumAttr<"BuiltIn", "valid SPIR-V BuiltIn", "built_in", [
-      SPIRV_BI_Position, SPIRV_BI_PointSize, SPIRV_BI_ClipDistance, SPIRV_BI_CullDistance,
-      SPIRV_BI_VertexId, SPIRV_BI_InstanceId, SPIRV_BI_PrimitiveId, SPIRV_BI_InvocationId,
-      SPIRV_BI_Layer, SPIRV_BI_ViewportIndex, SPIRV_BI_TessLevelOuter,
-      SPIRV_BI_TessLevelInner, SPIRV_BI_TessCoord, SPIRV_BI_PatchVertices,
-      SPIRV_BI_FragCoord, SPIRV_BI_PointCoord, SPIRV_BI_FrontFacing, SPIRV_BI_SampleId,
+      SPIRV_BI_Position, SPIRV_BI_PointSize, SPIRV_BI_ClipDistance,
+      SPIRV_BI_CullDistance, SPIRV_BI_VertexId, SPIRV_BI_InstanceId,
+      SPIRV_BI_PrimitiveId, SPIRV_BI_InvocationId, SPIRV_BI_Layer,
+      SPIRV_BI_ViewportIndex, SPIRV_BI_TessLevelOuter, SPIRV_BI_TessLevelInner,
+      SPIRV_BI_TessCoord, SPIRV_BI_PatchVertices, SPIRV_BI_FragCoord,
+      SPIRV_BI_PointCoord, SPIRV_BI_FrontFacing, SPIRV_BI_SampleId,
       SPIRV_BI_SamplePosition, SPIRV_BI_SampleMask, SPIRV_BI_FragDepth,
       SPIRV_BI_HelperInvocation, SPIRV_BI_NumWorkgroups, SPIRV_BI_WorkgroupSize,
       SPIRV_BI_WorkgroupId, SPIRV_BI_LocalInvocationId, SPIRV_BI_GlobalInvocationId,
@@ -2066,130 +2858,193 @@ def SPIRV_BuiltInAttr :
       SPIRV_BI_EnqueuedWorkgroupSize, SPIRV_BI_GlobalOffset, SPIRV_BI_GlobalLinearId,
       SPIRV_BI_SubgroupSize, SPIRV_BI_SubgroupMaxSize, SPIRV_BI_NumSubgroups,
       SPIRV_BI_NumEnqueuedSubgroups, SPIRV_BI_SubgroupId,
-      SPIRV_BI_SubgroupLocalInvocationId, SPIRV_BI_VertexIndex, SPIRV_BI_InstanceIndex,
+      SPIRV_BI_SubgroupLocalInvocationId, SPIRV_BI_VertexIndex,
+      SPIRV_BI_InstanceIndex, SPIRV_BI_CoreIDARM, SPIRV_BI_CoreCountARM,
+      SPIRV_BI_CoreMaxIDARM, SPIRV_BI_WarpIDARM, SPIRV_BI_WarpMaxIDARM,
       SPIRV_BI_SubgroupEqMask, SPIRV_BI_SubgroupGeMask, SPIRV_BI_SubgroupGtMask,
       SPIRV_BI_SubgroupLeMask, SPIRV_BI_SubgroupLtMask, SPIRV_BI_BaseVertex,
       SPIRV_BI_BaseInstance, SPIRV_BI_DrawIndex, SPIRV_BI_PrimitiveShadingRateKHR,
       SPIRV_BI_DeviceIndex, SPIRV_BI_ViewIndex, SPIRV_BI_ShadingRateKHR,
-      SPIRV_BI_BaryCoordNoPerspAMD, SPIRV_BI_BaryCoordNoPerspCentroidAMD,
-      SPIRV_BI_BaryCoordNoPerspSampleAMD, SPIRV_BI_BaryCoordSmoothAMD,
-      SPIRV_BI_BaryCoordSmoothCentroidAMD, SPIRV_BI_BaryCoordSmoothSampleAMD,
-      SPIRV_BI_BaryCoordPullModelAMD, SPIRV_BI_FragStencilRefEXT, SPIRV_BI_ViewportMaskNV,
+      SPIRV_BI_TileOffsetQCOM, SPIRV_BI_TileDimensionQCOM,
+      SPIRV_BI_TileApronSizeQCOM, SPIRV_BI_BaryCoordNoPerspAMD,
+      SPIRV_BI_BaryCoordNoPerspCentroidAMD, SPIRV_BI_BaryCoordNoPerspSampleAMD,
+      SPIRV_BI_BaryCoordSmoothAMD, SPIRV_BI_BaryCoordSmoothCentroidAMD,
+      SPIRV_BI_BaryCoordSmoothSampleAMD, SPIRV_BI_BaryCoordPullModelAMD,
+      SPIRV_BI_FragStencilRefEXT, SPIRV_BI_RemainingRecursionLevelsAMDX,
+      SPIRV_BI_ShaderIndexAMDX, SPIRV_BI_ViewportMaskNV,
       SPIRV_BI_SecondaryPositionNV, SPIRV_BI_SecondaryViewportMaskNV,
-      SPIRV_BI_PositionPerViewNV, SPIRV_BI_ViewportMaskPerViewNV, SPIRV_BI_FullyCoveredEXT,
-      SPIRV_BI_BaryCoordKHR, SPIRV_BI_BaryCoordNoPerspKHR, SPIRV_BI_FragSizeEXT,
+      SPIRV_BI_PositionPerViewNV, SPIRV_BI_ViewportMaskPerViewNV,
+      SPIRV_BI_FullyCoveredEXT, SPIRV_BI_TaskCountNV, SPIRV_BI_PrimitiveCountNV,
+      SPIRV_BI_PrimitiveIndicesNV, SPIRV_BI_ClipDistancePerViewNV,
+      SPIRV_BI_CullDistancePerViewNV, SPIRV_BI_LayerPerViewNV,
+      SPIRV_BI_MeshViewCountNV, SPIRV_BI_MeshViewIndicesNV, SPIRV_BI_BaryCoordKHR,
+      SPIRV_BI_BaryCoordNoPerspKHR, SPIRV_BI_FragSizeEXT,
       SPIRV_BI_FragInvocationCountEXT, SPIRV_BI_PrimitivePointIndicesEXT,
       SPIRV_BI_PrimitiveLineIndicesEXT, SPIRV_BI_PrimitiveTriangleIndicesEXT,
       SPIRV_BI_CullPrimitiveEXT, SPIRV_BI_LaunchIdKHR, SPIRV_BI_LaunchSizeKHR,
       SPIRV_BI_WorldRayOriginKHR, SPIRV_BI_WorldRayDirectionKHR,
-      SPIRV_BI_ObjectRayOriginKHR, SPIRV_BI_ObjectRayDirectionKHR, SPIRV_BI_RayTminKHR,
-      SPIRV_BI_RayTmaxKHR, SPIRV_BI_InstanceCustomIndexKHR, SPIRV_BI_ObjectToWorldKHR,
-      SPIRV_BI_WorldToObjectKHR, SPIRV_BI_HitTNV, SPIRV_BI_HitKindKHR,
-      SPIRV_BI_CurrentRayTimeNV, SPIRV_BI_IncomingRayFlagsKHR,
-      SPIRV_BI_RayGeometryIndexKHR, SPIRV_BI_WarpsPerSMNV, SPIRV_BI_SMCountNV,
-      SPIRV_BI_WarpIDNV, SPIRV_BI_SMIDNV, SPIRV_BI_CullMaskKHR
+      SPIRV_BI_ObjectRayOriginKHR, SPIRV_BI_ObjectRayDirectionKHR,
+      SPIRV_BI_RayTminKHR, SPIRV_BI_RayTmaxKHR, SPIRV_BI_InstanceCustomIndexKHR,
+      SPIRV_BI_ObjectToWorldKHR, SPIRV_BI_WorldToObjectKHR, SPIRV_BI_HitTNV,
+      SPIRV_BI_HitKindKHR, SPIRV_BI_CurrentRayTimeNV,
+      SPIRV_BI_HitTriangleVertexPositionsKHR,
+      SPIRV_BI_HitMicroTriangleVertexPositionsNV,
+      SPIRV_BI_HitMicroTriangleVertexBarycentricsNV, SPIRV_BI_IncomingRayFlagsKHR,
+      SPIRV_BI_RayGeometryIndexKHR, SPIRV_BI_HitIsSphereNV, SPIRV_BI_HitIsLSSNV,
+      SPIRV_BI_HitSpherePositionNV, SPIRV_BI_WarpsPerSMNV, SPIRV_BI_SMCountNV,
+      SPIRV_BI_WarpIDNV, SPIRV_BI_SMIDNV, SPIRV_BI_HitLSSPositionsNV,
+      SPIRV_BI_HitKindFrontFacingMicroTriangleNV,
+      SPIRV_BI_HitKindBackFacingMicroTriangleNV, SPIRV_BI_HitSphereRadiusNV,
+      SPIRV_BI_HitLSSRadiiNV, SPIRV_BI_ClusterIDNV, SPIRV_BI_CullMaskKHR
     ]>;
 
 def SPIRV_D_RelaxedPrecision                   : I32EnumAttrCase<"RelaxedPrecision", 0> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_SpecId                             : I32EnumAttrCase<"SpecId", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel, SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_Block                              : I32EnumAttrCase<"Block", 2> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_BufferBlock                        : I32EnumAttrCase<"BufferBlock", 3> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     MaxVersion<SPIRV_V_1_3>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_RowMajor                           : I32EnumAttrCase<"RowMajor", 4> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Matrix]>
   ];
 }
 def SPIRV_D_ColMajor                           : I32EnumAttrCase<"ColMajor", 5> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Matrix]>
   ];
 }
 def SPIRV_D_ArrayStride                        : I32EnumAttrCase<"ArrayStride", 6> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_MatrixStride                       : I32EnumAttrCase<"MatrixStride", 7> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Matrix]>
   ];
 }
 def SPIRV_D_GLSLShared                         : I32EnumAttrCase<"GLSLShared", 8> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_GLSLPacked                         : I32EnumAttrCase<"GLSLPacked", 9> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_CPacked                            : I32EnumAttrCase<"CPacked", 10> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_D_BuiltIn                            : I32EnumAttrCase<"BuiltIn", 11>;
+def SPIRV_D_BuiltIn                            : I32EnumAttrCase<"BuiltIn", 11> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_D_NoPerspective                      : I32EnumAttrCase<"NoPerspective", 13> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_Flat                               : I32EnumAttrCase<"Flat", 14> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_Patch                              : I32EnumAttrCase<"Patch", 15> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
 def SPIRV_D_Centroid                           : I32EnumAttrCase<"Centroid", 16> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_Sample                             : I32EnumAttrCase<"Sample", 17> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_SampleRateShading]>
   ];
 }
 def SPIRV_D_Invariant                          : I32EnumAttrCase<"Invariant", 18> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_D_Restrict                           : I32EnumAttrCase<"Restrict", 19>;
-def SPIRV_D_Aliased                            : I32EnumAttrCase<"Aliased", 20>;
-def SPIRV_D_Volatile                           : I32EnumAttrCase<"Volatile", 21>;
+def SPIRV_D_Restrict                           : I32EnumAttrCase<"Restrict", 19> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_D_Aliased                            : I32EnumAttrCase<"Aliased", 20> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_D_Volatile                           : I32EnumAttrCase<"Volatile", 21> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_D_Constant                           : I32EnumAttrCase<"Constant", 22> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_D_Coherent                           : I32EnumAttrCase<"Coherent", 23>;
-def SPIRV_D_NonWritable                        : I32EnumAttrCase<"NonWritable", 24>;
-def SPIRV_D_NonReadable                        : I32EnumAttrCase<"NonReadable", 25>;
+def SPIRV_D_Coherent                           : I32EnumAttrCase<"Coherent", 23> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_D_NonWritable                        : I32EnumAttrCase<"NonWritable", 24> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_D_NonReadable                        : I32EnumAttrCase<"NonReadable", 25> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_D_Uniform                            : I32EnumAttrCase<"Uniform", 26> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader, SPIRV_C_UniformDecoration]>
   ];
 }
@@ -2201,82 +3056,102 @@ def SPIRV_D_UniformId                          : I32EnumAttrCase<"UniformId", 27
 }
 def SPIRV_D_SaturatedConversion                : I32EnumAttrCase<"SaturatedConversion", 28> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
 def SPIRV_D_Stream                             : I32EnumAttrCase<"Stream", 29> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GeometryStreams]>
   ];
 }
 def SPIRV_D_Location                           : I32EnumAttrCase<"Location", 30> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_Component                          : I32EnumAttrCase<"Component", 31> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_Index                              : I32EnumAttrCase<"Index", 32> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_Binding                            : I32EnumAttrCase<"Binding", 33> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_DescriptorSet                      : I32EnumAttrCase<"DescriptorSet", 34> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_Offset                             : I32EnumAttrCase<"Offset", 35> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_XfbBuffer                          : I32EnumAttrCase<"XfbBuffer", 36> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_TransformFeedback]>
   ];
 }
 def SPIRV_D_XfbStride                          : I32EnumAttrCase<"XfbStride", 37> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_TransformFeedback]>
   ];
 }
 def SPIRV_D_FuncParamAttr                      : I32EnumAttrCase<"FuncParamAttr", 38> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_D_FPRoundingMode                     : I32EnumAttrCase<"FPRoundingMode", 39>;
+def SPIRV_D_FPRoundingMode                     : I32EnumAttrCase<"FPRoundingMode", 39> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_D_FPFastMathMode                     : I32EnumAttrCase<"FPFastMathMode", 40> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_Kernel]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_FloatControls2, SPIRV_C_Kernel]>
   ];
 }
 def SPIRV_D_LinkageAttributes                  : I32EnumAttrCase<"LinkageAttributes", 41> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Linkage]>
   ];
 }
 def SPIRV_D_NoContraction                      : I32EnumAttrCase<"NoContraction", 42> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_D_InputAttachmentIndex               : I32EnumAttrCase<"InputAttachmentIndex", 43> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_InputAttachment]>
   ];
 }
 def SPIRV_D_Alignment                          : I32EnumAttrCase<"Alignment", 44> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
@@ -2308,9 +3183,64 @@ def SPIRV_D_NoUnsignedWrap                     : I32EnumAttrCase<"NoUnsignedWrap
     Extension<[SPV_KHR_no_integer_wrap_decoration]>
   ];
 }
+def SPIRV_D_WeightTextureQCOM                  : I32EnumAttrCase<"WeightTextureQCOM", 4487> {
+  list<Availability> availability = [
+    Extension<[SPV_QCOM_image_processing]>
+  ];
+}
+def SPIRV_D_BlockMatchTextureQCOM              : I32EnumAttrCase<"BlockMatchTextureQCOM", 4488> {
+  list<Availability> availability = [
+    Extension<[SPV_QCOM_image_processing]>
+  ];
+}
+def SPIRV_D_BlockMatchSamplerQCOM              : I32EnumAttrCase<"BlockMatchSamplerQCOM", 4499> {
+  list<Availability> availability = [
+    Extension<[SPV_QCOM_image_processing2]>
+  ];
+}
 def SPIRV_D_ExplicitInterpAMD                  : I32EnumAttrCase<"ExplicitInterpAMD", 4999> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_explicit_vertex_parameter]>
+  ];
+}
+def SPIRV_D_NodeSharesPayloadLimitsWithAMDX    : I32EnumAttrCase<"NodeSharesPayloadLimitsWithAMDX", 5019> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_D_NodeMaxPayloadsAMDX                : I32EnumAttrCase<"NodeMaxPayloadsAMDX", 5020> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_D_TrackFinishWritingAMDX             : I32EnumAttrCase<"TrackFinishWritingAMDX", 5078> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_D_PayloadNodeNameAMDX                : I32EnumAttrCase<"PayloadNodeNameAMDX", 5091> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_D_PayloadNodeBaseIndexAMDX           : I32EnumAttrCase<"PayloadNodeBaseIndexAMDX", 5098> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_D_PayloadNodeSparseArrayAMDX         : I32EnumAttrCase<"PayloadNodeSparseArrayAMDX", 5099> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_D_PayloadNodeArraySizeAMDX           : I32EnumAttrCase<"PayloadNodeArraySizeAMDX", 5100> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_D_PayloadDispatchIndirectAMDX        : I32EnumAttrCase<"PayloadDispatchIndirectAMDX", 5105> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
   ];
 }
 def SPIRV_D_OverrideCoverageNV                 : I32EnumAttrCase<"OverrideCoverageNV", 5248> {
@@ -2338,8 +3268,20 @@ def SPIRV_D_SecondaryViewportRelativeNV        : I32EnumAttrCase<"SecondaryViewp
 }
 def SPIRV_D_PerPrimitiveEXT                    : I32EnumAttrCase<"PerPrimitiveEXT", 5271> {
   list<Availability> availability = [
-    Extension<[SPV_EXT_mesh_shader]>,
-    Capability<[SPIRV_C_MeshShadingEXT]>
+    Extension<[SPV_EXT_mesh_shader, SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_D_PerViewNV                          : I32EnumAttrCase<"PerViewNV", 5272> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_D_PerTaskNV                          : I32EnumAttrCase<"PerTaskNV", 5273> {
+  list<Availability> availability = [
+    Extension<[SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingNV]>
   ];
 }
 def SPIRV_D_PerVertexKHR                       : I32EnumAttrCase<"PerVertexKHR", 5285> {
@@ -2350,7 +3292,7 @@ def SPIRV_D_PerVertexKHR                       : I32EnumAttrCase<"PerVertexKHR",
 }
 def SPIRV_D_NonUniform                         : I32EnumAttrCase<"NonUniform", 5300> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_EXT_descriptor_indexing]>,
     Capability<[SPIRV_C_ShaderNonUniform]>
   ];
 }
@@ -2364,6 +3306,11 @@ def SPIRV_D_AliasedPointer                     : I32EnumAttrCase<"AliasedPointer
   list<Availability> availability = [
     Extension<[SPV_EXT_physical_storage_buffer, SPV_KHR_physical_storage_buffer]>,
     Capability<[SPIRV_C_PhysicalStorageBufferAddresses]>
+  ];
+}
+def SPIRV_D_HitObjectShaderRecordBufferNV      : I32EnumAttrCase<"HitObjectShaderRecordBufferNV", 5386> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderInvocationReorderNV]>
   ];
 }
 def SPIRV_D_BindlessSamplerNV                  : I32EnumAttrCase<"BindlessSamplerNV", 5398> {
@@ -2434,12 +3381,12 @@ def SPIRV_D_GlobalVariableOffsetINTEL          : I32EnumAttrCase<"GlobalVariable
 }
 def SPIRV_D_CounterBuffer                      : I32EnumAttrCase<"CounterBuffer", 5634> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_4>
+    Extension<[SPV_GOOGLE_hlsl_functionality1]>
   ];
 }
 def SPIRV_D_UserSemantic                       : I32EnumAttrCase<"UserSemantic", 5635> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_4>
+    Extension<[SPV_GOOGLE_hlsl_functionality1]>
   ];
 }
 def SPIRV_D_UserTypeGOOGLE                     : I32EnumAttrCase<"UserTypeGOOGLE", 5636> {
@@ -2529,6 +3476,21 @@ def SPIRV_D_ForcePow2DepthINTEL                : I32EnumAttrCase<"ForcePow2Depth
     Capability<[SPIRV_C_FPGAMemoryAttributesINTEL]>
   ];
 }
+def SPIRV_D_StridesizeINTEL                    : I32EnumAttrCase<"StridesizeINTEL", 5883> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAMemoryAttributesINTEL]>
+  ];
+}
+def SPIRV_D_WordsizeINTEL                      : I32EnumAttrCase<"WordsizeINTEL", 5884> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAMemoryAttributesINTEL]>
+  ];
+}
+def SPIRV_D_TrueDualPortINTEL                  : I32EnumAttrCase<"TrueDualPortINTEL", 5885> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAMemoryAttributesINTEL]>
+  ];
+}
 def SPIRV_D_BurstCoalesceINTEL                 : I32EnumAttrCase<"BurstCoalesceINTEL", 5899> {
   list<Availability> availability = [
     Capability<[SPIRV_C_FPGAMemoryAccessesINTEL]>
@@ -2559,6 +3521,11 @@ def SPIRV_D_FuseLoopsInFunctionINTEL           : I32EnumAttrCase<"FuseLoopsInFun
     Capability<[SPIRV_C_LoopFuseINTEL]>
   ];
 }
+def SPIRV_D_MathOpDSPModeINTEL                 : I32EnumAttrCase<"MathOpDSPModeINTEL", 5909> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGADSPControlINTEL]>
+  ];
+}
 def SPIRV_D_AliasScopeINTEL                    : I32EnumAttrCase<"AliasScopeINTEL", 5914> {
   list<Availability> availability = [
     Capability<[SPIRV_C_MemoryAccessAliasingINTEL]>
@@ -2567,6 +3534,21 @@ def SPIRV_D_AliasScopeINTEL                    : I32EnumAttrCase<"AliasScopeINTE
 def SPIRV_D_NoAliasINTEL                       : I32EnumAttrCase<"NoAliasINTEL", 5915> {
   list<Availability> availability = [
     Capability<[SPIRV_C_MemoryAccessAliasingINTEL]>
+  ];
+}
+def SPIRV_D_InitiationIntervalINTEL            : I32EnumAttrCase<"InitiationIntervalINTEL", 5917> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAInvocationPipeliningAttributesINTEL]>
+  ];
+}
+def SPIRV_D_MaxConcurrencyINTEL                : I32EnumAttrCase<"MaxConcurrencyINTEL", 5918> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAInvocationPipeliningAttributesINTEL]>
+  ];
+}
+def SPIRV_D_PipelineEnableINTEL                : I32EnumAttrCase<"PipelineEnableINTEL", 5919> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAInvocationPipeliningAttributesINTEL]>
   ];
 }
 def SPIRV_D_BufferLocationINTEL                : I32EnumAttrCase<"BufferLocationINTEL", 5921> {
@@ -2599,6 +3581,86 @@ def SPIRV_D_MediaBlockIOINTEL                  : I32EnumAttrCase<"MediaBlockIOIN
     Capability<[SPIRV_C_VectorComputeINTEL]>
   ];
 }
+def SPIRV_D_StallFreeINTEL                     : I32EnumAttrCase<"StallFreeINTEL", 6151> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAClusterAttributesV2INTEL]>
+  ];
+}
+def SPIRV_D_FPMaxErrorDecorationINTEL          : I32EnumAttrCase<"FPMaxErrorDecorationINTEL", 6170> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPMaxErrorINTEL]>
+  ];
+}
+def SPIRV_D_LatencyControlLabelINTEL           : I32EnumAttrCase<"LatencyControlLabelINTEL", 6172> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGALatencyControlINTEL]>
+  ];
+}
+def SPIRV_D_LatencyControlConstraintINTEL      : I32EnumAttrCase<"LatencyControlConstraintINTEL", 6173> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGALatencyControlINTEL]>
+  ];
+}
+def SPIRV_D_ConduitKernelArgumentINTEL         : I32EnumAttrCase<"ConduitKernelArgumentINTEL", 6175> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_RegisterMapKernelArgumentINTEL     : I32EnumAttrCase<"RegisterMapKernelArgumentINTEL", 6176> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_MMHostInterfaceAddressWidthINTEL   : I32EnumAttrCase<"MMHostInterfaceAddressWidthINTEL", 6177> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_MMHostInterfaceDataWidthINTEL      : I32EnumAttrCase<"MMHostInterfaceDataWidthINTEL", 6178> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_MMHostInterfaceLatencyINTEL        : I32EnumAttrCase<"MMHostInterfaceLatencyINTEL", 6179> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_MMHostInterfaceReadWriteModeINTEL  : I32EnumAttrCase<"MMHostInterfaceReadWriteModeINTEL", 6180> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_MMHostInterfaceMaxBurstINTEL       : I32EnumAttrCase<"MMHostInterfaceMaxBurstINTEL", 6181> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_MMHostInterfaceWaitRequestINTEL    : I32EnumAttrCase<"MMHostInterfaceWaitRequestINTEL", 6182> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_StableKernelArgumentINTEL          : I32EnumAttrCase<"StableKernelArgumentINTEL", 6183> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAArgumentInterfacesINTEL]>
+  ];
+}
+def SPIRV_D_HostAccessINTEL                    : I32EnumAttrCase<"HostAccessINTEL", 6188> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_GlobalVariableHostAccessINTEL]>
+  ];
+}
+def SPIRV_D_InitModeINTEL                      : I32EnumAttrCase<"InitModeINTEL", 6190> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_GlobalVariableFPGADecorationsINTEL]>
+  ];
+}
+def SPIRV_D_ImplementInRegisterMapINTEL        : I32EnumAttrCase<"ImplementInRegisterMapINTEL", 6191> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_GlobalVariableFPGADecorationsINTEL]>
+  ];
+}
 def SPIRV_D_CacheControlLoadINTEL              : I32EnumAttrCase<"CacheControlLoadINTEL", 6442> {
   list<Availability> availability = [
     Capability<[SPIRV_C_CacheControlsINTEL]>
@@ -2615,487 +3677,658 @@ def SPIRV_DecorationAttr :
       SPIRV_D_RelaxedPrecision, SPIRV_D_SpecId, SPIRV_D_Block, SPIRV_D_BufferBlock,
       SPIRV_D_RowMajor, SPIRV_D_ColMajor, SPIRV_D_ArrayStride, SPIRV_D_MatrixStride,
       SPIRV_D_GLSLShared, SPIRV_D_GLSLPacked, SPIRV_D_CPacked, SPIRV_D_BuiltIn,
-      SPIRV_D_NoPerspective, SPIRV_D_Flat, SPIRV_D_Patch, SPIRV_D_Centroid, SPIRV_D_Sample,
-      SPIRV_D_Invariant, SPIRV_D_Restrict, SPIRV_D_Aliased, SPIRV_D_Volatile, SPIRV_D_Constant,
-      SPIRV_D_Coherent, SPIRV_D_NonWritable, SPIRV_D_NonReadable, SPIRV_D_Uniform,
-      SPIRV_D_UniformId, SPIRV_D_SaturatedConversion, SPIRV_D_Stream, SPIRV_D_Location,
-      SPIRV_D_Component, SPIRV_D_Index, SPIRV_D_Binding, SPIRV_D_DescriptorSet, SPIRV_D_Offset,
-      SPIRV_D_XfbBuffer, SPIRV_D_XfbStride, SPIRV_D_FuncParamAttr, SPIRV_D_FPRoundingMode,
-      SPIRV_D_FPFastMathMode, SPIRV_D_LinkageAttributes, SPIRV_D_NoContraction,
-      SPIRV_D_InputAttachmentIndex, SPIRV_D_Alignment, SPIRV_D_MaxByteOffset,
-      SPIRV_D_AlignmentId, SPIRV_D_MaxByteOffsetId, SPIRV_D_NoSignedWrap,
-      SPIRV_D_NoUnsignedWrap, SPIRV_D_ExplicitInterpAMD, SPIRV_D_OverrideCoverageNV,
+      SPIRV_D_NoPerspective, SPIRV_D_Flat, SPIRV_D_Patch, SPIRV_D_Centroid,
+      SPIRV_D_Sample, SPIRV_D_Invariant, SPIRV_D_Restrict, SPIRV_D_Aliased,
+      SPIRV_D_Volatile, SPIRV_D_Constant, SPIRV_D_Coherent, SPIRV_D_NonWritable,
+      SPIRV_D_NonReadable, SPIRV_D_Uniform, SPIRV_D_UniformId,
+      SPIRV_D_SaturatedConversion, SPIRV_D_Stream, SPIRV_D_Location,
+      SPIRV_D_Component, SPIRV_D_Index, SPIRV_D_Binding, SPIRV_D_DescriptorSet,
+      SPIRV_D_Offset, SPIRV_D_XfbBuffer, SPIRV_D_XfbStride, SPIRV_D_FuncParamAttr,
+      SPIRV_D_FPRoundingMode, SPIRV_D_FPFastMathMode, SPIRV_D_LinkageAttributes,
+      SPIRV_D_NoContraction, SPIRV_D_InputAttachmentIndex, SPIRV_D_Alignment,
+      SPIRV_D_MaxByteOffset, SPIRV_D_AlignmentId, SPIRV_D_MaxByteOffsetId,
+      SPIRV_D_NoSignedWrap, SPIRV_D_NoUnsignedWrap, SPIRV_D_WeightTextureQCOM,
+      SPIRV_D_BlockMatchTextureQCOM, SPIRV_D_BlockMatchSamplerQCOM,
+      SPIRV_D_ExplicitInterpAMD, SPIRV_D_NodeSharesPayloadLimitsWithAMDX,
+      SPIRV_D_NodeMaxPayloadsAMDX, SPIRV_D_TrackFinishWritingAMDX,
+      SPIRV_D_PayloadNodeNameAMDX, SPIRV_D_PayloadNodeBaseIndexAMDX,
+      SPIRV_D_PayloadNodeSparseArrayAMDX, SPIRV_D_PayloadNodeArraySizeAMDX,
+      SPIRV_D_PayloadDispatchIndirectAMDX, SPIRV_D_OverrideCoverageNV,
       SPIRV_D_PassthroughNV, SPIRV_D_ViewportRelativeNV,
       SPIRV_D_SecondaryViewportRelativeNV, SPIRV_D_PerPrimitiveEXT,
-      SPIRV_D_PerVertexKHR, SPIRV_D_NonUniform, SPIRV_D_RestrictPointer,
-      SPIRV_D_AliasedPointer, SPIRV_D_BindlessSamplerNV, SPIRV_D_BindlessImageNV,
-      SPIRV_D_BoundSamplerNV, SPIRV_D_BoundImageNV, SPIRV_D_SIMTCallINTEL,
-      SPIRV_D_ReferencedIndirectlyINTEL, SPIRV_D_ClobberINTEL, SPIRV_D_SideEffectsINTEL,
-      SPIRV_D_VectorComputeVariableINTEL, SPIRV_D_FuncParamIOKindINTEL,
-      SPIRV_D_VectorComputeFunctionINTEL, SPIRV_D_StackCallINTEL,
-      SPIRV_D_GlobalVariableOffsetINTEL, SPIRV_D_CounterBuffer, SPIRV_D_UserSemantic,
-      SPIRV_D_UserTypeGOOGLE, SPIRV_D_FunctionRoundingModeINTEL,
-      SPIRV_D_FunctionDenormModeINTEL, SPIRV_D_RegisterINTEL, SPIRV_D_MemoryINTEL,
-      SPIRV_D_NumbanksINTEL, SPIRV_D_BankwidthINTEL, SPIRV_D_MaxPrivateCopiesINTEL,
-      SPIRV_D_SinglepumpINTEL, SPIRV_D_DoublepumpINTEL, SPIRV_D_MaxReplicatesINTEL,
+      SPIRV_D_PerViewNV, SPIRV_D_PerTaskNV, SPIRV_D_PerVertexKHR, SPIRV_D_NonUniform,
+      SPIRV_D_RestrictPointer, SPIRV_D_AliasedPointer,
+      SPIRV_D_HitObjectShaderRecordBufferNV, SPIRV_D_BindlessSamplerNV,
+      SPIRV_D_BindlessImageNV, SPIRV_D_BoundSamplerNV, SPIRV_D_BoundImageNV,
+      SPIRV_D_SIMTCallINTEL, SPIRV_D_ReferencedIndirectlyINTEL, SPIRV_D_ClobberINTEL,
+      SPIRV_D_SideEffectsINTEL, SPIRV_D_VectorComputeVariableINTEL,
+      SPIRV_D_FuncParamIOKindINTEL, SPIRV_D_VectorComputeFunctionINTEL,
+      SPIRV_D_StackCallINTEL, SPIRV_D_GlobalVariableOffsetINTEL,
+      SPIRV_D_CounterBuffer, SPIRV_D_UserSemantic, SPIRV_D_UserTypeGOOGLE,
+      SPIRV_D_FunctionRoundingModeINTEL, SPIRV_D_FunctionDenormModeINTEL,
+      SPIRV_D_RegisterINTEL, SPIRV_D_MemoryINTEL, SPIRV_D_NumbanksINTEL,
+      SPIRV_D_BankwidthINTEL, SPIRV_D_MaxPrivateCopiesINTEL, SPIRV_D_SinglepumpINTEL,
+      SPIRV_D_DoublepumpINTEL, SPIRV_D_MaxReplicatesINTEL,
       SPIRV_D_SimpleDualPortINTEL, SPIRV_D_MergeINTEL, SPIRV_D_BankBitsINTEL,
-      SPIRV_D_ForcePow2DepthINTEL, SPIRV_D_BurstCoalesceINTEL, SPIRV_D_CacheSizeINTEL,
-      SPIRV_D_DontStaticallyCoalesceINTEL, SPIRV_D_PrefetchINTEL, SPIRV_D_StallEnableINTEL,
-      SPIRV_D_FuseLoopsInFunctionINTEL, SPIRV_D_AliasScopeINTEL, SPIRV_D_NoAliasINTEL,
-      SPIRV_D_BufferLocationINTEL, SPIRV_D_IOPipeStorageINTEL,
-      SPIRV_D_FunctionFloatingPointModeINTEL, SPIRV_D_SingleElementVectorINTEL,
-      SPIRV_D_VectorComputeCallableFunctionINTEL, SPIRV_D_MediaBlockIOINTEL,
+      SPIRV_D_ForcePow2DepthINTEL, SPIRV_D_StridesizeINTEL, SPIRV_D_WordsizeINTEL,
+      SPIRV_D_TrueDualPortINTEL, SPIRV_D_BurstCoalesceINTEL, SPIRV_D_CacheSizeINTEL,
+      SPIRV_D_DontStaticallyCoalesceINTEL, SPIRV_D_PrefetchINTEL,
+      SPIRV_D_StallEnableINTEL, SPIRV_D_FuseLoopsInFunctionINTEL,
+      SPIRV_D_MathOpDSPModeINTEL, SPIRV_D_AliasScopeINTEL, SPIRV_D_NoAliasINTEL,
+      SPIRV_D_InitiationIntervalINTEL, SPIRV_D_MaxConcurrencyINTEL,
+      SPIRV_D_PipelineEnableINTEL, SPIRV_D_BufferLocationINTEL,
+      SPIRV_D_IOPipeStorageINTEL, SPIRV_D_FunctionFloatingPointModeINTEL,
+      SPIRV_D_SingleElementVectorINTEL, SPIRV_D_VectorComputeCallableFunctionINTEL,
+      SPIRV_D_MediaBlockIOINTEL, SPIRV_D_StallFreeINTEL,
+      SPIRV_D_FPMaxErrorDecorationINTEL, SPIRV_D_LatencyControlLabelINTEL,
+      SPIRV_D_LatencyControlConstraintINTEL, SPIRV_D_ConduitKernelArgumentINTEL,
+      SPIRV_D_RegisterMapKernelArgumentINTEL,
+      SPIRV_D_MMHostInterfaceAddressWidthINTEL,
+      SPIRV_D_MMHostInterfaceDataWidthINTEL, SPIRV_D_MMHostInterfaceLatencyINTEL,
+      SPIRV_D_MMHostInterfaceReadWriteModeINTEL,
+      SPIRV_D_MMHostInterfaceMaxBurstINTEL, SPIRV_D_MMHostInterfaceWaitRequestINTEL,
+      SPIRV_D_StableKernelArgumentINTEL, SPIRV_D_HostAccessINTEL,
+      SPIRV_D_InitModeINTEL, SPIRV_D_ImplementInRegisterMapINTEL,
       SPIRV_D_CacheControlLoadINTEL, SPIRV_D_CacheControlStoreINTEL
     ]>;
 
-def SPIRV_D_1D          : I32EnumAttrCase<"Dim1D", 0> {
+def SPIRV_D_1D               : I32EnumAttrCase<"Dim1D", 0> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_Image1D, SPIRV_C_Sampled1D]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_Sampled1D]>
   ];
 }
-def SPIRV_D_2D          : I32EnumAttrCase<"Dim2D", 1> {
+def SPIRV_D_2D               : I32EnumAttrCase<"Dim2D", 1> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_ImageMSArray, SPIRV_C_Kernel, SPIRV_C_Shader]>
+    MinVersion<SPIRV_V_1_0>
   ];
 }
-def SPIRV_D_3D          : I32EnumAttrCase<"Dim3D", 2>;
-def SPIRV_D_Cube        : I32EnumAttrCase<"Cube", 3> {
+def SPIRV_D_3D               : I32EnumAttrCase<"Dim3D", 2> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_ImageCubeArray, SPIRV_C_Shader]>
+    MinVersion<SPIRV_V_1_0>
   ];
 }
-def SPIRV_D_Rect        : I32EnumAttrCase<"Rect", 4> {
+def SPIRV_D_Cube             : I32EnumAttrCase<"Cube", 3> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_ImageRect, SPIRV_C_SampledRect]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_D_Buffer      : I32EnumAttrCase<"Buffer", 5> {
+def SPIRV_D_Rect             : I32EnumAttrCase<"Rect", 4> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_ImageBuffer, SPIRV_C_SampledBuffer]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_SampledRect]>
   ];
 }
-def SPIRV_D_SubpassData : I32EnumAttrCase<"SubpassData", 6> {
+def SPIRV_D_Buffer           : I32EnumAttrCase<"Buffer", 5> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_SampledBuffer]>
+  ];
+}
+def SPIRV_D_SubpassData      : I32EnumAttrCase<"SubpassData", 6> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_InputAttachment]>
+  ];
+}
+def SPIRV_D_TileImageDataEXT : I32EnumAttrCase<"TileImageDataEXT", 4173> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileImageColorReadAccessEXT]>
   ];
 }
 
 def SPIRV_DimAttr :
     SPIRV_I32EnumAttr<"Dim", "valid SPIR-V Dim", "dim", [
       SPIRV_D_1D, SPIRV_D_2D, SPIRV_D_3D, SPIRV_D_Cube, SPIRV_D_Rect, SPIRV_D_Buffer,
-      SPIRV_D_SubpassData
+      SPIRV_D_SubpassData, SPIRV_D_TileImageDataEXT
     ]>;
 
-def SPIRV_EM_Invocations                      : I32EnumAttrCase<"Invocations", 0> {
+def SPIRV_EM_Invocations                         : I32EnumAttrCase<"Invocations", 0> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry]>
   ];
 }
-def SPIRV_EM_SpacingEqual                     : I32EnumAttrCase<"SpacingEqual", 1> {
+def SPIRV_EM_SpacingEqual                        : I32EnumAttrCase<"SpacingEqual", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_SpacingFractionalEven            : I32EnumAttrCase<"SpacingFractionalEven", 2> {
+def SPIRV_EM_SpacingFractionalEven               : I32EnumAttrCase<"SpacingFractionalEven", 2> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_SpacingFractionalOdd             : I32EnumAttrCase<"SpacingFractionalOdd", 3> {
+def SPIRV_EM_SpacingFractionalOdd                : I32EnumAttrCase<"SpacingFractionalOdd", 3> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_VertexOrderCw                    : I32EnumAttrCase<"VertexOrderCw", 4> {
+def SPIRV_EM_VertexOrderCw                       : I32EnumAttrCase<"VertexOrderCw", 4> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_VertexOrderCcw                   : I32EnumAttrCase<"VertexOrderCcw", 5> {
+def SPIRV_EM_VertexOrderCcw                      : I32EnumAttrCase<"VertexOrderCcw", 5> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_PixelCenterInteger               : I32EnumAttrCase<"PixelCenterInteger", 6> {
+def SPIRV_EM_PixelCenterInteger                  : I32EnumAttrCase<"PixelCenterInteger", 6> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_OriginUpperLeft                  : I32EnumAttrCase<"OriginUpperLeft", 7> {
+def SPIRV_EM_OriginUpperLeft                     : I32EnumAttrCase<"OriginUpperLeft", 7> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_OriginLowerLeft                  : I32EnumAttrCase<"OriginLowerLeft", 8> {
+def SPIRV_EM_OriginLowerLeft                     : I32EnumAttrCase<"OriginLowerLeft", 8> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_EarlyFragmentTests               : I32EnumAttrCase<"EarlyFragmentTests", 9> {
+def SPIRV_EM_EarlyFragmentTests                  : I32EnumAttrCase<"EarlyFragmentTests", 9> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_PointMode                        : I32EnumAttrCase<"PointMode", 10> {
+def SPIRV_EM_PointMode                           : I32EnumAttrCase<"PointMode", 10> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_Xfb                              : I32EnumAttrCase<"Xfb", 11> {
+def SPIRV_EM_Xfb                                 : I32EnumAttrCase<"Xfb", 11> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_TransformFeedback]>
   ];
 }
-def SPIRV_EM_DepthReplacing                   : I32EnumAttrCase<"DepthReplacing", 12> {
+def SPIRV_EM_DepthReplacing                      : I32EnumAttrCase<"DepthReplacing", 12> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_DepthGreater                     : I32EnumAttrCase<"DepthGreater", 14> {
+def SPIRV_EM_DepthGreater                        : I32EnumAttrCase<"DepthGreater", 14> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_DepthLess                        : I32EnumAttrCase<"DepthLess", 15> {
+def SPIRV_EM_DepthLess                           : I32EnumAttrCase<"DepthLess", 15> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_DepthUnchanged                   : I32EnumAttrCase<"DepthUnchanged", 16> {
+def SPIRV_EM_DepthUnchanged                      : I32EnumAttrCase<"DepthUnchanged", 16> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_LocalSize                        : I32EnumAttrCase<"LocalSize", 17>;
-def SPIRV_EM_LocalSizeHint                    : I32EnumAttrCase<"LocalSizeHint", 18> {
+def SPIRV_EM_LocalSize                           : I32EnumAttrCase<"LocalSize", 17> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_EM_LocalSizeHint                       : I32EnumAttrCase<"LocalSizeHint", 18> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_EM_InputPoints                      : I32EnumAttrCase<"InputPoints", 19> {
+def SPIRV_EM_InputPoints                         : I32EnumAttrCase<"InputPoints", 19> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry]>
   ];
 }
-def SPIRV_EM_InputLines                       : I32EnumAttrCase<"InputLines", 20> {
+def SPIRV_EM_InputLines                          : I32EnumAttrCase<"InputLines", 20> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry]>
   ];
 }
-def SPIRV_EM_InputLinesAdjacency              : I32EnumAttrCase<"InputLinesAdjacency", 21> {
+def SPIRV_EM_InputLinesAdjacency                 : I32EnumAttrCase<"InputLinesAdjacency", 21> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry]>
   ];
 }
-def SPIRV_EM_Triangles                        : I32EnumAttrCase<"Triangles", 22> {
+def SPIRV_EM_Triangles                           : I32EnumAttrCase<"Triangles", 22> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry, SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_InputTrianglesAdjacency          : I32EnumAttrCase<"InputTrianglesAdjacency", 23> {
+def SPIRV_EM_InputTrianglesAdjacency             : I32EnumAttrCase<"InputTrianglesAdjacency", 23> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry]>
   ];
 }
-def SPIRV_EM_Quads                            : I32EnumAttrCase<"Quads", 24> {
+def SPIRV_EM_Quads                               : I32EnumAttrCase<"Quads", 24> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_Isolines                         : I32EnumAttrCase<"Isolines", 25> {
+def SPIRV_EM_Isolines                            : I32EnumAttrCase<"Isolines", 25> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_OutputVertices                   : I32EnumAttrCase<"OutputVertices", 26> {
+def SPIRV_EM_OutputVertices                      : I32EnumAttrCase<"OutputVertices", 26> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_Geometry, SPIRV_C_MeshShadingEXT, SPIRV_C_Tessellation]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_Geometry, SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV, SPIRV_C_Tessellation]>
   ];
 }
-def SPIRV_EM_OutputPoints                     : I32EnumAttrCase<"OutputPoints", 27> {
+def SPIRV_EM_OutputPoints                        : I32EnumAttrCase<"OutputPoints", 27> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_Geometry, SPIRV_C_MeshShadingEXT]>
+    MinVersion<SPIRV_V_1_0>,
+    Capability<[SPIRV_C_Geometry, SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV]>
   ];
 }
-def SPIRV_EM_OutputLineStrip                  : I32EnumAttrCase<"OutputLineStrip", 28> {
+def SPIRV_EM_OutputLineStrip                     : I32EnumAttrCase<"OutputLineStrip", 28> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry]>
   ];
 }
-def SPIRV_EM_OutputTriangleStrip              : I32EnumAttrCase<"OutputTriangleStrip", 29> {
+def SPIRV_EM_OutputTriangleStrip                 : I32EnumAttrCase<"OutputTriangleStrip", 29> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry]>
   ];
 }
-def SPIRV_EM_VecTypeHint                      : I32EnumAttrCase<"VecTypeHint", 30> {
+def SPIRV_EM_VecTypeHint                         : I32EnumAttrCase<"VecTypeHint", 30> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_EM_ContractionOff                   : I32EnumAttrCase<"ContractionOff", 31> {
+def SPIRV_EM_ContractionOff                      : I32EnumAttrCase<"ContractionOff", 31> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_EM_Initializer                      : I32EnumAttrCase<"Initializer", 33> {
+def SPIRV_EM_Initializer                         : I32EnumAttrCase<"Initializer", 33> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_1>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_EM_Finalizer                        : I32EnumAttrCase<"Finalizer", 34> {
+def SPIRV_EM_Finalizer                           : I32EnumAttrCase<"Finalizer", 34> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_1>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_EM_SubgroupSize                     : I32EnumAttrCase<"SubgroupSize", 35> {
+def SPIRV_EM_SubgroupSize                        : I32EnumAttrCase<"SubgroupSize", 35> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_1>,
     Capability<[SPIRV_C_SubgroupDispatch]>
   ];
 }
-def SPIRV_EM_SubgroupsPerWorkgroup            : I32EnumAttrCase<"SubgroupsPerWorkgroup", 36> {
+def SPIRV_EM_SubgroupsPerWorkgroup               : I32EnumAttrCase<"SubgroupsPerWorkgroup", 36> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_1>,
     Capability<[SPIRV_C_SubgroupDispatch]>
   ];
 }
-def SPIRV_EM_SubgroupsPerWorkgroupId          : I32EnumAttrCase<"SubgroupsPerWorkgroupId", 37> {
+def SPIRV_EM_SubgroupsPerWorkgroupId             : I32EnumAttrCase<"SubgroupsPerWorkgroupId", 37> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_2>,
     Capability<[SPIRV_C_SubgroupDispatch]>
   ];
 }
-def SPIRV_EM_LocalSizeId                      : I32EnumAttrCase<"LocalSizeId", 38> {
+def SPIRV_EM_LocalSizeId                         : I32EnumAttrCase<"LocalSizeId", 38> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_2>
   ];
 }
-def SPIRV_EM_LocalSizeHintId                  : I32EnumAttrCase<"LocalSizeHintId", 39> {
+def SPIRV_EM_LocalSizeHintId                     : I32EnumAttrCase<"LocalSizeHintId", 39> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_2>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
-def SPIRV_EM_SubgroupUniformControlFlowKHR    : I32EnumAttrCase<"SubgroupUniformControlFlowKHR", 4421> {
+def SPIRV_EM_NonCoherentColorAttachmentReadEXT   : I32EnumAttrCase<"NonCoherentColorAttachmentReadEXT", 4169> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileImageColorReadAccessEXT]>
+  ];
+}
+def SPIRV_EM_NonCoherentDepthAttachmentReadEXT   : I32EnumAttrCase<"NonCoherentDepthAttachmentReadEXT", 4170> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileImageDepthReadAccessEXT]>
+  ];
+}
+def SPIRV_EM_NonCoherentStencilAttachmentReadEXT : I32EnumAttrCase<"NonCoherentStencilAttachmentReadEXT", 4171> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileImageStencilReadAccessEXT]>
+  ];
+}
+def SPIRV_EM_SubgroupUniformControlFlowKHR       : I32EnumAttrCase<"SubgroupUniformControlFlowKHR", 4421> {
   list<Availability> availability = [
     Extension<[SPV_KHR_subgroup_uniform_control_flow]>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_PostDepthCoverage                : I32EnumAttrCase<"PostDepthCoverage", 4446> {
+def SPIRV_EM_PostDepthCoverage                   : I32EnumAttrCase<"PostDepthCoverage", 4446> {
   list<Availability> availability = [
     Extension<[SPV_KHR_post_depth_coverage]>,
     Capability<[SPIRV_C_SampleMaskPostDepthCoverage]>
   ];
 }
-def SPIRV_EM_DenormPreserve                   : I32EnumAttrCase<"DenormPreserve", 4459> {
+def SPIRV_EM_DenormPreserve                      : I32EnumAttrCase<"DenormPreserve", 4459> {
   list<Availability> availability = [
     Extension<[SPV_KHR_float_controls]>,
     Capability<[SPIRV_C_DenormPreserve]>
   ];
 }
-def SPIRV_EM_DenormFlushToZero                : I32EnumAttrCase<"DenormFlushToZero", 4460> {
+def SPIRV_EM_DenormFlushToZero                   : I32EnumAttrCase<"DenormFlushToZero", 4460> {
   list<Availability> availability = [
     Extension<[SPV_KHR_float_controls]>,
     Capability<[SPIRV_C_DenormFlushToZero]>
   ];
 }
-def SPIRV_EM_SignedZeroInfNanPreserve         : I32EnumAttrCase<"SignedZeroInfNanPreserve", 4461> {
+def SPIRV_EM_SignedZeroInfNanPreserve            : I32EnumAttrCase<"SignedZeroInfNanPreserve", 4461> {
   list<Availability> availability = [
     Extension<[SPV_KHR_float_controls]>,
     Capability<[SPIRV_C_SignedZeroInfNanPreserve]>
   ];
 }
-def SPIRV_EM_RoundingModeRTE                  : I32EnumAttrCase<"RoundingModeRTE", 4462> {
+def SPIRV_EM_RoundingModeRTE                     : I32EnumAttrCase<"RoundingModeRTE", 4462> {
   list<Availability> availability = [
     Extension<[SPV_KHR_float_controls]>,
     Capability<[SPIRV_C_RoundingModeRTE]>
   ];
 }
-def SPIRV_EM_RoundingModeRTZ                  : I32EnumAttrCase<"RoundingModeRTZ", 4463> {
+def SPIRV_EM_RoundingModeRTZ                     : I32EnumAttrCase<"RoundingModeRTZ", 4463> {
   list<Availability> availability = [
     Extension<[SPV_KHR_float_controls]>,
     Capability<[SPIRV_C_RoundingModeRTZ]>
   ];
 }
-def SPIRV_EM_EarlyAndLateFragmentTestsAMD     : I32EnumAttrCase<"EarlyAndLateFragmentTestsAMD", 5017> {
+def SPIRV_EM_NonCoherentTileAttachmentReadQCOM   : I32EnumAttrCase<"NonCoherentTileAttachmentReadQCOM", 4489> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileShadingQCOM]>
+  ];
+}
+def SPIRV_EM_TileShadingRateQCOM                 : I32EnumAttrCase<"TileShadingRateQCOM", 4490> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileShadingQCOM]>
+  ];
+}
+def SPIRV_EM_EarlyAndLateFragmentTestsAMD        : I32EnumAttrCase<"EarlyAndLateFragmentTestsAMD", 5017> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_early_and_late_fragment_tests]>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_EM_StencilRefReplacingEXT           : I32EnumAttrCase<"StencilRefReplacingEXT", 5027> {
+def SPIRV_EM_StencilRefReplacingEXT              : I32EnumAttrCase<"StencilRefReplacingEXT", 5027> {
   list<Availability> availability = [
     Extension<[SPV_EXT_shader_stencil_export]>,
     Capability<[SPIRV_C_StencilExportEXT]>
   ];
 }
-def SPIRV_EM_StencilRefUnchangedFrontAMD      : I32EnumAttrCase<"StencilRefUnchangedFrontAMD", 5079> {
+def SPIRV_EM_CoalescingAMDX                      : I32EnumAttrCase<"CoalescingAMDX", 5069> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_EM_IsApiEntryAMDX                      : I32EnumAttrCase<"IsApiEntryAMDX", 5070> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_EM_MaxNodeRecursionAMDX                : I32EnumAttrCase<"MaxNodeRecursionAMDX", 5071> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_EM_StaticNumWorkgroupsAMDX             : I32EnumAttrCase<"StaticNumWorkgroupsAMDX", 5072> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_EM_ShaderIndexAMDX                     : I32EnumAttrCase<"ShaderIndexAMDX", 5073> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_EM_MaxNumWorkgroupsAMDX                : I32EnumAttrCase<"MaxNumWorkgroupsAMDX", 5077> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
+  ];
+}
+def SPIRV_EM_StencilRefUnchangedFrontAMD         : I32EnumAttrCase<"StencilRefUnchangedFrontAMD", 5079> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_early_and_late_fragment_tests, SPV_EXT_shader_stencil_export]>,
     Capability<[SPIRV_C_StencilExportEXT]>
   ];
 }
-def SPIRV_EM_StencilRefGreaterFrontAMD        : I32EnumAttrCase<"StencilRefGreaterFrontAMD", 5080> {
+def SPIRV_EM_StencilRefGreaterFrontAMD           : I32EnumAttrCase<"StencilRefGreaterFrontAMD", 5080> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_early_and_late_fragment_tests, SPV_EXT_shader_stencil_export]>,
     Capability<[SPIRV_C_StencilExportEXT]>
   ];
 }
-def SPIRV_EM_StencilRefLessFrontAMD           : I32EnumAttrCase<"StencilRefLessFrontAMD", 5081> {
+def SPIRV_EM_StencilRefLessFrontAMD              : I32EnumAttrCase<"StencilRefLessFrontAMD", 5081> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_early_and_late_fragment_tests, SPV_EXT_shader_stencil_export]>,
     Capability<[SPIRV_C_StencilExportEXT]>
   ];
 }
-def SPIRV_EM_StencilRefUnchangedBackAMD       : I32EnumAttrCase<"StencilRefUnchangedBackAMD", 5082> {
+def SPIRV_EM_StencilRefUnchangedBackAMD          : I32EnumAttrCase<"StencilRefUnchangedBackAMD", 5082> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_early_and_late_fragment_tests, SPV_EXT_shader_stencil_export]>,
     Capability<[SPIRV_C_StencilExportEXT]>
   ];
 }
-def SPIRV_EM_StencilRefGreaterBackAMD         : I32EnumAttrCase<"StencilRefGreaterBackAMD", 5083> {
+def SPIRV_EM_StencilRefGreaterBackAMD            : I32EnumAttrCase<"StencilRefGreaterBackAMD", 5083> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_early_and_late_fragment_tests, SPV_EXT_shader_stencil_export]>,
     Capability<[SPIRV_C_StencilExportEXT]>
   ];
 }
-def SPIRV_EM_StencilRefLessBackAMD            : I32EnumAttrCase<"StencilRefLessBackAMD", 5084> {
+def SPIRV_EM_StencilRefLessBackAMD               : I32EnumAttrCase<"StencilRefLessBackAMD", 5084> {
   list<Availability> availability = [
     Extension<[SPV_AMD_shader_early_and_late_fragment_tests, SPV_EXT_shader_stencil_export]>,
     Capability<[SPIRV_C_StencilExportEXT]>
   ];
 }
-def SPIRV_EM_OutputLinesEXT                    : I32EnumAttrCase<"OutputLinesEXT", 5269> {
+def SPIRV_EM_QuadDerivativesKHR                  : I32EnumAttrCase<"QuadDerivativesKHR", 5088> {
   list<Availability> availability = [
-    Extension<[SPV_EXT_mesh_shader]>,
-    Capability<[SPIRV_C_MeshShadingEXT]>
+    Capability<[SPIRV_C_QuadControlKHR]>
   ];
 }
-def SPIRV_EM_OutputPrimitivesEXT              : I32EnumAttrCase<"OutputPrimitivesEXT", 5270> {
+def SPIRV_EM_RequireFullQuadsKHR                 : I32EnumAttrCase<"RequireFullQuadsKHR", 5089> {
   list<Availability> availability = [
-    Extension<[SPV_EXT_mesh_shader]>,
-    Capability<[SPIRV_C_MeshShadingEXT]>
+    Capability<[SPIRV_C_QuadControlKHR]>
   ];
 }
-def SPIRV_EM_DerivativeGroupQuadsNV           : I32EnumAttrCase<"DerivativeGroupQuadsNV", 5289> {
+def SPIRV_EM_SharesInputWithAMDX                 : I32EnumAttrCase<"SharesInputWithAMDX", 5102> {
   list<Availability> availability = [
-    Extension<[SPV_NV_compute_shader_derivatives]>,
-    Capability<[SPIRV_C_ComputeDerivativeGroupQuadsNV]>
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
   ];
 }
-def SPIRV_EM_DerivativeGroupLinearNV          : I32EnumAttrCase<"DerivativeGroupLinearNV", 5290> {
+def SPIRV_EM_OutputLinesEXT                      : I32EnumAttrCase<"OutputLinesEXT", 5269> {
   list<Availability> availability = [
-    Extension<[SPV_NV_compute_shader_derivatives]>,
-    Capability<[SPIRV_C_ComputeDerivativeGroupLinearNV]>
+    Extension<[SPV_EXT_mesh_shader, SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV]>
   ];
 }
-def SPIRV_EM_OutputTrianglesEXT               : I32EnumAttrCase<"OutputTrianglesEXT", 5298> {
+def SPIRV_EM_OutputPrimitivesEXT                 : I32EnumAttrCase<"OutputPrimitivesEXT", 5270> {
   list<Availability> availability = [
-    Extension<[SPV_EXT_mesh_shader]>,
-    Capability<[SPIRV_C_MeshShadingEXT]>
+    Extension<[SPV_EXT_mesh_shader, SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV]>
   ];
 }
-def SPIRV_EM_PixelInterlockOrderedEXT         : I32EnumAttrCase<"PixelInterlockOrderedEXT", 5366> {
+def SPIRV_EM_DerivativeGroupQuadsKHR             : I32EnumAttrCase<"DerivativeGroupQuadsKHR", 5289> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_compute_shader_derivatives, SPV_NV_compute_shader_derivatives]>,
+    Capability<[SPIRV_C_ComputeDerivativeGroupQuadsKHR, SPIRV_C_ComputeDerivativeGroupQuadsNV]>
+  ];
+}
+def SPIRV_EM_DerivativeGroupLinearKHR            : I32EnumAttrCase<"DerivativeGroupLinearKHR", 5290> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_compute_shader_derivatives, SPV_NV_compute_shader_derivatives]>,
+    Capability<[SPIRV_C_ComputeDerivativeGroupLinearKHR, SPIRV_C_ComputeDerivativeGroupLinearNV]>
+  ];
+}
+def SPIRV_EM_OutputTrianglesEXT                  : I32EnumAttrCase<"OutputTrianglesEXT", 5298> {
+  list<Availability> availability = [
+    Extension<[SPV_EXT_mesh_shader, SPV_NV_mesh_shader]>,
+    Capability<[SPIRV_C_MeshShadingEXT, SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_EM_PixelInterlockOrderedEXT            : I32EnumAttrCase<"PixelInterlockOrderedEXT", 5366> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_shader_interlock]>,
     Capability<[SPIRV_C_FragmentShaderPixelInterlockEXT]>
   ];
 }
-def SPIRV_EM_PixelInterlockUnorderedEXT       : I32EnumAttrCase<"PixelInterlockUnorderedEXT", 5367> {
+def SPIRV_EM_PixelInterlockUnorderedEXT          : I32EnumAttrCase<"PixelInterlockUnorderedEXT", 5367> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_shader_interlock]>,
     Capability<[SPIRV_C_FragmentShaderPixelInterlockEXT]>
   ];
 }
-def SPIRV_EM_SampleInterlockOrderedEXT        : I32EnumAttrCase<"SampleInterlockOrderedEXT", 5368> {
+def SPIRV_EM_SampleInterlockOrderedEXT           : I32EnumAttrCase<"SampleInterlockOrderedEXT", 5368> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_shader_interlock]>,
     Capability<[SPIRV_C_FragmentShaderSampleInterlockEXT]>
   ];
 }
-def SPIRV_EM_SampleInterlockUnorderedEXT      : I32EnumAttrCase<"SampleInterlockUnorderedEXT", 5369> {
+def SPIRV_EM_SampleInterlockUnorderedEXT         : I32EnumAttrCase<"SampleInterlockUnorderedEXT", 5369> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_shader_interlock]>,
     Capability<[SPIRV_C_FragmentShaderSampleInterlockEXT]>
   ];
 }
-def SPIRV_EM_ShadingRateInterlockOrderedEXT   : I32EnumAttrCase<"ShadingRateInterlockOrderedEXT", 5370> {
+def SPIRV_EM_ShadingRateInterlockOrderedEXT      : I32EnumAttrCase<"ShadingRateInterlockOrderedEXT", 5370> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_shader_interlock]>,
     Capability<[SPIRV_C_FragmentShaderShadingRateInterlockEXT]>
   ];
 }
-def SPIRV_EM_ShadingRateInterlockUnorderedEXT : I32EnumAttrCase<"ShadingRateInterlockUnorderedEXT", 5371> {
+def SPIRV_EM_ShadingRateInterlockUnorderedEXT    : I32EnumAttrCase<"ShadingRateInterlockUnorderedEXT", 5371> {
   list<Availability> availability = [
     Extension<[SPV_EXT_fragment_shader_interlock]>,
     Capability<[SPIRV_C_FragmentShaderShadingRateInterlockEXT]>
   ];
 }
-def SPIRV_EM_SharedLocalMemorySizeINTEL       : I32EnumAttrCase<"SharedLocalMemorySizeINTEL", 5618> {
+def SPIRV_EM_SharedLocalMemorySizeINTEL          : I32EnumAttrCase<"SharedLocalMemorySizeINTEL", 5618> {
   list<Availability> availability = [
     Capability<[SPIRV_C_VectorComputeINTEL]>
   ];
 }
-def SPIRV_EM_RoundingModeRTPINTEL             : I32EnumAttrCase<"RoundingModeRTPINTEL", 5620> {
+def SPIRV_EM_RoundingModeRTPINTEL                : I32EnumAttrCase<"RoundingModeRTPINTEL", 5620> {
   list<Availability> availability = [
     Capability<[SPIRV_C_RoundToInfinityINTEL]>
   ];
 }
-def SPIRV_EM_RoundingModeRTNINTEL             : I32EnumAttrCase<"RoundingModeRTNINTEL", 5621> {
+def SPIRV_EM_RoundingModeRTNINTEL                : I32EnumAttrCase<"RoundingModeRTNINTEL", 5621> {
   list<Availability> availability = [
     Capability<[SPIRV_C_RoundToInfinityINTEL]>
   ];
 }
-def SPIRV_EM_FloatingPointModeALTINTEL        : I32EnumAttrCase<"FloatingPointModeALTINTEL", 5622> {
+def SPIRV_EM_FloatingPointModeALTINTEL           : I32EnumAttrCase<"FloatingPointModeALTINTEL", 5622> {
   list<Availability> availability = [
     Capability<[SPIRV_C_RoundToInfinityINTEL]>
   ];
 }
-def SPIRV_EM_FloatingPointModeIEEEINTEL       : I32EnumAttrCase<"FloatingPointModeIEEEINTEL", 5623> {
+def SPIRV_EM_FloatingPointModeIEEEINTEL          : I32EnumAttrCase<"FloatingPointModeIEEEINTEL", 5623> {
   list<Availability> availability = [
     Capability<[SPIRV_C_RoundToInfinityINTEL]>
   ];
 }
-def SPIRV_EM_MaxWorkgroupSizeINTEL            : I32EnumAttrCase<"MaxWorkgroupSizeINTEL", 5893> {
+def SPIRV_EM_MaxWorkgroupSizeINTEL               : I32EnumAttrCase<"MaxWorkgroupSizeINTEL", 5893> {
   list<Availability> availability = [
     Extension<[SPV_INTEL_kernel_attributes]>,
     Capability<[SPIRV_C_KernelAttributesINTEL]>
   ];
 }
-def SPIRV_EM_MaxWorkDimINTEL                  : I32EnumAttrCase<"MaxWorkDimINTEL", 5894> {
+def SPIRV_EM_MaxWorkDimINTEL                     : I32EnumAttrCase<"MaxWorkDimINTEL", 5894> {
   list<Availability> availability = [
     Extension<[SPV_INTEL_kernel_attributes]>,
     Capability<[SPIRV_C_KernelAttributesINTEL]>
   ];
 }
-def SPIRV_EM_NoGlobalOffsetINTEL              : I32EnumAttrCase<"NoGlobalOffsetINTEL", 5895> {
+def SPIRV_EM_NoGlobalOffsetINTEL                 : I32EnumAttrCase<"NoGlobalOffsetINTEL", 5895> {
   list<Availability> availability = [
     Extension<[SPV_INTEL_kernel_attributes]>,
     Capability<[SPIRV_C_KernelAttributesINTEL]>
   ];
 }
-def SPIRV_EM_NumSIMDWorkitemsINTEL            : I32EnumAttrCase<"NumSIMDWorkitemsINTEL", 5896> {
+def SPIRV_EM_NumSIMDWorkitemsINTEL               : I32EnumAttrCase<"NumSIMDWorkitemsINTEL", 5896> {
   list<Availability> availability = [
     Extension<[SPV_INTEL_kernel_attributes]>,
     Capability<[SPIRV_C_FPGAKernelAttributesINTEL]>
   ];
 }
-def SPIRV_EM_SchedulerTargetFmaxMhzINTEL      : I32EnumAttrCase<"SchedulerTargetFmaxMhzINTEL", 5903> {
+def SPIRV_EM_SchedulerTargetFmaxMhzINTEL         : I32EnumAttrCase<"SchedulerTargetFmaxMhzINTEL", 5903> {
   list<Availability> availability = [
     Capability<[SPIRV_C_FPGAKernelAttributesINTEL]>
   ];
 }
-def SPIRV_EM_StreamingInterfaceINTEL          : I32EnumAttrCase<"StreamingInterfaceINTEL", 6154> {
+def SPIRV_EM_MaximallyReconvergesKHR             : I32EnumAttrCase<"MaximallyReconvergesKHR", 6023> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_maximal_reconvergence]>,
+    Capability<[SPIRV_C_Shader]>
+  ];
+}
+def SPIRV_EM_FPFastMathDefault                   : I32EnumAttrCase<"FPFastMathDefault", 6028> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FloatControls2]>
+  ];
+}
+def SPIRV_EM_StreamingInterfaceINTEL             : I32EnumAttrCase<"StreamingInterfaceINTEL", 6154> {
   list<Availability> availability = [
     Capability<[SPIRV_C_FPGAKernelAttributesINTEL]>
   ];
 }
-def SPIRV_EM_NamedBarrierCountINTEL           : I32EnumAttrCase<"NamedBarrierCountINTEL", 6417> {
+def SPIRV_EM_RegisterMapInterfaceINTEL           : I32EnumAttrCase<"RegisterMapInterfaceINTEL", 6160> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGAKernelAttributesv2INTEL]>
+  ];
+}
+def SPIRV_EM_NamedBarrierCountINTEL              : I32EnumAttrCase<"NamedBarrierCountINTEL", 6417> {
   list<Availability> availability = [
     Capability<[SPIRV_C_VectorComputeINTEL]>
+  ];
+}
+def SPIRV_EM_MaximumRegistersINTEL               : I32EnumAttrCase<"MaximumRegistersINTEL", 6461> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_RegisterLimitsINTEL]>
+  ];
+}
+def SPIRV_EM_MaximumRegistersIdINTEL             : I32EnumAttrCase<"MaximumRegistersIdINTEL", 6462> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_RegisterLimitsINTEL]>
+  ];
+}
+def SPIRV_EM_NamedMaximumRegistersINTEL          : I32EnumAttrCase<"NamedMaximumRegistersINTEL", 6463> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_RegisterLimitsINTEL]>
   ];
 }
 
@@ -3103,25 +4336,36 @@ def SPIRV_ExecutionModeAttr :
     SPIRV_I32EnumAttr<"ExecutionMode", "valid SPIR-V ExecutionMode", "execution_mode", [
       SPIRV_EM_Invocations, SPIRV_EM_SpacingEqual, SPIRV_EM_SpacingFractionalEven,
       SPIRV_EM_SpacingFractionalOdd, SPIRV_EM_VertexOrderCw, SPIRV_EM_VertexOrderCcw,
-      SPIRV_EM_PixelCenterInteger, SPIRV_EM_OriginUpperLeft, SPIRV_EM_OriginLowerLeft,
-      SPIRV_EM_EarlyFragmentTests, SPIRV_EM_PointMode, SPIRV_EM_Xfb, SPIRV_EM_DepthReplacing,
-      SPIRV_EM_DepthGreater, SPIRV_EM_DepthLess, SPIRV_EM_DepthUnchanged, SPIRV_EM_LocalSize,
+      SPIRV_EM_PixelCenterInteger, SPIRV_EM_OriginUpperLeft,
+      SPIRV_EM_OriginLowerLeft, SPIRV_EM_EarlyFragmentTests, SPIRV_EM_PointMode,
+      SPIRV_EM_Xfb, SPIRV_EM_DepthReplacing, SPIRV_EM_DepthGreater,
+      SPIRV_EM_DepthLess, SPIRV_EM_DepthUnchanged, SPIRV_EM_LocalSize,
       SPIRV_EM_LocalSizeHint, SPIRV_EM_InputPoints, SPIRV_EM_InputLines,
-      SPIRV_EM_InputLinesAdjacency, SPIRV_EM_Triangles, SPIRV_EM_InputTrianglesAdjacency,
-      SPIRV_EM_Quads, SPIRV_EM_Isolines, SPIRV_EM_OutputVertices, SPIRV_EM_OutputPoints,
-      SPIRV_EM_OutputLineStrip, SPIRV_EM_OutputTriangleStrip, SPIRV_EM_VecTypeHint,
-      SPIRV_EM_ContractionOff, SPIRV_EM_Initializer, SPIRV_EM_Finalizer,
-      SPIRV_EM_SubgroupSize, SPIRV_EM_SubgroupsPerWorkgroup,
-      SPIRV_EM_SubgroupsPerWorkgroupId, SPIRV_EM_LocalSizeId, SPIRV_EM_LocalSizeHintId,
+      SPIRV_EM_InputLinesAdjacency, SPIRV_EM_Triangles,
+      SPIRV_EM_InputTrianglesAdjacency, SPIRV_EM_Quads, SPIRV_EM_Isolines,
+      SPIRV_EM_OutputVertices, SPIRV_EM_OutputPoints, SPIRV_EM_OutputLineStrip,
+      SPIRV_EM_OutputTriangleStrip, SPIRV_EM_VecTypeHint, SPIRV_EM_ContractionOff,
+      SPIRV_EM_Initializer, SPIRV_EM_Finalizer, SPIRV_EM_SubgroupSize,
+      SPIRV_EM_SubgroupsPerWorkgroup, SPIRV_EM_SubgroupsPerWorkgroupId,
+      SPIRV_EM_LocalSizeId, SPIRV_EM_LocalSizeHintId,
+      SPIRV_EM_NonCoherentColorAttachmentReadEXT,
+      SPIRV_EM_NonCoherentDepthAttachmentReadEXT,
+      SPIRV_EM_NonCoherentStencilAttachmentReadEXT,
       SPIRV_EM_SubgroupUniformControlFlowKHR, SPIRV_EM_PostDepthCoverage,
       SPIRV_EM_DenormPreserve, SPIRV_EM_DenormFlushToZero,
       SPIRV_EM_SignedZeroInfNanPreserve, SPIRV_EM_RoundingModeRTE,
-      SPIRV_EM_RoundingModeRTZ, SPIRV_EM_EarlyAndLateFragmentTestsAMD,
-      SPIRV_EM_StencilRefReplacingEXT, SPIRV_EM_StencilRefUnchangedFrontAMD,
+      SPIRV_EM_RoundingModeRTZ, SPIRV_EM_NonCoherentTileAttachmentReadQCOM,
+      SPIRV_EM_TileShadingRateQCOM, SPIRV_EM_EarlyAndLateFragmentTestsAMD,
+      SPIRV_EM_StencilRefReplacingEXT, SPIRV_EM_CoalescingAMDX,
+      SPIRV_EM_IsApiEntryAMDX, SPIRV_EM_MaxNodeRecursionAMDX,
+      SPIRV_EM_StaticNumWorkgroupsAMDX, SPIRV_EM_ShaderIndexAMDX,
+      SPIRV_EM_MaxNumWorkgroupsAMDX, SPIRV_EM_StencilRefUnchangedFrontAMD,
       SPIRV_EM_StencilRefGreaterFrontAMD, SPIRV_EM_StencilRefLessFrontAMD,
       SPIRV_EM_StencilRefUnchangedBackAMD, SPIRV_EM_StencilRefGreaterBackAMD,
-      SPIRV_EM_StencilRefLessBackAMD, SPIRV_EM_OutputLinesEXT,
-      SPIRV_EM_OutputPrimitivesEXT, SPIRV_EM_DerivativeGroupQuadsNV, SPIRV_EM_DerivativeGroupLinearNV,
+      SPIRV_EM_StencilRefLessBackAMD, SPIRV_EM_QuadDerivativesKHR,
+      SPIRV_EM_RequireFullQuadsKHR, SPIRV_EM_SharesInputWithAMDX,
+      SPIRV_EM_OutputLinesEXT, SPIRV_EM_OutputPrimitivesEXT,
+      SPIRV_EM_DerivativeGroupQuadsKHR, SPIRV_EM_DerivativeGroupLinearKHR,
       SPIRV_EM_OutputTrianglesEXT, SPIRV_EM_PixelInterlockOrderedEXT,
       SPIRV_EM_PixelInterlockUnorderedEXT, SPIRV_EM_SampleInterlockOrderedEXT,
       SPIRV_EM_SampleInterlockUnorderedEXT, SPIRV_EM_ShadingRateInterlockOrderedEXT,
@@ -3130,43 +4374,63 @@ def SPIRV_ExecutionModeAttr :
       SPIRV_EM_FloatingPointModeALTINTEL, SPIRV_EM_FloatingPointModeIEEEINTEL,
       SPIRV_EM_MaxWorkgroupSizeINTEL, SPIRV_EM_MaxWorkDimINTEL,
       SPIRV_EM_NoGlobalOffsetINTEL, SPIRV_EM_NumSIMDWorkitemsINTEL,
-      SPIRV_EM_SchedulerTargetFmaxMhzINTEL, SPIRV_EM_StreamingInterfaceINTEL,
-      SPIRV_EM_NamedBarrierCountINTEL
+      SPIRV_EM_SchedulerTargetFmaxMhzINTEL, SPIRV_EM_MaximallyReconvergesKHR,
+      SPIRV_EM_FPFastMathDefault, SPIRV_EM_StreamingInterfaceINTEL,
+      SPIRV_EM_RegisterMapInterfaceINTEL, SPIRV_EM_NamedBarrierCountINTEL,
+      SPIRV_EM_MaximumRegistersINTEL, SPIRV_EM_MaximumRegistersIdINTEL,
+      SPIRV_EM_NamedMaximumRegistersINTEL
     ]>;
 
 def SPIRV_EM_Vertex                 : I32EnumAttrCase<"Vertex", 0> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_EM_TessellationControl    : I32EnumAttrCase<"TessellationControl", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
 def SPIRV_EM_TessellationEvaluation : I32EnumAttrCase<"TessellationEvaluation", 2> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Tessellation]>
   ];
 }
 def SPIRV_EM_Geometry               : I32EnumAttrCase<"Geometry", 3> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Geometry]>
   ];
 }
 def SPIRV_EM_Fragment               : I32EnumAttrCase<"Fragment", 4> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_EM_GLCompute              : I32EnumAttrCase<"GLCompute", 5> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_EM_Kernel                 : I32EnumAttrCase<"Kernel", 6> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
+  ];
+}
+def SPIRV_EM_TaskNV                 : I32EnumAttrCase<"TaskNV", 5267> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_MeshShadingNV]>
+  ];
+}
+def SPIRV_EM_MeshNV                 : I32EnumAttrCase<"MeshNV", 5268> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_MeshShadingNV]>
   ];
 }
 def SPIRV_EM_RayGenerationKHR       : I32EnumAttrCase<"RayGenerationKHR", 5313> {
@@ -3214,53 +4478,89 @@ def SPIRV_ExecutionModelAttr :
     SPIRV_I32EnumAttr<"ExecutionModel", "valid SPIR-V ExecutionModel", "execution_model", [
       SPIRV_EM_Vertex, SPIRV_EM_TessellationControl, SPIRV_EM_TessellationEvaluation,
       SPIRV_EM_Geometry, SPIRV_EM_Fragment, SPIRV_EM_GLCompute, SPIRV_EM_Kernel,
-      SPIRV_EM_RayGenerationKHR, SPIRV_EM_IntersectionKHR,
-      SPIRV_EM_AnyHitKHR, SPIRV_EM_ClosestHitKHR, SPIRV_EM_MissKHR, SPIRV_EM_CallableKHR,
-      SPIRV_EM_TaskEXT, SPIRV_EM_MeshEXT
+      SPIRV_EM_TaskNV, SPIRV_EM_MeshNV, SPIRV_EM_RayGenerationKHR,
+      SPIRV_EM_IntersectionKHR, SPIRV_EM_AnyHitKHR, SPIRV_EM_ClosestHitKHR,
+      SPIRV_EM_MissKHR, SPIRV_EM_CallableKHR, SPIRV_EM_TaskEXT, SPIRV_EM_MeshEXT
     ]>;
 
-def SPIRV_FC_None         : I32BitEnumAttrCaseNone<"None">;
-def SPIRV_FC_Inline       : I32BitEnumAttrCaseBit<"Inline", 0>;
-def SPIRV_FC_DontInline   : I32BitEnumAttrCaseBit<"DontInline", 1>;
-def SPIRV_FC_Pure         : I32BitEnumAttrCaseBit<"Pure", 2>;
-def SPIRV_FC_Const        : I32BitEnumAttrCaseBit<"Const", 3>;
-def SPIRV_FC_OptNoneINTEL : I32BitEnumAttrCaseBit<"OptNoneINTEL", 16> {
+def SPIRV_FPRM_RTE : I32EnumAttrCase<"RTE", 0> {
   list<Availability> availability = [
-    Capability<[SPIRV_C_OptNoneINTEL]>
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_FPRM_RTZ : I32EnumAttrCase<"RTZ", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_FPRM_RTP : I32EnumAttrCase<"RTP", 2> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_FPRM_RTN : I32EnumAttrCase<"RTN", 3> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
   ];
 }
 
-def SPIRV_FPRM_RTE : I32EnumAttrCase<"RTE", 0>;
-def SPIRV_FPRM_RTZ : I32EnumAttrCase<"RTZ", 1>;
-def SPIRV_FPRM_RTP : I32EnumAttrCase<"RTP", 2>;
-def SPIRV_FPRM_RTN : I32EnumAttrCase<"RTN", 3>;
-
-// TODO: Enforce SPIR-V spec validation rule for Shader capability: only permit
-//       FPRoundingMode on a value stored to certain storage classes?
-//       (The OpenCL environment also has FPRoundingMode rules, but different.)
 def SPIRV_FPRoundingModeAttr :
-    SPIRV_I32EnumAttr<"FPRoundingMode", "valid SPIR-V FPRoundingMode", "fp_rounding_mode", [
+    SPIRV_I32EnumAttr<"FPRoundingMode", "valid SPIR-V FPRoundingMode", "f_p_rounding_mode", [
       SPIRV_FPRM_RTE, SPIRV_FPRM_RTZ, SPIRV_FPRM_RTP, SPIRV_FPRM_RTN
     ]>;
 
+def SPIRV_FC_None       : I32BitEnumAttrCaseNone<"None"> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_FC_Inline     : I32BitEnumAttrCaseBit<"Inline", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_FC_DontInline : I32BitEnumAttrCaseBit<"DontInline", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_FC_Pure       : I32BitEnumAttrCaseBit<"Pure", 2> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_FC_Const      : I32BitEnumAttrCaseBit<"Const", 3> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_FC_OptNoneEXT : I32BitEnumAttrCaseBit<"OptNoneEXT", 16> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_OptNoneEXT]>
+  ];
+}
+
 def SPIRV_FunctionControlAttr :
     SPIRV_BitEnumAttr<"FunctionControl", "valid SPIR-V FunctionControl", "function_control", [
-      SPIRV_FC_None, SPIRV_FC_Inline, SPIRV_FC_DontInline, SPIRV_FC_Pure, SPIRV_FC_Const,
-      SPIRV_FC_OptNoneINTEL
+      SPIRV_FC_None, SPIRV_FC_Inline, SPIRV_FC_DontInline, SPIRV_FC_Pure,
+      SPIRV_FC_Const, SPIRV_FC_OptNoneEXT
     ]>;
 
 def SPIRV_GO_Reduce                     : I32EnumAttrCase<"Reduce", 0> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GroupNonUniformArithmetic, SPIRV_C_GroupNonUniformBallot, SPIRV_C_Kernel]>
   ];
 }
 def SPIRV_GO_InclusiveScan              : I32EnumAttrCase<"InclusiveScan", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GroupNonUniformArithmetic, SPIRV_C_GroupNonUniformBallot, SPIRV_C_Kernel]>
   ];
 }
 def SPIRV_GO_ExclusiveScan              : I32EnumAttrCase<"ExclusiveScan", 2> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GroupNonUniformArithmetic, SPIRV_C_GroupNonUniformBallot, SPIRV_C_Kernel]>
   ];
 }
@@ -3296,272 +4596,338 @@ def SPIRV_GroupOperationAttr :
       SPIRV_GO_PartitionedInclusiveScanNV, SPIRV_GO_PartitionedExclusiveScanNV
     ]>;
 
-def SPIRV_IF_Unknown      : I32EnumAttrCase<"Unknown", 0>;
+def SPIRV_IF_Unknown      : I32EnumAttrCase<"Unknown", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_IF_Rgba32f      : I32EnumAttrCase<"Rgba32f", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rgba16f      : I32EnumAttrCase<"Rgba16f", 2> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_R32f         : I32EnumAttrCase<"R32f", 3> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rgba8        : I32EnumAttrCase<"Rgba8", 4> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rgba8Snorm   : I32EnumAttrCase<"Rgba8Snorm", 5> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rg32f        : I32EnumAttrCase<"Rg32f", 6> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg16f        : I32EnumAttrCase<"Rg16f", 7> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R11fG11fB10f : I32EnumAttrCase<"R11fG11fB10f", 8> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R16f         : I32EnumAttrCase<"R16f", 9> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rgba16       : I32EnumAttrCase<"Rgba16", 10> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rgb10A2      : I32EnumAttrCase<"Rgb10A2", 11> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg16         : I32EnumAttrCase<"Rg16", 12> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg8          : I32EnumAttrCase<"Rg8", 13> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R16          : I32EnumAttrCase<"R16", 14> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R8           : I32EnumAttrCase<"R8", 15> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rgba16Snorm  : I32EnumAttrCase<"Rgba16Snorm", 16> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg16Snorm    : I32EnumAttrCase<"Rg16Snorm", 17> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg8Snorm     : I32EnumAttrCase<"Rg8Snorm", 18> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R16Snorm     : I32EnumAttrCase<"R16Snorm", 19> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R8Snorm      : I32EnumAttrCase<"R8Snorm", 20> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rgba32i      : I32EnumAttrCase<"Rgba32i", 21> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rgba16i      : I32EnumAttrCase<"Rgba16i", 22> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rgba8i       : I32EnumAttrCase<"Rgba8i", 23> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_R32i         : I32EnumAttrCase<"R32i", 24> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rg32i        : I32EnumAttrCase<"Rg32i", 25> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg16i        : I32EnumAttrCase<"Rg16i", 26> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg8i         : I32EnumAttrCase<"Rg8i", 27> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R16i         : I32EnumAttrCase<"R16i", 28> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R8i          : I32EnumAttrCase<"R8i", 29> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rgba32ui     : I32EnumAttrCase<"Rgba32ui", 30> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rgba16ui     : I32EnumAttrCase<"Rgba16ui", 31> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rgba8ui      : I32EnumAttrCase<"Rgba8ui", 32> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_R32ui        : I32EnumAttrCase<"R32ui", 33> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_IF_Rgb10a2ui    : I32EnumAttrCase<"Rgb10a2ui", 34> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg32ui       : I32EnumAttrCase<"Rg32ui", 35> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg16ui       : I32EnumAttrCase<"Rg16ui", 36> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_Rg8ui        : I32EnumAttrCase<"Rg8ui", 37> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R16ui        : I32EnumAttrCase<"R16ui", 38> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R8ui         : I32EnumAttrCase<"R8ui", 39> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_StorageImageExtendedFormats]>
   ];
 }
 def SPIRV_IF_R64ui        : I32EnumAttrCase<"R64ui", 40> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Int64ImageEXT]>
   ];
 }
 def SPIRV_IF_R64i         : I32EnumAttrCase<"R64i", 41> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Int64ImageEXT]>
   ];
 }
 
 def SPIRV_ImageFormatAttr :
     SPIRV_I32EnumAttr<"ImageFormat", "valid SPIR-V ImageFormat", "image_format", [
-      SPIRV_IF_Unknown, SPIRV_IF_Rgba32f, SPIRV_IF_Rgba16f, SPIRV_IF_R32f, SPIRV_IF_Rgba8,
-      SPIRV_IF_Rgba8Snorm, SPIRV_IF_Rg32f, SPIRV_IF_Rg16f, SPIRV_IF_R11fG11fB10f,
-      SPIRV_IF_R16f, SPIRV_IF_Rgba16, SPIRV_IF_Rgb10A2, SPIRV_IF_Rg16, SPIRV_IF_Rg8,
-      SPIRV_IF_R16, SPIRV_IF_R8, SPIRV_IF_Rgba16Snorm, SPIRV_IF_Rg16Snorm, SPIRV_IF_Rg8Snorm,
-      SPIRV_IF_R16Snorm, SPIRV_IF_R8Snorm, SPIRV_IF_Rgba32i, SPIRV_IF_Rgba16i, SPIRV_IF_Rgba8i,
-      SPIRV_IF_R32i, SPIRV_IF_Rg32i, SPIRV_IF_Rg16i, SPIRV_IF_Rg8i, SPIRV_IF_R16i, SPIRV_IF_R8i,
+      SPIRV_IF_Unknown, SPIRV_IF_Rgba32f, SPIRV_IF_Rgba16f, SPIRV_IF_R32f,
+      SPIRV_IF_Rgba8, SPIRV_IF_Rgba8Snorm, SPIRV_IF_Rg32f, SPIRV_IF_Rg16f,
+      SPIRV_IF_R11fG11fB10f, SPIRV_IF_R16f, SPIRV_IF_Rgba16, SPIRV_IF_Rgb10A2,
+      SPIRV_IF_Rg16, SPIRV_IF_Rg8, SPIRV_IF_R16, SPIRV_IF_R8, SPIRV_IF_Rgba16Snorm,
+      SPIRV_IF_Rg16Snorm, SPIRV_IF_Rg8Snorm, SPIRV_IF_R16Snorm, SPIRV_IF_R8Snorm,
+      SPIRV_IF_Rgba32i, SPIRV_IF_Rgba16i, SPIRV_IF_Rgba8i, SPIRV_IF_R32i,
+      SPIRV_IF_Rg32i, SPIRV_IF_Rg16i, SPIRV_IF_Rg8i, SPIRV_IF_R16i, SPIRV_IF_R8i,
       SPIRV_IF_Rgba32ui, SPIRV_IF_Rgba16ui, SPIRV_IF_Rgba8ui, SPIRV_IF_R32ui,
-      SPIRV_IF_Rgb10a2ui, SPIRV_IF_Rg32ui, SPIRV_IF_Rg16ui, SPIRV_IF_Rg8ui, SPIRV_IF_R16ui,
-      SPIRV_IF_R8ui, SPIRV_IF_R64ui, SPIRV_IF_R64i
+      SPIRV_IF_Rgb10a2ui, SPIRV_IF_Rg32ui, SPIRV_IF_Rg16ui, SPIRV_IF_Rg8ui,
+      SPIRV_IF_R16ui, SPIRV_IF_R8ui, SPIRV_IF_R64ui, SPIRV_IF_R64i
     ]>;
 
 def SPIRV_IO_None               : I32BitEnumAttrCaseNone<"None">;
 def SPIRV_IO_Bias               : I32BitEnumAttrCaseBit<"Bias", 0> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_IO_Lod                : I32BitEnumAttrCaseBit<"Lod", 1>;
-def SPIRV_IO_Grad               : I32BitEnumAttrCaseBit<"Grad", 2>;
-def SPIRV_IO_ConstOffset        : I32BitEnumAttrCaseBit<"ConstOffset", 3>;
+def SPIRV_IO_Lod                : I32BitEnumAttrCaseBit<"Lod", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_IO_Grad               : I32BitEnumAttrCaseBit<"Grad", 2> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_IO_ConstOffset        : I32BitEnumAttrCaseBit<"ConstOffset", 3> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_IO_Offset             : I32BitEnumAttrCaseBit<"Offset", 4> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_ImageGatherExtended]>
   ];
 }
 def SPIRV_IO_ConstOffsets       : I32BitEnumAttrCaseBit<"ConstOffsets", 5> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_ImageGatherExtended]>
   ];
 }
-def SPIRV_IO_Sample             : I32BitEnumAttrCaseBit<"Sample", 6>;
+def SPIRV_IO_Sample             : I32BitEnumAttrCaseBit<"Sample", 6> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_IO_MinLod             : I32BitEnumAttrCaseBit<"MinLod", 7> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_MinLod]>
   ];
 }
 def SPIRV_IO_MakeTexelAvailable : I32BitEnumAttrCaseBit<"MakeTexelAvailable", 8> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
 def SPIRV_IO_MakeTexelVisible   : I32BitEnumAttrCaseBit<"MakeTexelVisible", 9> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
 def SPIRV_IO_NonPrivateTexel    : I32BitEnumAttrCaseBit<"NonPrivateTexel", 10> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
 def SPIRV_IO_VolatileTexel      : I32BitEnumAttrCaseBit<"VolatileTexel", 11> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
@@ -3570,7 +4936,6 @@ def SPIRV_IO_SignExtend         : I32BitEnumAttrCaseBit<"SignExtend", 12> {
     MinVersion<SPIRV_V_1_4>
   ];
 }
-def SPIRV_IO_Offsets            : I32BitEnumAttrCaseBit<"Offsets", 16>;
 def SPIRV_IO_ZeroExtend         : I32BitEnumAttrCaseBit<"ZeroExtend", 13> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_4>
@@ -3581,23 +4946,30 @@ def SPIRV_IO_Nontemporal        : I32BitEnumAttrCaseBit<"Nontemporal", 14> {
     MinVersion<SPIRV_V_1_6>
   ];
 }
+def SPIRV_IO_Offsets            : I32BitEnumAttrCaseBit<"Offsets", 16> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 
 def SPIRV_ImageOperandsAttr :
     SPIRV_BitEnumAttr<"ImageOperands", "valid SPIR-V ImageOperands", "image_operands", [
-      SPIRV_IO_None, SPIRV_IO_Bias, SPIRV_IO_Lod, SPIRV_IO_Grad, SPIRV_IO_ConstOffset,
-      SPIRV_IO_Offset, SPIRV_IO_ConstOffsets, SPIRV_IO_Sample, SPIRV_IO_MinLod,
-      SPIRV_IO_MakeTexelAvailable, SPIRV_IO_MakeTexelVisible, SPIRV_IO_NonPrivateTexel,
-      SPIRV_IO_VolatileTexel, SPIRV_IO_SignExtend, SPIRV_IO_Offsets, SPIRV_IO_ZeroExtend,
-      SPIRV_IO_Nontemporal
+      SPIRV_IO_None, SPIRV_IO_Bias, SPIRV_IO_Lod, SPIRV_IO_Grad,
+      SPIRV_IO_ConstOffset, SPIRV_IO_Offset, SPIRV_IO_ConstOffsets, SPIRV_IO_Sample,
+      SPIRV_IO_MinLod, SPIRV_IO_MakeTexelAvailable, SPIRV_IO_MakeTexelVisible,
+      SPIRV_IO_NonPrivateTexel, SPIRV_IO_VolatileTexel, SPIRV_IO_SignExtend,
+      SPIRV_IO_ZeroExtend, SPIRV_IO_Nontemporal, SPIRV_IO_Offsets
     ]>;
 
 def SPIRV_LT_Export      : I32EnumAttrCase<"Export", 0> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Linkage]>
   ];
 }
 def SPIRV_LT_Import      : I32EnumAttrCase<"Import", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Linkage]>
   ];
 }
@@ -3613,9 +4985,21 @@ def SPIRV_LinkageTypeAttr :
       SPIRV_LT_Export, SPIRV_LT_Import, SPIRV_LT_LinkOnceODR
     ]>;
 
-def SPIRV_LC_None                      : I32BitEnumAttrCaseNone<"None">;
-def SPIRV_LC_Unroll                    : I32BitEnumAttrCaseBit<"Unroll", 0>;
-def SPIRV_LC_DontUnroll                : I32BitEnumAttrCaseBit<"DontUnroll", 1>;
+def SPIRV_LC_None                      : I32BitEnumAttrCaseNone<"None"> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_LC_Unroll                    : I32BitEnumAttrCaseBit<"Unroll", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_LC_DontUnroll                : I32BitEnumAttrCaseBit<"DontUnroll", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_LC_DependencyInfinite        : I32BitEnumAttrCaseBit<"DependencyInfinite", 2> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_1>
@@ -3653,83 +5037,103 @@ def SPIRV_LC_PartialCount              : I32BitEnumAttrCaseBit<"PartialCount", 8
 }
 def SPIRV_LC_InitiationIntervalINTEL   : I32BitEnumAttrCaseBit<"InitiationIntervalINTEL", 16> {
   list<Availability> availability = [
-    Extension<[SPV_INTEL_fpga_loop_controls]>,
-    Capability<[SPIRV_C_FPGALoopControlsINTEL]>
-  ];
-}
-def SPIRV_LC_LoopCoalesceINTEL         : I32BitEnumAttrCaseBit<"LoopCoalesceINTEL", 20> {
-  list<Availability> availability = [
-    Extension<[SPV_INTEL_fpga_loop_controls]>,
     Capability<[SPIRV_C_FPGALoopControlsINTEL]>
   ];
 }
 def SPIRV_LC_MaxConcurrencyINTEL       : I32BitEnumAttrCaseBit<"MaxConcurrencyINTEL", 17> {
   list<Availability> availability = [
-    Extension<[SPV_INTEL_fpga_loop_controls]>,
-    Capability<[SPIRV_C_FPGALoopControlsINTEL]>
-  ];
-}
-def SPIRV_LC_MaxInterleavingINTEL      : I32BitEnumAttrCaseBit<"MaxInterleavingINTEL", 21> {
-  list<Availability> availability = [
-    Extension<[SPV_INTEL_fpga_loop_controls]>,
     Capability<[SPIRV_C_FPGALoopControlsINTEL]>
   ];
 }
 def SPIRV_LC_DependencyArrayINTEL      : I32BitEnumAttrCaseBit<"DependencyArrayINTEL", 18> {
   list<Availability> availability = [
-    Extension<[SPV_INTEL_fpga_loop_controls]>,
-    Capability<[SPIRV_C_FPGALoopControlsINTEL]>
-  ];
-}
-def SPIRV_LC_SpeculatedIterationsINTEL : I32BitEnumAttrCaseBit<"SpeculatedIterationsINTEL", 22> {
-  list<Availability> availability = [
-    Extension<[SPV_INTEL_fpga_loop_controls]>,
     Capability<[SPIRV_C_FPGALoopControlsINTEL]>
   ];
 }
 def SPIRV_LC_PipelineEnableINTEL       : I32BitEnumAttrCaseBit<"PipelineEnableINTEL", 19> {
   list<Availability> availability = [
-    Extension<[SPV_INTEL_fpga_loop_controls]>,
+    Capability<[SPIRV_C_FPGALoopControlsINTEL]>
+  ];
+}
+def SPIRV_LC_LoopCoalesceINTEL         : I32BitEnumAttrCaseBit<"LoopCoalesceINTEL", 20> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGALoopControlsINTEL]>
+  ];
+}
+def SPIRV_LC_MaxInterleavingINTEL      : I32BitEnumAttrCaseBit<"MaxInterleavingINTEL", 21> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGALoopControlsINTEL]>
+  ];
+}
+def SPIRV_LC_SpeculatedIterationsINTEL : I32BitEnumAttrCaseBit<"SpeculatedIterationsINTEL", 22> {
+  list<Availability> availability = [
     Capability<[SPIRV_C_FPGALoopControlsINTEL]>
   ];
 }
 def SPIRV_LC_NoFusionINTEL             : I32BitEnumAttrCaseBit<"NoFusionINTEL", 23> {
   list<Availability> availability = [
-    Extension<[SPV_INTEL_fpga_loop_controls]>,
+    Capability<[SPIRV_C_FPGALoopControlsINTEL]>
+  ];
+}
+def SPIRV_LC_LoopCountINTEL            : I32BitEnumAttrCaseBit<"LoopCountINTEL", 24> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_FPGALoopControlsINTEL]>
+  ];
+}
+def SPIRV_LC_MaxReinvocationDelayINTEL : I32BitEnumAttrCaseBit<"MaxReinvocationDelayINTEL", 25> {
+  list<Availability> availability = [
     Capability<[SPIRV_C_FPGALoopControlsINTEL]>
   ];
 }
 
 def SPIRV_LoopControlAttr :
     SPIRV_BitEnumAttr<"LoopControl", "valid SPIR-V LoopControl", "loop_control", [
-      SPIRV_LC_None, SPIRV_LC_Unroll, SPIRV_LC_DontUnroll, SPIRV_LC_DependencyInfinite,
-      SPIRV_LC_DependencyLength, SPIRV_LC_MinIterations, SPIRV_LC_MaxIterations,
-      SPIRV_LC_IterationMultiple, SPIRV_LC_PeelCount, SPIRV_LC_PartialCount,
-      SPIRV_LC_InitiationIntervalINTEL, SPIRV_LC_LoopCoalesceINTEL,
-      SPIRV_LC_MaxConcurrencyINTEL, SPIRV_LC_MaxInterleavingINTEL,
-      SPIRV_LC_DependencyArrayINTEL, SPIRV_LC_SpeculatedIterationsINTEL,
-      SPIRV_LC_PipelineEnableINTEL, SPIRV_LC_NoFusionINTEL
+      SPIRV_LC_None, SPIRV_LC_Unroll, SPIRV_LC_DontUnroll,
+      SPIRV_LC_DependencyInfinite, SPIRV_LC_DependencyLength, SPIRV_LC_MinIterations,
+      SPIRV_LC_MaxIterations, SPIRV_LC_IterationMultiple, SPIRV_LC_PeelCount,
+      SPIRV_LC_PartialCount, SPIRV_LC_InitiationIntervalINTEL,
+      SPIRV_LC_MaxConcurrencyINTEL, SPIRV_LC_DependencyArrayINTEL,
+      SPIRV_LC_PipelineEnableINTEL, SPIRV_LC_LoopCoalesceINTEL,
+      SPIRV_LC_MaxInterleavingINTEL, SPIRV_LC_SpeculatedIterationsINTEL,
+      SPIRV_LC_NoFusionINTEL, SPIRV_LC_LoopCountINTEL,
+      SPIRV_LC_MaxReinvocationDelayINTEL
     ]>;
 
-def SPIRV_MA_None                 : I32BitEnumAttrCaseNone<"None">;
-def SPIRV_MA_Volatile             : I32BitEnumAttrCaseBit<"Volatile", 0>;
-def SPIRV_MA_Aligned              : I32BitEnumAttrCaseBit<"Aligned", 1>;
-def SPIRV_MA_Nontemporal          : I32BitEnumAttrCaseBit<"Nontemporal", 2>;
+def SPIRV_MA_None                 : I32BitEnumAttrCaseNone<"None"> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MA_Volatile             : I32BitEnumAttrCaseBit<"Volatile", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MA_Aligned              : I32BitEnumAttrCaseBit<"Aligned", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MA_Nontemporal          : I32BitEnumAttrCaseBit<"Nontemporal", 2> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_MA_MakePointerAvailable : I32BitEnumAttrCaseBit<"MakePointerAvailable", 3> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
 def SPIRV_MA_MakePointerVisible   : I32BitEnumAttrCaseBit<"MakePointerVisible", 4> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
 def SPIRV_MA_NonPrivatePointer    : I32BitEnumAttrCaseBit<"NonPrivatePointer", 5> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
@@ -3750,21 +5154,25 @@ def SPIRV_MemoryAccessAttr :
     SPIRV_BitEnumAttr<"MemoryAccess", "valid SPIR-V MemoryAccess", "memory_access", [
       SPIRV_MA_None, SPIRV_MA_Volatile, SPIRV_MA_Aligned, SPIRV_MA_Nontemporal,
       SPIRV_MA_MakePointerAvailable, SPIRV_MA_MakePointerVisible,
-      SPIRV_MA_NonPrivatePointer, SPIRV_MA_AliasScopeINTELMask, SPIRV_MA_NoAliasINTELMask
+      SPIRV_MA_NonPrivatePointer, SPIRV_MA_AliasScopeINTELMask,
+      SPIRV_MA_NoAliasINTELMask
     ]>;
 
 def SPIRV_MM_Simple  : I32EnumAttrCase<"Simple", 0> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_MM_GLSL450 : I32EnumAttrCase<"GLSL450", 1> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_MM_OpenCL  : I32EnumAttrCase<"OpenCL", 2> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Kernel]>
   ];
 }
@@ -3780,40 +5188,78 @@ def SPIRV_MemoryModelAttr :
       SPIRV_MM_Simple, SPIRV_MM_GLSL450, SPIRV_MM_OpenCL, SPIRV_MM_Vulkan
     ]>;
 
-def SPIRV_MS_None                   : I32BitEnumAttrCaseNone<"None">;
-def SPIRV_MS_Acquire                : I32BitEnumAttrCaseBit<"Acquire", 1>;
-def SPIRV_MS_Release                : I32BitEnumAttrCaseBit<"Release", 2>;
-def SPIRV_MS_AcquireRelease         : I32BitEnumAttrCaseBit<"AcquireRelease", 3>;
-def SPIRV_MS_SequentiallyConsistent : I32BitEnumAttrCaseBit<"SequentiallyConsistent", 4>;
+def SPIRV_MS_Relaxed                : I32BitEnumAttrCaseNone<"Relaxed"> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MS_Acquire                : I32BitEnumAttrCaseBit<"Acquire", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MS_Release                : I32BitEnumAttrCaseBit<"Release", 2> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MS_AcquireRelease         : I32BitEnumAttrCaseBit<"AcquireRelease", 3> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MS_SequentiallyConsistent : I32BitEnumAttrCaseBit<"SequentiallyConsistent", 4> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_MS_UniformMemory          : I32BitEnumAttrCaseBit<"UniformMemory", 6> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_MS_SubgroupMemory         : I32BitEnumAttrCaseBit<"SubgroupMemory", 7>;
-def SPIRV_MS_WorkgroupMemory        : I32BitEnumAttrCaseBit<"WorkgroupMemory", 8>;
-def SPIRV_MS_CrossWorkgroupMemory   : I32BitEnumAttrCaseBit<"CrossWorkgroupMemory", 9>;
+def SPIRV_MS_SubgroupMemory         : I32BitEnumAttrCaseBit<"SubgroupMemory", 7> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MS_WorkgroupMemory        : I32BitEnumAttrCaseBit<"WorkgroupMemory", 8> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_MS_CrossWorkgroupMemory   : I32BitEnumAttrCaseBit<"CrossWorkgroupMemory", 9> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_MS_AtomicCounterMemory    : I32BitEnumAttrCaseBit<"AtomicCounterMemory", 10> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_AtomicStorage]>
   ];
 }
-def SPIRV_MS_ImageMemory            : I32BitEnumAttrCaseBit<"ImageMemory", 11>;
+def SPIRV_MS_ImageMemory            : I32BitEnumAttrCaseBit<"ImageMemory", 11> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_MS_OutputMemory           : I32BitEnumAttrCaseBit<"OutputMemory", 12> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
 def SPIRV_MS_MakeAvailable          : I32BitEnumAttrCaseBit<"MakeAvailable", 13> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
 def SPIRV_MS_MakeVisible            : I32BitEnumAttrCaseBit<"MakeVisible", 14> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_5>,
+    Extension<[SPV_KHR_vulkan_memory_model]>,
     Capability<[SPIRV_C_VulkanMemoryModel]>
   ];
 }
@@ -3826,18 +5272,50 @@ def SPIRV_MS_Volatile               : I32BitEnumAttrCaseBit<"Volatile", 15> {
 
 def SPIRV_MemorySemanticsAttr :
     SPIRV_BitEnumAttr<"MemorySemantics", "valid SPIR-V MemorySemantics", "memory_semantics", [
-      SPIRV_MS_None, SPIRV_MS_Acquire, SPIRV_MS_Release, SPIRV_MS_AcquireRelease,
-      SPIRV_MS_SequentiallyConsistent, SPIRV_MS_UniformMemory, SPIRV_MS_SubgroupMemory,
-      SPIRV_MS_WorkgroupMemory, SPIRV_MS_CrossWorkgroupMemory,
-      SPIRV_MS_AtomicCounterMemory, SPIRV_MS_ImageMemory, SPIRV_MS_OutputMemory,
-      SPIRV_MS_MakeAvailable, SPIRV_MS_MakeVisible, SPIRV_MS_Volatile
+      SPIRV_MS_Relaxed, SPIRV_MS_Acquire, SPIRV_MS_Release, SPIRV_MS_AcquireRelease,
+      SPIRV_MS_SequentiallyConsistent, SPIRV_MS_UniformMemory,
+      SPIRV_MS_SubgroupMemory, SPIRV_MS_WorkgroupMemory,
+      SPIRV_MS_CrossWorkgroupMemory, SPIRV_MS_AtomicCounterMemory,
+      SPIRV_MS_ImageMemory, SPIRV_MS_OutputMemory, SPIRV_MS_MakeAvailable,
+      SPIRV_MS_MakeVisible, SPIRV_MS_Volatile
     ]>;
 
-def SPIRV_S_CrossDevice   : I32EnumAttrCase<"CrossDevice", 0>;
-def SPIRV_S_Device        : I32EnumAttrCase<"Device", 1>;
-def SPIRV_S_Workgroup     : I32EnumAttrCase<"Workgroup", 2>;
-def SPIRV_S_Subgroup      : I32EnumAttrCase<"Subgroup", 3>;
-def SPIRV_S_Invocation    : I32EnumAttrCase<"Invocation", 4>;
+def SPIRV_PVF_PackedVectorFormat4x8Bit : I32EnumAttrCase<"PackedVectorFormat4x8Bit", 0> {
+  list<Availability> availability = [
+    Extension<[SPV_KHR_integer_dot_product]>
+  ];
+}
+
+def SPIRV_PackedVectorFormatAttr :
+    SPIRV_I32EnumAttr<"PackedVectorFormat", "valid SPIR-V PackedVectorFormat", "packed_vector_format", [
+      SPIRV_PVF_PackedVectorFormat4x8Bit
+    ]>;
+
+def SPIRV_S_CrossDevice   : I32EnumAttrCase<"CrossDevice", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_S_Device        : I32EnumAttrCase<"Device", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_S_Workgroup     : I32EnumAttrCase<"Workgroup", 2> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_S_Subgroup      : I32EnumAttrCase<"Subgroup", 3> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_S_Invocation    : I32EnumAttrCase<"Invocation", 4> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_S_QueueFamily   : I32EnumAttrCase<"QueueFamily", 5> {
   list<Availability> availability = [
     MinVersion<SPIRV_V_1_5>,
@@ -3856,55 +5334,112 @@ def SPIRV_ScopeAttr :
       SPIRV_S_Invocation, SPIRV_S_QueueFamily, SPIRV_S_ShaderCallKHR
     ]>;
 
-def SPIRV_SC_None        : I32BitEnumAttrCaseNone<"None">;
-def SPIRV_SC_Flatten     : I32BitEnumAttrCaseBit<"Flatten", 0>;
-def SPIRV_SC_DontFlatten : I32BitEnumAttrCaseBit<"DontFlatten", 1>;
+def SPIRV_SC_None        : I32BitEnumAttrCaseNone<"None"> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_SC_Flatten     : I32BitEnumAttrCaseBit<"Flatten", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_SC_DontFlatten : I32BitEnumAttrCaseBit<"DontFlatten", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 
 def SPIRV_SelectionControlAttr :
     SPIRV_BitEnumAttr<"SelectionControl", "valid SPIR-V SelectionControl", "selection_control", [
       SPIRV_SC_None, SPIRV_SC_Flatten, SPIRV_SC_DontFlatten
     ]>;
 
-def SPIRV_SC_UniformConstant         : I32EnumAttrCase<"UniformConstant", 0>;
-def SPIRV_SC_Input                   : I32EnumAttrCase<"Input", 1>;
+def SPIRV_SC_UniformConstant         : I32EnumAttrCase<"UniformConstant", 0> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_SC_Input                   : I32EnumAttrCase<"Input", 1> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_SC_Uniform                 : I32EnumAttrCase<"Uniform", 2> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_SC_Output                  : I32EnumAttrCase<"Output", 3> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
-def SPIRV_SC_Workgroup               : I32EnumAttrCase<"Workgroup", 4>;
-def SPIRV_SC_CrossWorkgroup          : I32EnumAttrCase<"CrossWorkgroup", 5>;
+def SPIRV_SC_Workgroup               : I32EnumAttrCase<"Workgroup", 4> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
+def SPIRV_SC_CrossWorkgroup          : I32EnumAttrCase<"CrossWorkgroup", 5> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_SC_Private                 : I32EnumAttrCase<"Private", 6> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader, SPIRV_C_VectorComputeINTEL]>
   ];
 }
-def SPIRV_SC_Function                : I32EnumAttrCase<"Function", 7>;
+def SPIRV_SC_Function                : I32EnumAttrCase<"Function", 7> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_SC_Generic                 : I32EnumAttrCase<"Generic", 8> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_GenericPointer]>
   ];
 }
 def SPIRV_SC_PushConstant            : I32EnumAttrCase<"PushConstant", 9> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_Shader]>
   ];
 }
 def SPIRV_SC_AtomicCounter           : I32EnumAttrCase<"AtomicCounter", 10> {
   list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>,
     Capability<[SPIRV_C_AtomicStorage]>
   ];
 }
-def SPIRV_SC_Image                   : I32EnumAttrCase<"Image", 11>;
+def SPIRV_SC_Image                   : I32EnumAttrCase<"Image", 11> {
+  list<Availability> availability = [
+    MinVersion<SPIRV_V_1_0>
+  ];
+}
 def SPIRV_SC_StorageBuffer           : I32EnumAttrCase<"StorageBuffer", 12> {
   list<Availability> availability = [
     Extension<[SPV_KHR_storage_buffer_storage_class, SPV_KHR_variable_pointers]>,
     Capability<[SPIRV_C_Shader]>
+  ];
+}
+def SPIRV_SC_TileImageEXT            : I32EnumAttrCase<"TileImageEXT", 4172> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileImageColorReadAccessEXT]>
+  ];
+}
+def SPIRV_SC_TileAttachmentQCOM      : I32EnumAttrCase<"TileAttachmentQCOM", 4491> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_TileShadingQCOM]>
+  ];
+}
+def SPIRV_SC_NodePayloadAMDX         : I32EnumAttrCase<"NodePayloadAMDX", 5068> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderEnqueueAMDX]>
   ];
 }
 def SPIRV_SC_CallableDataKHR         : I32EnumAttrCase<"CallableDataKHR", 5328> {
@@ -3949,9 +5484,13 @@ def SPIRV_SC_PhysicalStorageBuffer   : I32EnumAttrCase<"PhysicalStorageBuffer", 
     Capability<[SPIRV_C_PhysicalStorageBufferAddresses]>
   ];
 }
+def SPIRV_SC_HitObjectAttributeNV    : I32EnumAttrCase<"HitObjectAttributeNV", 5385> {
+  list<Availability> availability = [
+    Capability<[SPIRV_C_ShaderInvocationReorderNV]>
+  ];
+}
 def SPIRV_SC_TaskPayloadWorkgroupEXT : I32EnumAttrCase<"TaskPayloadWorkgroupEXT", 5402> {
   list<Availability> availability = [
-    MinVersion<SPIRV_V_1_4>,
     Extension<[SPV_EXT_mesh_shader]>,
     Capability<[SPIRV_C_MeshShadingEXT]>
   ];
@@ -3978,25 +5517,16 @@ def SPIRV_SC_HostOnlyINTEL           : I32EnumAttrCase<"HostOnlyINTEL", 5937> {
 def SPIRV_StorageClassAttr :
     SPIRV_I32EnumAttr<"StorageClass", "valid SPIR-V StorageClass", "storage_class", [
       SPIRV_SC_UniformConstant, SPIRV_SC_Input, SPIRV_SC_Uniform, SPIRV_SC_Output,
-      SPIRV_SC_Workgroup, SPIRV_SC_CrossWorkgroup, SPIRV_SC_Private, SPIRV_SC_Function,
-      SPIRV_SC_Generic, SPIRV_SC_PushConstant, SPIRV_SC_AtomicCounter, SPIRV_SC_Image,
-      SPIRV_SC_StorageBuffer, SPIRV_SC_CallableDataKHR, SPIRV_SC_IncomingCallableDataKHR,
-      SPIRV_SC_RayPayloadKHR, SPIRV_SC_HitAttributeKHR, SPIRV_SC_IncomingRayPayloadKHR,
-      SPIRV_SC_ShaderRecordBufferKHR, SPIRV_SC_PhysicalStorageBuffer,
+      SPIRV_SC_Workgroup, SPIRV_SC_CrossWorkgroup, SPIRV_SC_Private,
+      SPIRV_SC_Function, SPIRV_SC_Generic, SPIRV_SC_PushConstant,
+      SPIRV_SC_AtomicCounter, SPIRV_SC_Image, SPIRV_SC_StorageBuffer,
+      SPIRV_SC_TileImageEXT, SPIRV_SC_TileAttachmentQCOM, SPIRV_SC_NodePayloadAMDX,
+      SPIRV_SC_CallableDataKHR, SPIRV_SC_IncomingCallableDataKHR,
+      SPIRV_SC_RayPayloadKHR, SPIRV_SC_HitAttributeKHR,
+      SPIRV_SC_IncomingRayPayloadKHR, SPIRV_SC_ShaderRecordBufferKHR,
+      SPIRV_SC_PhysicalStorageBuffer, SPIRV_SC_HitObjectAttributeNV,
       SPIRV_SC_TaskPayloadWorkgroupEXT, SPIRV_SC_CodeSectionINTEL,
       SPIRV_SC_DeviceOnlyINTEL, SPIRV_SC_HostOnlyINTEL
-    ]>;
-
-def SPIRV_PVF_PackedVectorFormat4x8Bit : I32EnumAttrCase<"PackedVectorFormat4x8Bit", 0> {
-  list<Availability> availability = [
-    MinVersion<SPIRV_V_1_6>,
-    Extension<[SPV_KHR_integer_dot_product]>
-  ];
-}
-
-def SPIRV_PackedVectorFormatAttr :
-    SPIRV_I32EnumAttr<"PackedVectorFormat", "valid SPIR-V PackedVectorFormat", "packed_vector_format", [
-      SPIRV_PVF_PackedVectorFormat4x8Bit
     ]>;
 
 // End enum section. Generated from SPIR-V spec; DO NOT MODIFY!
@@ -4508,8 +6038,8 @@ def SPIRV_OC_OpGroupNonUniformBitwiseXor      : I32EnumAttrCase<"OpGroupNonUnifo
 def SPIRV_OC_OpGroupNonUniformLogicalAnd      : I32EnumAttrCase<"OpGroupNonUniformLogicalAnd", 362>;
 def SPIRV_OC_OpGroupNonUniformLogicalOr       : I32EnumAttrCase<"OpGroupNonUniformLogicalOr", 363>;
 def SPIRV_OC_OpGroupNonUniformLogicalXor      : I32EnumAttrCase<"OpGroupNonUniformLogicalXor", 364>;
-def SPIRV_OC_OpGroupNonUniformRotateKHR       : I32EnumAttrCase<"OpGroupNonUniformRotateKHR", 4431>;
 def SPIRV_OC_OpSubgroupBallotKHR              : I32EnumAttrCase<"OpSubgroupBallotKHR", 4421>;
+def SPIRV_OC_OpGroupNonUniformRotateKHR       : I32EnumAttrCase<"OpGroupNonUniformRotateKHR", 4431>;
 def SPIRV_OC_OpSDot                           : I32EnumAttrCase<"OpSDot", 4450>;
 def SPIRV_OC_OpUDot                           : I32EnumAttrCase<"OpUDot", 4451>;
 def SPIRV_OC_OpSUDot                          : I32EnumAttrCase<"OpSUDot", 4452>;
@@ -4523,6 +6053,16 @@ def SPIRV_OC_OpCooperativeMatrixMulAddKHR     : I32EnumAttrCase<"OpCooperativeMa
 def SPIRV_OC_OpCooperativeMatrixLengthKHR     : I32EnumAttrCase<"OpCooperativeMatrixLengthKHR", 4460>;
 def SPIRV_OC_OpEmitMeshTasksEXT               : I32EnumAttrCase<"OpEmitMeshTasksEXT", 5294>;
 def SPIRV_OC_OpSetMeshOutputsEXT              : I32EnumAttrCase<"OpSetMeshOutputsEXT", 5295>;
+def SPIRV_OC_OpCreateTensorLayoutNV           : I32EnumAttrCase<"OpCreateTensorLayoutNV", 5372>;
+def SPIRV_OC_OpTensorLayoutSetDimensionNV     : I32EnumAttrCase<"OpTensorLayoutSetDimensionNV", 5373>;
+def SPIRV_OC_OpTensorLayoutSetStrideNV        : I32EnumAttrCase<"OpTensorLayoutSetStrideNV", 5374>;
+def SPIRV_OC_OpTensorLayoutSliceNV            : I32EnumAttrCase<"OpTensorLayoutSliceNV", 5375>;
+def SPIRV_OC_OpTensorLayoutSetClampValueNV    : I32EnumAttrCase<"OpTensorLayoutSetClampValueNV", 5376>;
+def SPIRV_OC_OpCreateTensorViewNV             : I32EnumAttrCase<"OpCreateTensorViewNV", 5377>;
+def SPIRV_OC_OpTensorViewSetDimensionNV       : I32EnumAttrCase<"OpTensorViewSetDimensionNV", 5378>;
+def SPIRV_OC_OpTensorViewSetStrideNV          : I32EnumAttrCase<"OpTensorViewSetStrideNV", 5379>;
+def SPIRV_OC_OpTensorViewSetClipNV            : I32EnumAttrCase<"OpTensorViewSetClipNV", 5382>;
+def SPIRV_OC_OpTensorLayoutSetBlockSizeNV     : I32EnumAttrCase<"OpTensorLayoutSetBlockSizeNV", 5384>;
 def SPIRV_OC_OpSubgroupBlockReadINTEL         : I32EnumAttrCase<"OpSubgroupBlockReadINTEL", 5575>;
 def SPIRV_OC_OpSubgroupBlockWriteINTEL        : I32EnumAttrCase<"OpSubgroupBlockWriteINTEL", 5576>;
 def SPIRV_OC_OpAssumeTrueKHR                  : I32EnumAttrCase<"OpAssumeTrueKHR", 5630>;
@@ -4600,13 +6140,13 @@ def SPIRV_OpcodeAttr :
       SPIRV_OC_OpAtomicAnd, SPIRV_OC_OpAtomicOr, SPIRV_OC_OpAtomicXor,
       SPIRV_OC_OpPhi, SPIRV_OC_OpLoopMerge, SPIRV_OC_OpSelectionMerge,
       SPIRV_OC_OpLabel, SPIRV_OC_OpBranch, SPIRV_OC_OpBranchConditional,
-      SPIRV_OC_OpKill, SPIRV_OC_OpReturn, SPIRV_OC_OpReturnValue, SPIRV_OC_OpUnreachable,
-      SPIRV_OC_OpGroupBroadcast, SPIRV_OC_OpGroupIAdd, SPIRV_OC_OpGroupFAdd,
-      SPIRV_OC_OpGroupFMin, SPIRV_OC_OpGroupUMin, SPIRV_OC_OpGroupSMin,
-      SPIRV_OC_OpGroupFMax, SPIRV_OC_OpGroupUMax, SPIRV_OC_OpGroupSMax,
-      SPIRV_OC_OpNoLine, SPIRV_OC_OpModuleProcessed, SPIRV_OC_OpGroupNonUniformElect,
-      SPIRV_OC_OpGroupNonUniformBroadcast, SPIRV_OC_OpGroupNonUniformBallot,
-      SPIRV_OC_OpGroupNonUniformBallotBitCount,
+      SPIRV_OC_OpKill, SPIRV_OC_OpReturn, SPIRV_OC_OpReturnValue,
+      SPIRV_OC_OpUnreachable, SPIRV_OC_OpGroupBroadcast, SPIRV_OC_OpGroupIAdd,
+      SPIRV_OC_OpGroupFAdd, SPIRV_OC_OpGroupFMin, SPIRV_OC_OpGroupUMin,
+      SPIRV_OC_OpGroupSMin, SPIRV_OC_OpGroupFMax, SPIRV_OC_OpGroupUMax,
+      SPIRV_OC_OpGroupSMax, SPIRV_OC_OpNoLine, SPIRV_OC_OpModuleProcessed,
+      SPIRV_OC_OpGroupNonUniformElect, SPIRV_OC_OpGroupNonUniformBroadcast,
+      SPIRV_OC_OpGroupNonUniformBallot, SPIRV_OC_OpGroupNonUniformBallotBitCount,
       SPIRV_OC_OpGroupNonUniformBallotFindLSB,
       SPIRV_OC_OpGroupNonUniformBallotFindMSB, SPIRV_OC_OpGroupNonUniformShuffle,
       SPIRV_OC_OpGroupNonUniformShuffleXor, SPIRV_OC_OpGroupNonUniformShuffleUp,
@@ -4618,19 +6158,23 @@ def SPIRV_OpcodeAttr :
       SPIRV_OC_OpGroupNonUniformFMax, SPIRV_OC_OpGroupNonUniformBitwiseAnd,
       SPIRV_OC_OpGroupNonUniformBitwiseOr, SPIRV_OC_OpGroupNonUniformBitwiseXor,
       SPIRV_OC_OpGroupNonUniformLogicalAnd, SPIRV_OC_OpGroupNonUniformLogicalOr,
-      SPIRV_OC_OpGroupNonUniformLogicalXor, SPIRV_OC_OpGroupNonUniformRotateKHR,
-      SPIRV_OC_OpSubgroupBallotKHR,
-      SPIRV_OC_OpSDot, SPIRV_OC_OpUDot, SPIRV_OC_OpSUDot, SPIRV_OC_OpSDotAccSat,
-      SPIRV_OC_OpUDotAccSat, SPIRV_OC_OpSUDotAccSat,
-      SPIRV_OC_OpTypeCooperativeMatrixKHR, SPIRV_OC_OpCooperativeMatrixLoadKHR,
-      SPIRV_OC_OpCooperativeMatrixStoreKHR, SPIRV_OC_OpCooperativeMatrixMulAddKHR,
-      SPIRV_OC_OpCooperativeMatrixLengthKHR, SPIRV_OC_OpEmitMeshTasksEXT,
-      SPIRV_OC_OpSetMeshOutputsEXT, SPIRV_OC_OpSubgroupBlockReadINTEL,
-      SPIRV_OC_OpSubgroupBlockWriteINTEL, SPIRV_OC_OpAssumeTrueKHR,
-      SPIRV_OC_OpAtomicFAddEXT, SPIRV_OC_OpConvertFToBF16INTEL,
-      SPIRV_OC_OpConvertBF16ToFINTEL, SPIRV_OC_OpControlBarrierArriveINTEL,
-      SPIRV_OC_OpControlBarrierWaitINTEL, SPIRV_OC_OpGroupIMulKHR,
-      SPIRV_OC_OpGroupFMulKHR
+      SPIRV_OC_OpGroupNonUniformLogicalXor, SPIRV_OC_OpSubgroupBallotKHR,
+      SPIRV_OC_OpGroupNonUniformRotateKHR, SPIRV_OC_OpSDot, SPIRV_OC_OpUDot,
+      SPIRV_OC_OpSUDot, SPIRV_OC_OpSDotAccSat, SPIRV_OC_OpUDotAccSat,
+      SPIRV_OC_OpSUDotAccSat, SPIRV_OC_OpTypeCooperativeMatrixKHR,
+      SPIRV_OC_OpCooperativeMatrixLoadKHR, SPIRV_OC_OpCooperativeMatrixStoreKHR,
+      SPIRV_OC_OpCooperativeMatrixMulAddKHR, SPIRV_OC_OpCooperativeMatrixLengthKHR,
+      SPIRV_OC_OpEmitMeshTasksEXT, SPIRV_OC_OpSetMeshOutputsEXT,
+      SPIRV_OC_OpCreateTensorLayoutNV, SPIRV_OC_OpTensorLayoutSetDimensionNV,
+      SPIRV_OC_OpTensorLayoutSetStrideNV, SPIRV_OC_OpTensorLayoutSliceNV,
+      SPIRV_OC_OpTensorLayoutSetClampValueNV, SPIRV_OC_OpCreateTensorViewNV,
+      SPIRV_OC_OpTensorViewSetDimensionNV, SPIRV_OC_OpTensorViewSetStrideNV,
+      SPIRV_OC_OpTensorViewSetClipNV, SPIRV_OC_OpTensorLayoutSetBlockSizeNV,
+      SPIRV_OC_OpSubgroupBlockReadINTEL, SPIRV_OC_OpSubgroupBlockWriteINTEL,
+      SPIRV_OC_OpAssumeTrueKHR, SPIRV_OC_OpAtomicFAddEXT,
+      SPIRV_OC_OpConvertFToBF16INTEL, SPIRV_OC_OpConvertBF16ToFINTEL,
+      SPIRV_OC_OpControlBarrierArriveINTEL, SPIRV_OC_OpControlBarrierWaitINTEL,
+      SPIRV_OC_OpGroupIMulKHR, SPIRV_OC_OpGroupFMulKHR
     ]>;
 
 // End opcode section. Generated from SPIR-V spec; DO NOT MODIFY!
