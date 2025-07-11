@@ -7080,8 +7080,8 @@ SDValue SITargetLowering::lowerFP_ROUND(SDValue Op, SelectionDAG &DAG) const {
 
   // Round-inexact-to-odd f64 to f32, then do the final rounding using the
   // hardware f32 -> bf16 instruction.
-  EVT F32VT = SrcVT.isVector() ? SrcVT.changeVectorElementType(MVT::f32) :
-                                 MVT::f32;
+  EVT F32VT =
+      SrcVT.isVector() ? SrcVT.changeVectorElementType(MVT::f32) : MVT::f32;
   SDValue Rod = expandRoundInexactToOdd(F32VT, Src, DL, DAG);
   return DAG.getNode(ISD::FP_ROUND, DL, DstVT, Rod,
                      DAG.getTargetConstant(0, DL, MVT::i32));
@@ -10390,18 +10390,18 @@ SDValue SITargetLowering::LowerINTRINSIC_VOID(SDValue Op,
     case 12:
       if (!Subtarget->hasLDSLoadB96_B128())
         return SDValue();
-      Opc = HasVIndex ? HasVOffset ? AMDGPU::BUFFER_LOAD_DWORDX3_LDS_BOTHEN
-                                   : AMDGPU::BUFFER_LOAD_DWORDX3_LDS_IDXEN
-                      : HasVOffset ? AMDGPU::BUFFER_LOAD_DWORDX3_LDS_OFFEN
-                                   : AMDGPU::BUFFER_LOAD_DWORDX3_LDS_OFFSET;
+      Opc = HasVIndex    ? HasVOffset ? AMDGPU::BUFFER_LOAD_DWORDX3_LDS_BOTHEN
+                                      : AMDGPU::BUFFER_LOAD_DWORDX3_LDS_IDXEN
+            : HasVOffset ? AMDGPU::BUFFER_LOAD_DWORDX3_LDS_OFFEN
+                         : AMDGPU::BUFFER_LOAD_DWORDX3_LDS_OFFSET;
       break;
     case 16:
       if (!Subtarget->hasLDSLoadB96_B128())
         return SDValue();
-      Opc = HasVIndex ? HasVOffset ? AMDGPU::BUFFER_LOAD_DWORDX4_LDS_BOTHEN
-                                   : AMDGPU::BUFFER_LOAD_DWORDX4_LDS_IDXEN
-                      : HasVOffset ? AMDGPU::BUFFER_LOAD_DWORDX4_LDS_OFFEN
-                                   : AMDGPU::BUFFER_LOAD_DWORDX4_LDS_OFFSET;
+      Opc = HasVIndex    ? HasVOffset ? AMDGPU::BUFFER_LOAD_DWORDX4_LDS_BOTHEN
+                                      : AMDGPU::BUFFER_LOAD_DWORDX4_LDS_IDXEN
+            : HasVOffset ? AMDGPU::BUFFER_LOAD_DWORDX4_LDS_OFFEN
+                         : AMDGPU::BUFFER_LOAD_DWORDX4_LDS_OFFSET;
       break;
     }
 
@@ -10431,9 +10431,9 @@ SDValue SITargetLowering::LowerINTRINSIC_VOID(SDValue Op,
         Aux & (IsGFX12Plus ? AMDGPU::CPol::SWZ : AMDGPU::CPol::SWZ_pregfx12)
             ? 1
             : 0,
-        DL, MVT::i8));                                           // swz
-    Ops.push_back(M0Val.getValue(0));                            // Chain
-    Ops.push_back(M0Val.getValue(1));                            // Glue
+        DL, MVT::i8));                // swz
+    Ops.push_back(M0Val.getValue(0)); // Chain
+    Ops.push_back(M0Val.getValue(1)); // Glue
 
     auto *M = cast<MemSDNode>(Op);
     MachineMemOperand *LoadMMO = M->getMemOperand();
@@ -17926,4 +17926,54 @@ SITargetLowering::lowerIdempotentRMWIntoFencedLoad(AtomicRMWInst *AI) const {
   AI->replaceAllUsesWith(LI);
   AI->eraseFromParent();
   return LI;
+}
+
+bool SITargetLowering::SimplifyDemandedBitsForTargetNode(
+    SDValue Op, const APInt &OriginalDemandedBits,
+    const APInt &OriginalDemandedElts, KnownBits &Known, TargetLoweringOpt &TLO,
+    unsigned Depth) const {
+  if (Op.getOpcode() != ISD::INTRINSIC_WO_CHAIN)
+    return false;
+
+  if (Op.getNumOperands() < 1)
+    return false;
+
+  SDValue intrinsicIDOp = Op.getOperand(0);
+  if (!isa<ConstantSDNode>(intrinsicIDOp))
+    return false;
+
+  unsigned IntrinsicID = cast<ConstantSDNode>(intrinsicIDOp)->getZExtValue();
+
+  EVT VT = Op.getValueType();
+  // unsigned bitWidth = VT.getSizeInBits();
+  unsigned bitWidth = OriginalDemandedBits.getBitWidth();
+  APInt demandedBits = OriginalDemandedBits.trunc(bitWidth);
+  APInt demandedBitsOrig = OriginalDemandedBits.trunc(bitWidth);
+
+  // SDLoc DL(Op);
+  // unsigned IntrinsicID = Op.getConstantOperandVal(0);
+
+  switch (IntrinsicID) {
+  case Intrinsic::amdgcn_readfirstlane: {
+    // // demandedBits = APInt::getLowBitsSet(32, 8);
+    // // Now we simplify the operand of readfirstlane
+    SDValue readfirstlaneOperand =
+        Op.getOperand(1); // operand for readfirstlane intrinsic
+    //
+    // // Recursively simplify demanded bits for operand
+    KnownBits KnownOperand;
+    if (SimplifyDemandedBits(readfirstlaneOperand, demandedBits,
+                             OriginalDemandedElts, KnownOperand, TLO,
+                             Depth + 1)) {
+      printf("Simplify demanded bits return true - %d!!!\n", demandedBits.getZExtValue());
+      return true;
+    }
+    //
+    break;
+  }
+  default:
+    break;
+  }
+
+  return false;
 }

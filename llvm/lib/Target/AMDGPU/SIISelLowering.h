@@ -614,6 +614,13 @@ public:
 
   MachineMemOperand::Flags
   getTargetMMOFlags(const Instruction &I) const override;
+
+  bool SimplifyDemandedBitsForTargetNode(SDValue Op,
+                                           const APInt &DemandedBits,
+                                           const APInt &DemandedElts,
+                                           KnownBits &Known,
+                                           TargetLoweringOpt &TLO,
+                                           unsigned Depth) const override;
 };
 
 // Returns true if argument is a boolean value which is not serialized into
